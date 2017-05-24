@@ -1,6 +1,8 @@
 %% Signal
-x = sqpulse(500,1000,1);
-[~,x] = cexp(1,100);
+%x = sqpulse(50,100,1);
+%n = 0:127;
+x = cos(n');
+%x = tpulse(32, 128, 1);
 
 % parameters
 M = 3;

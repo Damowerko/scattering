@@ -4,7 +4,7 @@ if ~isfield(options.psi, 'sigma')
     options.psi.sigma = 0.85;
 end
 if ~isfield(options.psi, 'xi')
-    options.phi.xi = 3/4 * pi;
+    options.psi.xi = 3/4 * pi;
 end
 if ~isfield(options.phi, 'sigma')
     options.phi.sigma = 0.85;
@@ -13,44 +13,46 @@ end
 N = length(x);
 N_filt = 2^ceil(log2(N));
 
+sum = zeros(N_filt,1);
+% normalizing factor
+for j = 0:options.J-1
+    xi_psi = options.psi.xi * 2^(-j);
+    sigma_psi = options.psi.sigma * 2^j;
+    temp = morlet_1d_freq(N_filt, xi_psi, sigma_psi);
+    sum = sum + abs(temp).^2;
+end
+nu = sqrt(2/max(sum));
+
 % filters psi
 psi = zeros(N_filt, options.J);
 for j = 0:options.J-1
     xi_psi = options.psi.xi * 2^(-j);
     sigma_psi = options.psi.sigma * 2^j;
-    filt = 2^(-2*options.J)*morlet_1d_freq(N_filt, sigma_psi, xi_psi);
-    if length(filt) < N_filt
-        filt(N_filt) = 0;
-    end
-    psi(:,j+1) = filt;
+    filt = morlet_1d_freq(N, xi_psi, sigma_psi);
+    psi(:,j+1) = filt * nu;
 end
 
 % apply filters and modulus
-U = zeros(N_filt, size(psi,2));
+U = zeros(N, size(psi,2));
 for i = 1:size(psi,2)
-    % fft of signal
+    if(N < N_filt)
+        x(N_filt) = 0;
+    end
     X = fft(x);
-    % pad frequency signal to the length of filter
-    X = pad_signal(X, N_filt);
-    Y = psi(:,i) .* X; 
-    ds = round(log2(2*pi/psi_bw(p1)/2));
-		ds = max(ds, 0);
+    Y = psi(:,i) .* X;
     
-    U(:,i) = abs(ifft(Y));
+    U(:,i) = abs();
 end
 
 % low-pass filter phi
 sigma_phi = options.phi.sigma * 2^(options.J-1);
-phi = 2^(-2*options.J)*gaussian_filter_freq(N_filt, sigma_phi);
-if length(phi) < N_filt
-    phi(N_filt) = 0;
-end
+phi = gaussian_filter_freq(N, sigma_phi);
 
 % apply low pass filter
-S = zeros(N_filt/2^options.J, size(U,2));
+S = zeros(N, size(U,2));
 for i = 1:size(U,2)
     X = fft(U(:,i));
     Y = X .* phi;
-    Y = downsample(Y, 2^options.J);
+    %Y = downsample(Y, 2^options.J);
     S(:,i) = real(ifft(Y));
 end

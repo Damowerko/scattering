@@ -1,4 +1,4 @@
-function [ Sp1, Up1 ] = layer( U, options )
+function [ Sp1, Up1 ] = layer_freq( U, options )
 %size_scale = 2^ceil(log2(size(U,1))) / size(U,1);
 %Sp1 = zeros(size(U) .* [size_scale/2^options.J options.J]);
 %Up1 = zeros(size(U) .* [size_scale options.J]);

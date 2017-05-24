@@ -4,7 +4,7 @@ if ~isfield(options.psi, 'sigma')
     options.psi.sigma = 0.85;
 end
 if ~isfield(options.psi, 'xi')
-    options.phi.xi = 3/4 * pi;
+    options.psi.xi = 3/4 * pi;
 end
 if ~isfield(options.phi, 'sigma')
     options.phi.sigma = 0.85;
@@ -12,45 +12,52 @@ end
 
 N = length(x);
 N_filt = 2^ceil(log2(N));
+if(N < N_filt)
+        x(N_filt) = 0;
+end
+
+sum = zeros(N_filt,1);
+% normalizing factor
+for j = 0:options.J-1
+    xi_psi = options.psi.xi * 2^(-j);
+    sigma_psi = options.psi.sigma * 2^j;
+    temp = morlet_1d_freq(N_filt, xi_psi, sigma_psi);
+    sum = sum + abs(temp).^2;
+end
+nu = sqrt(2/max(sum));
 
 % filters psi
 psi = zeros(N_filt, options.J);
 for j = 0:options.J-1
     xi_psi = options.psi.xi * 2^(-j);
     sigma_psi = options.psi.sigma * 2^j;
-    filt = 2^(-2*options.J)*morlet_1d_freq(N_filt, sigma_psi, xi_psi);
-    if length(filt) < N_filt
-        filt(N_filt) = 0;
-    end
+    filt = morlet_1d_freq(N_filt, xi_psi, sigma_psi);
     psi(:,j+1) = filt;
 end
 
 % apply filters and modulus
 U = zeros(N, size(psi,2));
 for i = 1:size(psi,2)
-    % fft of signal
     X = fft(x);
-    % pad frequency signal to the length of filter
-    X = pad_signal(X, N_filt);
-    Y = psi(:,i) .* X; 
-    ds = round(log2(2*sigma_psi/options.psi.sigma));
-    ds = max(ds, 0);
-    Y = unpad_signal(Y, ds, N);
-    U(:,i) = abs(ifft(Y));
+    Y = psi(:,i) .* X;
+    y = ifft(Y);
+    U(:,i) = abs(y(1:N));
 end
 
 % low-pass filter phi
 sigma_phi = options.phi.sigma * 2^(options.J-1);
-phi = 2^(-2*options.J)*gaussian_filter_freq(N_filt, sigma_phi);
-ds = round(log2(4*sigma_phi/options.phi.sigma));
-ds = max(ds, 0);
+phi = gaussian_filter_freq(N_filt, sigma_phi);
 
 % apply low pass filter
 S = zeros(N, size(U,2));
 for i = 1:size(U,2)
-    X = fft(U(:,i));
-    X = pad_signal(X, N_filt);
+    x = U(:,i);
+    if(N < N_filt)
+        x(N_filt) = 0;
+    end
+    X = fft(x);
     Y = X .* phi;
-    Y = unpad_signal(Y, ds, N);
-    S(:,i) = real(ifft(Y));
+    %Y = downsample(Y, 2^options.J);
+    y = ifft(Y);
+    S(:,i) = real(y(1:N));
 end
