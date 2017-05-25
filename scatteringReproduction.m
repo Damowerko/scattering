@@ -1,11 +1,11 @@
 %% Signal
 %x = sqpulse(50,100,1);
-%n = 0:127;
+n = 0:127;
 x = cos(n');
 %x = tpulse(32, 128, 1);
 
 % parameters
-M = 3;
+M = 2;
 J = 2;
 
 options.J = J;

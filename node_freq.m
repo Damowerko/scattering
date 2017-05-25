@@ -16,22 +16,10 @@ if(N < N_filt)
         x(N_filt) = 0;
 end
 
-sum = zeros(N_filt,1);
-% normalizing factor
-for j = 0:options.J-1
-    xi_psi = options.psi.xi * 2^(-j);
-    sigma_psi = options.psi.sigma * 2^j;
-    temp = morlet_1d_freq(N_filt, xi_psi, sigma_psi);
-    sum = sum + abs(temp).^2;
-end
-nu = sqrt(2/max(sum));
-
 % filters psi
 psi = zeros(N_filt, options.J);
 for j = 0:options.J-1
-    xi_psi = options.psi.xi * 2^(-j);
-    sigma_psi = options.psi.sigma * 2^j;
-    filt = morlet_1d_freq(N_filt, xi_psi, sigma_psi);
+    filt = morlet_1d_freq(N_filt, options.psi.sigma, j);
     psi(:,j+1) = filt;
 end
 
