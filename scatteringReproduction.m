@@ -91,7 +91,7 @@ x_test = loadMNISTImages('MNIST/t10k-images.idx3-ubyte');
 x_test = reshape(x_test, [28 28 10000]);
 y_test = loadMNISTLabels('MNIST/t10k-labels.idx1-ubyte');
 
-train_samples = 13000;
+train_samples = 20000;
 x_train = x_train(:,:,1:train_samples);
 y_train = y_train(1:train_samples);
 
@@ -102,7 +102,7 @@ y_test = y_test(1:test_samples);
 
 clear options;
 options.J = 2;
-options.L = 3;
+options.L = 1;
 options.sigma_phi = 0.85;
 options.sigma_psi = 0.85;
 options.xi_psi = 3/4 * pi;
@@ -112,35 +112,36 @@ train_transform = transform_2d(x_train, options);
 test_transform = transform_2d(x_test, options);
 
 
-%% PCA matrix
-d = 10; % number of PCA coefficients to use
-pca_transform = transpose(pca(transpose(train_transform), 'NumComponents', d));
+%% Training
+v = cell(10, 1);
+m = cell(10, 1);
 
-%% Transform dataset into PC
-
-x_train = pca_transform(1:d, :) * train_transform;
-x_test = pca_transform(1:d, :) * test_transform;
-
-% classes
-classes = zeros(d,10);
-for class = 0:9
-    L = y_train == class;
-    classes(:, class+1) = mean(x_train(:,L),2);
+for n = 1:10
+    s = train_transform(:, y_train == (n-1));
+    m{n} =  mean(s,2);
+    [V,E] = eig(cov((s-m{n})'));
+    [E,I] = sort(diag(E),'descend');
+    v{n} = V(:,I);
 end
 
 %% Evaluation
+d = 40; % number of PCA coefficients to use
 
-D = zeros(10,size(x_test,2));
-for class = 1:10
-    d = (classes(:,class) - x_test);
-    d = sqrt(sum(d.^2,1));
-    D(class,:) = d;
+E = zeros(10,size(x_test,2));
+error = zeros(test_samples, 10);
+for n = 1:10
+    s = bsxfun(@minus, test_transform, m{n});
+    pc = v{n}(:,1:d);
+    err_temp = zeros(size(pc,2)+1, size(s,2));
+	err_temp(1,:) = sum(abs(s).^2,1);
+	err_temp(2:end,:) = -abs(pc'*s).^2;
+    error(:, n) = transpose(sum(err_temp, 1));
+    %err = sqrt(cumsum(err,1));
 end
 
 % find probability
-l1_norm = sum(D,1);
-D = D./l1_norm;
-prob = 1-D;
+prob = bsxfun(@rdivide, error, sum(error, 2));
+prob = 1 - prob;
 
 % logical index actual classes
 Y_test = repmat(y_test(:),1,10) == repmat(1:10,length(y_test),1);
@@ -149,10 +150,9 @@ Y_test = transpose(Y_test);
 logloss = -sum(log(prob(Y_test))) / size(y_test,1);
 disp(['Logloss: ' num2str(logloss)])
 
-
 % accuracy
-[~,I] = sort(D,1, 'ascend');
-correct = I(1,:)' == y_test+1;
+[~,I] = sort(error,2, 'ascend');
+correct = I(:,1) == y_test+1;
 accuracy = sum(correct) / length(correct);
 disp(['Accuracy: ' num2str(accuracy)]);
 
