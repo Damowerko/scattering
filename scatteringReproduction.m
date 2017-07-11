@@ -83,6 +83,8 @@
 %% MNIST get data
 
 %load data
+
+disp 'loading data'
 x_train = loadMNISTImages('MNIST/train-images.idx3-ubyte');
 x_train = reshape(x_train, [28 28 60000]);
 y_train = loadMNISTLabels('MNIST/train-labels.idx1-ubyte');
@@ -91,7 +93,7 @@ x_test = loadMNISTImages('MNIST/t10k-images.idx3-ubyte');
 x_test = reshape(x_test, [28 28 10000]);
 y_test = loadMNISTLabels('MNIST/t10k-labels.idx1-ubyte');
 
-train_samples = 20000;
+train_samples = 10000;
 x_train = x_train(:,:,1:train_samples);
 y_train = y_train(1:train_samples);
 
@@ -101,32 +103,35 @@ y_test = y_test(1:test_samples);
 
 
 clear options;
-options.J = 2;
+options.J = 4;
 options.L = 1;
 options.sigma_phi = 0.85;
 options.sigma_psi = 0.85;
 options.xi_psi = 3/4 * pi;
 options.M = 2;
+options.subsample = false;
 
+
+disp 'scattering transform'
 train_transform = transform_2d(x_train, options);
 test_transform = transform_2d(x_test, options);
-
 
 %% Training
 v = cell(10, 1);
 m = cell(10, 1);
 
 for n = 1:10
+    disp(['training: ' int2str(n) '/10'])
     s = train_transform(:, y_train == (n-1));
     m{n} =  mean(s,2);
-    [V,E] = eig(cov((s-m{n})'));
+    [V,E] = eig(cov((bsxfun(@minus,s,m{n}))'));
     [E,I] = sort(diag(E),'descend');
     v{n} = V(:,I);
 end
 
-%% Evaluation
+disp 'evaluating'
+%% Evaluations
 d = 40; % number of PCA coefficients to use
-
 E = zeros(10,size(x_test,2));
 error = zeros(test_samples, 10);
 for n = 1:10
@@ -139,6 +144,7 @@ for n = 1:10
     %err = sqrt(cumsum(err,1));
 end
 
+disp 'done!'
 % find probability
 prob = bsxfun(@rdivide, error, sum(error, 2));
 prob = 1 - prob;

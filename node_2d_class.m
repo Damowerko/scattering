@@ -1,4 +1,4 @@
-function [ S, U ] = node_2d(data, filters )
+function [ S, U ] = node_2d(data, filters, options )
 x = data.U;
 size_in = size(x);
 
@@ -24,7 +24,13 @@ end
 % phi
 y = real(ifft2(X .* filters.phi));
 y = unpad_signal(y, [0 0], size_in);
-S = y(1:size_in(1),1:size_in(2));
+
+
+if options.subsample
+    S = y(1:2^options.J:size_in(1),1:2^options.J:size_in(2));
+else
+    S = y(1:size_in(1),1:size_in(2));
+end
 
 end
 

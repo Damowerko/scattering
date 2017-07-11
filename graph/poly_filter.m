@@ -24,12 +24,14 @@ end
 V = V(:,I);
 E = diag(E);
 
-S = V*E*V';
-
 W = fliplr(vander(lambdas)); %vandermode matrix
 h = W\hf; %filter coefficients
 H = zeros(N,N);
+
+S = V*E*V';
+Spn = S;
 for n = 1:N
-    H = H + h(n) * S^n;
+    H = H + h(n) * Spn;
+    Spn = Spn*S;
 end
 end

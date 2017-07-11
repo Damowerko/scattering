@@ -2,22 +2,45 @@ function [ x_transform ] = transform_2d( X, options )
 
 SAMPLES = size(X, 3);
 
-%M = 2^ceil(log2(size(x,1)));
-%N = 2^ceil(log2(size(x,2)));
-%M = 2^options.J * ceil (size(x,1)/2^options.J + 2)
-%N = 2^options.J * ceil (size(x,2)/2^options.J + 2)
-M = size(X,1);
-N = size(X,2);
+if options.subsample
+	M = 2^ceil(log2(size(X,1)));
+	N = 2^ceil(log2(size(X,2)));
+
+	M_sub = M / 2^options.J;
+	N_sub = N / 2^options.J;
+
+	%pad signal with zeros
+	dsize = [M-size(X,1), N-size(X,2)];
+	if dsize(1) ~= 0
+		X(M,:,:) = 0;
+	end
+	if dsize(2) ~= 0
+		X(:,N,:) = 0;
+	end
+else
+	M = size(X,1);
+	N = size(X,2);
+	M_sub = M; %the subsampled length is the same as original
+	N_sub = N;
+end
 
 clear filters;
 filters = filters_2d(M, N, options);
 
-% scattering coefficients
+% number of scattering coefficients
 P = 0;
-for m = 0:options.M
-    P = P + m^options.L * nchoosek(options.J, m);
+if options.subsample
+    for m = 0:options.M
+        P = P + options.L^m / 2^options.J * nchoosek(options.J, m);
+    end
+else
+    for m = 0:options.M
+        P = P + options.L^m * nchoosek(options.J, m);
+    end
 end
 P = P * N * M;
+
+disp(['Transformed signal length: ' int2str(P)])
 
 x_train_transform = zeros(P, SAMPLES);
 
@@ -36,11 +59,11 @@ for n = 1:SAMPLES
     end
     result(options.M+2) = [];
     
-    sample = ones(1, P);
+    sample = zeros(1, P);
     count = 0;
     for p = 1:length(result);
         for q = 1:length(result{p}.data)
-            sample(count*N*M+1:(count+1)*M*N) = result{p}.data{q}.S(:);
+            sample(count*N_sub*M_sub+1:(count+1)*M_sub*N_sub) = result{p}.data{q}.S(:);
             count = count + 1;
         end
     end

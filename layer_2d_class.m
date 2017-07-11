@@ -6,8 +6,8 @@ output{m+1} = struct();
 output{m+1}.data = {};
 
 for n = 1:length(input{m}.data)
-    [S, U] = node_2d_class(input{m}.data{n}, filters);
-    output{m}.data{n}.S = S; 
+    [S, U] = node_2d_class(input{m}.data{n}, filters, options);
+    output{m}.data{n}.S = S;
     j = input{m}.data{n}.j;
     r = input{m}.data{n}.r;
     for j = 0:size(U,3)-1
