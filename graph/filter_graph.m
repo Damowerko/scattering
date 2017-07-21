@@ -36,17 +36,17 @@ filters.phi = [];
 
 for j = 0:options.J-1
     if options.lambda_scale
-        hf = morlet_1d_freq(length(A), options.psi.sigma, j)';
-    else
         hf = morlet_1d_graph(frequencies, options.psi.sigma, j)';
+    else
+        hf = morlet_1d_freq(length(A), options.psi.sigma, j)';
     end
     filters.psi{j+1} = freq_filter(hf, V, E);
 end
 
 if options.lambda_scale
-    hf = gaussian_filter_freq(length(A), options.phi.sigma)';
-else
     hf = gaussian_filter_graph(frequencies, options.psi.sigma)
+else
+    hf = gaussian_filter_freq(length(A), options.phi.sigma)';
 end
 filters.phi = freq_filter(hf, V, E);
 

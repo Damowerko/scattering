@@ -1,7 +1,7 @@
 function [ f ] = gaussian_filter_freq(frequencies, sigma)
 extent = 1;         % extent of periodization - the higher, the better
 sigma = 1/sigma;
-f = zeros(N,1);
+f = zeros(length(frequencies),1);
 % Calculate the 2*pi-periodization of the filter over 0 to 2*pi*(N-1)/N
 N = length(frequencies);
 n = map_lambdas(frequencies, 0, N-1);
