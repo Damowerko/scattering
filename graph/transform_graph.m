@@ -9,7 +9,7 @@ scat{1} = struct();
 scat{1}.data{1} = layer_data_graph([], x, [-1]);
 
 for m = 1:options.M+2
-    scat = layer_graph(scat, filters);
+    scat = layer_graph(scat, filters, options);
 end
 scat = scat(1:options.M+1);
 

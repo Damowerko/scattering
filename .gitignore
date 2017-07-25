@@ -5,5 +5,3 @@ MNIST/
 *.png
 *.mat
 
-## results
-/graph/results

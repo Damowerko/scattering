@@ -93,7 +93,7 @@ x_test = loadMNISTImages('MNIST/t10k-images.idx3-ubyte');
 x_test = reshape(x_test, [28 28 10000]);
 y_test = loadMNISTLabels('MNIST/t10k-labels.idx1-ubyte');
 
-train_samples = 10000;
+train_samples = 6000;
 x_train = x_train(:,:,1:train_samples);
 y_train = y_train(1:train_samples);
 
@@ -101,15 +101,27 @@ test_samples = 1000;
 x_test = x_test(:,:,1:test_samples);
 y_test = y_test(1:test_samples);
 
+darr = [10 20 30 40 50 60 70 80 90 100 120 140 160 180 200];
+result_acc = zeros(length(darr), 7, 3);
+
+for J = 1:5
+for M = 1:3
+
+
+if J < M | (result_acc(length(darr),J,M) ~= 0 & result_loss(length(darr), J, M) ~= 0)
+    continue;
+end
+
+disp(sprintf('j=%d  |  M=%d', J, M))
 
 clear options;
-options.J = 4;
-options.L = 1;
+options.J = J;
+options.L = 4;
 options.sigma_phi = 0.85;
 options.sigma_psi = 0.85;
 options.xi_psi = 3/4 * pi;
-options.M = 2;
-options.subsample = false;
+options.M = M;
+options.subsample = true;
 
 
 disp 'scattering transform'
@@ -129,9 +141,17 @@ for n = 1:10
     v{n} = V(:,I);
 end
 
+
+for dn = 1:length(darr)
+
 disp 'evaluating'
 %% Evaluations
-d = 40; % number of PCA coefficients to use
+d = darr(dn); % number of PCA coefficients to use
+
+if d > size(v{n},2)
+   continue
+end
+
 E = zeros(10,size(x_test,2));
 error = zeros(test_samples, 10);
 for n = 1:10
@@ -162,12 +182,9 @@ correct = I(:,1) == y_test+1;
 accuracy = sum(correct) / length(correct);
 disp(['Accuracy: ' num2str(accuracy)]);
 
+result_acc(dn, J, M) = accuracy;
 
-
-
-
-
-
-
-
-
+end 
+end
+end
+save(['results/' datestr(datetime)], 'result_acc')

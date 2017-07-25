@@ -1,6 +1,7 @@
 function [filters] = filter_graph(A, options)
 
 G = graph(A);
+N = length(A);
 
 switch options.graph_shift
     case 'adjacency'
@@ -34,20 +35,38 @@ filters = struct();
 filters.psi = {options.J};
 filters.phi = [];
 
+S = zeros(N,1); % use to calculate normalization factor
+hf = zeros(N,options.J);
+
 for j = 0:options.J-1
     if options.lambda_scale
-        hf = morlet_1d_graph(frequencies, options.psi.sigma, j)';
+        hf(:,j+1) = morlet_1d_graph(frequencies, options.psi.sigma, j)';
     else
-        hf = morlet_1d_freq(length(A), options.psi.sigma, j)';
+        hf(:,j+1) = morlet_1d_freq(N, options.psi.sigma, j)';
     end
-    filters.psi{j+1} = freq_filter(hf, V, E);
+    
+    S = S + abs(hf(:,j+1)).^2;
+    % normalize filter
+    %hf = hf / norm(hf,1);
+    %filters.psi{j+1} = freq_filter(hf, V, E);
+end
+
+psi_factor = sqrt(2/max(S));
+hf = hf * psi_factor;
+
+for j = 0:options.J-1
+    filters.psi{j+1} = freq_filter(hf(:,j+1), V, E);
 end
 
 if options.lambda_scale
-    hf = gaussian_filter_graph(frequencies, options.psi.sigma)
+    hf = gaussian_filter_graph(frequencies, options.psi.sigma);
 else
-    hf = gaussian_filter_freq(length(A), options.phi.sigma)';
+    hf = gaussian_filter_freq(N, options.phi.sigma)';
 end
-filters.phi = freq_filter(hf, V, E);
+%hf = hf/norm(hf,1); % normalize
 
+
+
+
+filters.phi = freq_filter(hf, V, E);
 end
