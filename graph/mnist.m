@@ -40,7 +40,7 @@ options.psi.sigma = 0.85;
 options.psi.xi = 3/4*pi;
 options.phi.sigma = 0.85;
 options.graph_shift = 'covariance'; % 'laplacian' or 'adjacency' or 'covariance'
-options.lambda_scale = true;
+options.lambda_scale = false;
 options.subsample = false;
 
 P = 0;
