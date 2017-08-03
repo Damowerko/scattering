@@ -40,14 +40,19 @@ filters = struct();
 filters.psi = {options.J};
 filters.phi = [];
 
+
+freq_num = ceil(0.5 * length(E) * ones(1,options.J).^(-[1:options.J]));
+bw = frequencies(freq_num);
+sigma = pi / sqrt(3) / bw;
+
 S = zeros(N,1); % use to calculate normalization factor
 hf = zeros(N,options.J);
 
 for j = 0:options.J-1
     if options.lambda_scale
-        hf(:,j+1) = morlet_1d_graph(frequencies, options.psi.sigma, j)';
+        hf(:,j+1) = morlet_1d_graph(frequencies, sigma(j+1), j)';
     else
-        hf(:,j+1) = morlet_1d_freq(N, options.psi.sigma, j)';
+        hf(:,j+1) = morlet_1d_freq(N, sigma(j+1), j)';
     end
     
     S = S + abs(hf(:,j+1)).^2;
