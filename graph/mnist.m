@@ -24,8 +24,8 @@ else
     result_loss = zeros(length(darr),7,3);
 end
  
-for J = 1:5
-for M = 1:3
+for J = 3:5
+for M = 2:3
 
 if J < M | (result_acc(length(darr),J,M) ~= 0 & result_loss(length(darr), J, M) ~= 0)
     continue;
@@ -36,7 +36,7 @@ disp(sprintf('j=%d  |  M=%d', J, M))
 clear options;
 options.J = J;
 options.M = M;
-options.psi.sigma = 0.85;
+options.psi.sigma = 2;
 options.psi.xi = 3/4*pi;
 options.phi.sigma = 0.85;
 options.graph_shift = 'covariance'; % 'laplacian' or 'adjacency' or 'covariance'
