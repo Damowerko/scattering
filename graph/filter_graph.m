@@ -50,7 +50,7 @@ hf = zeros(N,options.J);
 for j = 0:options.J-1
     if options.lambda_scale
 %        hf(:,j+1) = morlet_1d_graph(frequencies, options.psi.sigma, j)';
-        hf(:,j+1)  = square_filter(frequencies, js(j+1));
+        hf(:,j+1)  = square_filter(frequencies, j);
     else
         hf(:,j+1)  = square_filter(1:length(frequencies), j);
 %        hf(:,j+1) = morlet_1d_freq(N, options.psi.sigma, js(j+1))';
