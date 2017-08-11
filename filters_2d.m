@@ -11,8 +11,10 @@ for j = 0:options.J-1
     
     for l = 1:options.L
         % generate spacial filter and take the fft
-        temp = morlet_2d2(M, N, sigma_psi, 4/options.L, xi_psi, thetas(l));
-        temp = real(fft2(temp));
+        temp = ones(ceil(M*2^(-j-1)),ceil(N*2^(-j-1)));
+        temp(M,N) = 0;
+        %temp = morlet_2d2(M, N, sigma_psi, 4/options.L, xi_psi, thetas(l));
+        %temp = real(fft2(temp));
         psi(:,:, j+1, l) = temp; 
     end
 end
