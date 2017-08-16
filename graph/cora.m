@@ -103,11 +103,11 @@ for i = 1:size(x_test,2)
 end
 
 %% Training
-v = cell(10, 1);
-m = cell(10, 1);
+v = cell(7, 1);
+m = cell(7, 1);
 
 disp 'Training classifier...'
-progress = textprogressbar(10);
+progress = textprogressbar(7);
 
 for n = 1:7
     s = train_transform(:, y_train == n);
@@ -128,9 +128,9 @@ for dn = 1:length(darr)
         continue;
     end
 
-    E = zeros(10,size(x_test,2));
-    error = zeros(test_samples, 10);
-    for n = 1:10
+    E = zeros(7,size(x_test,2));
+    error = zeros(test_samples, 7);
+    for n = 1:7
         s = bsxfun(@minus, test_transform, m{n});
         pc = v{n}(:,1:d);
         err_temp = zeros(size(pc,2)+1, size(s,2));
@@ -146,14 +146,14 @@ for dn = 1:length(darr)
     prob = 1 - prob;
 
     % logical index actual classes
-    Y_test = repmat(y_test(:),1,10) == repmat(1:10,length(y_test),1);
+    Y_test = repmat(y_test(:),1,7) == repmat(1:7,length(y_test),1);
     Y_test = transpose(Y_test);
 
     logloss = -sum(log(prob(Y_test))) / size(y_test,1);
 
     % accuracy
     [~,I] = sort(error,2, 'ascend');
-    correct = I(:,1) == y_test+1;
+    correct = I(:,1) == y_test(:);
     accuracy = sum(correct) / length(correct);
 
     %disp(sprintf('Accuracy: %f  |  Logloss: %f', accuracy, logloss))
