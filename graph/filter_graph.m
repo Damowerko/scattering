@@ -22,16 +22,16 @@ if strcmpi(options.graph_shift, 'laplacian')
     frequencies = E;
     E = diag(E);
 elseif strcmpi(options.graph_shift, 'covariance')
-    [E, I] = sort(diag(E), 'descend');
-    frequencies = E;
-    frequencies = max(frequencies) - frequencies;
-    E = diag(E);
+    max_e = max(diag(E));
+    [frequencies, I] = sort(max_e-diag(E), 'descend');
+    E = diag(max_e - frequencies);
 elseif strcmpi(options.graph_shift, 'adjacency')
     % sort complex eigenvalues
     emax = max(real(diag(E)));
     [frequencies,I] = sort(abs(emax-diag(E)),'ascend');
     E = diag(E);
     E = diag(E(I));
+    frequencies = log(frequencies+0.1);
 end
 V = V(:,I); % sort eigenvectors
 
@@ -49,11 +49,9 @@ hf = zeros(N,options.J);
 
 for j = 0:options.J-1
     if options.lambda_scale
-%        hf(:,j+1) = morlet_1d_graph(frequencies, options.psi.sigma, j)';
-        hf(:,j+1)  = square_filter(frequencies, j);
+        hf(:,j+1) = morlet_1d_graph(frequencies, options.psi.sigma, j)';
     else
-        hf(:,j+1)  = square_filter(1:length(frequencies), j);
-%        hf(:,j+1) = morlet_1d_freq(N, options.psi.sigma, js(j+1))';
+        hf(:,j+1) = morlet_1d_freq(N, options.psi.sigma, js(j+1))';
     end
     
     S = S + abs(hf(:,j+1)).^2;
