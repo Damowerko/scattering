@@ -15,8 +15,8 @@ x_test = x_data(:,(1:test_samples)+train_samples);
 y_test = y_data((1:test_samples)+train_samples);
 
 darr = [10 20 30 40 50 60 70 80 90 100 120 140 160 180 200];
-if exist('results/temp.mat', 'file')
-    load 'results/temp.mat'
+if exist('cora/results/temp.mat', 'file')
+    load 'cora/results/temp.mat'
 else
     result_acc = zeros(length(darr),7,3);
     result_loss = zeros(length(darr),7,3);
@@ -34,10 +34,10 @@ disp(sprintf('j=%d  |  M=%d', J, M))
 clear options;
 options.J = J;
 options.M = M;
-options.psi.sigma = 2;
+options.psi.sigma = 0.85;
 options.psi.xi = 3/4*pi;
 options.phi.sigma = 0.85;
-options.graph_shift = 'adjacency'; % 'laplacian' or 'adjacency' or 'covariance'
+options.graph_shift = 'covariance'; % 'laplacian' or 'adjacency' or 'covariance'
 options.lambda_scale = true;
 options.subsample = false;
 
@@ -160,7 +160,7 @@ for dn = 1:length(darr)
     result_loss(dn, J, M) = logloss; % save results
     result_acc(dn, J, M) = accuracy;
     
-    save(['results/temp'],'result_loss','result_acc');
+    save(['cora/results/temp'],'result_loss','result_acc');
     progress(dn); % update progress bar
 end
 
@@ -171,7 +171,5 @@ end
 end
 end
 
-if exist('results/temp.mat', 'file')
-    delete 'results/temp.mat'
-end
-save(['results/' datestr(datetime)],'result_loss','result_acc');
+save(['cora/results/' datestr(datetime)],'result_loss','result_acc');
+delete('cora/results/temp.mat');

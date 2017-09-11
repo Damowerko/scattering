@@ -40,7 +40,7 @@ options.psi.sigma = 2;
 options.psi.xi = 3/4*pi;
 options.phi.sigma = 0.85;
 options.graph_shift = 'covariance'; % 'laplacian' or 'adjacency' or 'covariance'
-options.lambda_scale = true;
+options.lambda_scale = false;
 options.subsample = false;
 
 P = 0;
@@ -54,7 +54,8 @@ else
     P = P * 28 * 28;
 end
 
-filters = filter_graph(image_adj(28,28), options);
+load('cov.mat');
+filters = filter_graph(C, options);
 disp(sprintf('Signal size: %d', P))
 
 
@@ -173,7 +174,5 @@ end
 end
 end
 
-if exist('results/temp.mat', 'file')
-    delete 'results/temp.mat'
-end
 save(['results/' datestr(datetime)],'result_loss','result_acc');
+delete('results/temp.mat')
