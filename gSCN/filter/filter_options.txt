@@ -1,0 +1,9 @@
+operator,'A'
+normalization,'none'
+lambda_scale,false
+psi_sigma,0.85
+psi_xi,3/4*pi
+phi_sigma,0.85
+map2pi,false
+exp_scale,NaN
+log_scale,0
