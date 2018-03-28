@@ -1,0 +1,3 @@
+[submodule "scatnet"]
+	path = scatnet
+	url = https://github.com/scatnet/scatnet.git

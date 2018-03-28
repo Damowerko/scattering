@@ -1,0 +1,7 @@
+## mnist data
+MNIST/
+
+## output files
+*.png
+*.mat
+

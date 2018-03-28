@@ -1,7 +1,4 @@
-## mnist data
-MNIST/
-
-## output files
-*.png
+*.docx
 *.mat
-
+*.xlsx
+*.csv
