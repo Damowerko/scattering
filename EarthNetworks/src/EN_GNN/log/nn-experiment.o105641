@@ -1,0 +1,637 @@
+
+########################################################################
+#      Date:           Thu Jun 28 15:34:12 PDT 2018
+#    Job ID:           105641.c009
+#      User:           u8634
+# Resources:           neednodes=1:ppn=2,nodes=1:ppn=2,walltime=06:00:00
+########################################################################
+
+
+Region: NYC
+N stations: 25
+Normalize data: True
+fields: ['PressureSeaLevelMBar', 'TemperatureC', 'WindSpeedKph', 'PressureSeaLevelMBarRatePerHour', 'Humidity', 'HumidityRatePerHour', 'RainMillimetersRatePerHour']
+
+/glob/intel-python/python3/lib/python3.6/site-packages/h5py/__init__.py:34: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+Using TensorFlow backend.
+
+Negative weight: 0.00019984012789768185 | Positive weight: 0.005128205128205128
+
+Training model...
+Fitting 3 folds for each of 36 candidates, totalling 108 fits
+[CV] M1=500, M2=None, dropout=0.0 ....................................
+[CV] M1=500, M2=None, dropout=0.0 ....................................
+[CV] M1=500, M2=None, dropout=0.0 ....................................
+[CV] M1=500, M2=None, dropout=0.4 ....................................
+[CV] M1=500, M2=None, dropout=0.4 ....................................
+[CV] M1=500, M2=None, dropout=0.4 ....................................
+[CV] M1=500, M2=None, dropout=0.6 ....................................
+[CV] M1=500, M2=None, dropout=0.6 ....................................
+[CV] M1=500, M2=None, dropout=0.6 ....................................
+[CV] M1=500, M2=100, dropout=0.0 .....................................
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/glob/intel-python/python3/lib/python3.6/site-packages/sklearn/externals/joblib/_parallel_backends.py", line 350, in __call__
+    return self.func(*args, **kwargs)
+  File "/glob/intel-python/python3/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py", line 131, in __call__
+    return [func(*args, **kwargs) for func, args, kwargs in self.items]
+  File "/glob/intel-python/python3/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py", line 131, in <listcomp>
+    return [func(*args, **kwargs) for func, args, kwargs in self.items]
+  File "/glob/intel-python/python3/lib/python3.6/site-packages/sklearn/model_selection/_validation.py", line 458, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/home/u8634/.local/lib/python3.6/site-packages/keras/wrappers/scikit_learn.py", line 209, in fit
+    return super(KerasClassifier, self).fit(x, y, **kwargs)
+  File "/home/u8634/.local/lib/python3.6/site-packages/keras/wrappers/scikit_learn.py", line 151, in fit
+    history = self.model.fit(x, y, **fit_args)
+  File "/home/u8634/.local/lib/python3.6/site-packages/keras/engine/training.py", line 955, in fit
+    batch_size=batch_size)
+  File "/home/u8634/.local/lib/python3.6/site-packages/keras/engine/training.py", line 792, in _standardize_user_data
+    exception_prefix='target')
+  File "/home/u8634/.local/lib/python3.6/site-packages/keras/engine/training_utils.py", line 136, in standardize_input_data
+    str(data_shape))
+ValueError: Error when checking target: expected dense_2 to have shape (1,) but got array with shape (2,)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/glob/intel-python/python3/lib/python3.6/multiprocessing/pool.py", line 119, in worker
+    result = (True, func(*args, **kwds))
+  File "/glob/intel-python/python3/lib/python3.6/site-packages/sklearn/externals/joblib/_parallel_backends.py", line 359, in __call__
+    raise TransportableException(text, e_type)
+sklearn.externals.joblib.my_exceptions.TransportableException: TransportableException
+___________________________________________________________________________
+ValueError                                         Thu Jun 28 15:35:03 2018
+PID: 168761             Python 3.6.3: /glob/intel-python/python3/bin/python
+...........................................................................
+/glob/intel-python/python3/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py in __call__(self=<sklearn.externals.joblib.parallel.BatchedCalls object>)
+    126     def __init__(self, iterator_slice):
+    127         self.items = list(iterator_slice)
+    128         self._size = len(self.items)
+    129 
+    130     def __call__(self):
+--> 131         return [func(*args, **kwargs) for func, args, kwargs in self.items]
+        self.items = [(<function _fit_and_score>, (<keras.wrappers.scikit_learn.KerasClassifier object>, memmap([[0.02980869, 2.5701516 , 0.04040916, ......0.61895615,
+         0.        ]], dtype=float32), array([0, 0, 0, ..., 0, 0, 0], dtype=int32), {'accuracy': make_scorer(accuracy_score), 'f1': make_scorer(f1_score)}, array([1733, 1734, 1735, ..., 5196, 5197, 5198]), array([   0,    1,    2, ..., 1730, 1731, 1732]), 10, {'M1': 500, 'M2': None, 'dropout': 0.0}), {'error_score': 'raise', 'fit_params': {'sample_weight': array([0.00019984, 0.00019984, 0.00019984, ..., 0.00019984, 0.00019984,
+       0.00019984])}, 'return_n_test_samples': True, 'return_parameters': False, 'return_times': True, 'return_train_score': 'warn'})]
+    132 
+    133     def __len__(self):
+    134         return self._size
+    135 
+
+...........................................................................
+/glob/intel-python/python3/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py in <listcomp>(.0=<list_iterator object>)
+    126     def __init__(self, iterator_slice):
+    127         self.items = list(iterator_slice)
+    128         self._size = len(self.items)
+    129 
+    130     def __call__(self):
+--> 131         return [func(*args, **kwargs) for func, args, kwargs in self.items]
+        func = <function _fit_and_score>
+        args = (<keras.wrappers.scikit_learn.KerasClassifier object>, memmap([[0.02980869, 2.5701516 , 0.04040916, ......0.61895615,
+         0.        ]], dtype=float32), array([0, 0, 0, ..., 0, 0, 0], dtype=int32), {'accuracy': make_scorer(accuracy_score), 'f1': make_scorer(f1_score)}, array([1733, 1734, 1735, ..., 5196, 5197, 5198]), array([   0,    1,    2, ..., 1730, 1731, 1732]), 10, {'M1': 500, 'M2': None, 'dropout': 0.0})
+        kwargs = {'error_score': 'raise', 'fit_params': {'sample_weight': array([0.00019984, 0.00019984, 0.00019984, ..., 0.00019984, 0.00019984,
+       0.00019984])}, 'return_n_test_samples': True, 'return_parameters': False, 'return_times': True, 'return_train_score': 'warn'}
+    132 
+    133     def __len__(self):
+    134         return self._size
+    135 
+
+...........................................................................
+/glob/intel-python/python3/lib/python3.6/site-packages/sklearn/model_selection/_validation.py in _fit_and_score(estimator=<keras.wrappers.scikit_learn.KerasClassifier object>, X=memmap([[0.02980869, 2.5701516 , 0.04040916, ......0.61895615,
+         0.        ]], dtype=float32), y=array([0, 0, 0, ..., 0, 0, 0], dtype=int32), scorer={'accuracy': make_scorer(accuracy_score), 'f1': make_scorer(f1_score)}, train=array([1733, 1734, 1735, ..., 5196, 5197, 5198]), test=array([   0,    1,    2, ..., 1730, 1731, 1732]), verbose=10, parameters={'M1': 500, 'M2': None, 'dropout': 0.0}, fit_params={'sample_weight': array([0.00019984, 0.00019984, 0.00019984, ..., 0.00019984, 0.00019984,
+       0.00019984])}, return_train_score='warn', return_parameters=False, return_n_test_samples=True, return_times=True, error_score='raise')
+    453 
+    454     try:
+    455         if y_train is None:
+    456             estimator.fit(X_train, **fit_params)
+    457         else:
+--> 458             estimator.fit(X_train, y_train, **fit_params)
+        estimator.fit = <bound method KerasClassifier.fit of <keras.wrappers.scikit_learn.KerasClassifier object>>
+        X_train = memmap([[0.02868145, 2.3555088 , 0.17170438, ......0.61895615,
+         0.        ]], dtype=float32)
+        y_train = array([0, 0, 0, ..., 0, 0, 0], dtype=int32)
+        fit_params = {'sample_weight': array([0.00019984, 0.00019984, 0.00019984, ..., 0.00019984, 0.00019984,
+       0.00019984])}
+    459 
+    460     except Exception as e:
+    461         # Note fit time as time until error
+    462         fit_time = time.time() - start_time
+
+...........................................................................
+/home/u8634/.local/lib/python3.6/site-packages/keras/wrappers/scikit_learn.py in fit(self=<keras.wrappers.scikit_learn.KerasClassifier object>, x=memmap([[0.02868145, 2.3555088 , 0.17170438, ......0.61895615,
+         0.        ]], dtype=float32), y=array([0, 0, 0, ..., 0, 0, 0]), sample_weight=array([0.00019984, 0.00019984, 0.00019984, ..., 0.00019984, 0.00019984,
+       0.00019984]), **kwargs={'sample_weight': array([0.00019984, 0.00019984, 0.00019984, ..., 0.00019984, 0.00019984,
+       0.00019984])})
+    204         else:
+    205             raise ValueError('Invalid shape for y: ' + str(y.shape))
+    206         self.n_classes_ = len(self.classes_)
+    207         if sample_weight is not None:
+    208             kwargs['sample_weight'] = sample_weight
+--> 209         return super(KerasClassifier, self).fit(x, y, **kwargs)
+        self.fit = <bound method KerasClassifier.fit of <keras.wrappers.scikit_learn.KerasClassifier object>>
+        x = memmap([[0.02868145, 2.3555088 , 0.17170438, ......0.61895615,
+         0.        ]], dtype=float32)
+        y = array([0, 0, 0, ..., 0, 0, 0])
+        kwargs = {'sample_weight': array([0.00019984, 0.00019984, 0.00019984, ..., 0.00019984, 0.00019984,
+       0.00019984])}
+    210 
+    211     def predict(self, x, **kwargs):
+    212         """Returns the class predictions for the given test data.
+    213 
+
+...........................................................................
+/home/u8634/.local/lib/python3.6/site-packages/keras/wrappers/scikit_learn.py in fit(self=<keras.wrappers.scikit_learn.KerasClassifier object>, x=memmap([[0.02868145, 2.3555088 , 0.17170438, ......0.61895615,
+         0.        ]], dtype=float32), y=array([[1., 0.],
+       [1., 0.],
+       [1., 0....       [1., 0.],
+       [1., 0.]], dtype=float32), **kwargs={'sample_weight': array([0.00019984, 0.00019984, 0.00019984, ..., 0.00019984, 0.00019984,
+       0.00019984])})
+    146             y = to_categorical(y)
+    147 
+    148         fit_args = copy.deepcopy(self.filter_sk_params(Sequential.fit))
+    149         fit_args.update(kwargs)
+    150 
+--> 151         history = self.model.fit(x, y, **fit_args)
+        history = undefined
+        self.model.fit = <bound method Model.fit of <keras.engine.sequential.Sequential object>>
+        x = memmap([[0.02868145, 2.3555088 , 0.17170438, ......0.61895615,
+         0.        ]], dtype=float32)
+        y = array([[1., 0.],
+       [1., 0.],
+       [1., 0....       [1., 0.],
+       [1., 0.]], dtype=float32)
+        fit_args = {'batch_size': 100, 'epochs': 100, 'sample_weight': array([0.00019984, 0.00019984, 0.00019984, ..., 0.00019984, 0.00019984,
+       0.00019984]), 'verbose': 0}
+    152 
+    153         return history
+    154 
+    155     def filter_sk_params(self, fn, override=None):
+
+...........................................................................
+/home/u8634/.local/lib/python3.6/site-packages/keras/engine/training.py in fit(self=<keras.engine.sequential.Sequential object>, x=memmap([[0.02868145, 2.3555088 , 0.17170438, ......0.61895615,
+         0.        ]], dtype=float32), y=array([[1., 0.],
+       [1., 0.],
+       [1., 0....       [1., 0.],
+       [1., 0.]], dtype=float32), batch_size=100, epochs=100, verbose=0, callbacks=None, validation_split=0.0, validation_data=None, shuffle=True, class_weight=None, sample_weight=array([0.00019984, 0.00019984, 0.00019984, ..., 0.00019984, 0.00019984,
+       0.00019984]), initial_epoch=0, steps_per_epoch=None, validation_steps=None, **kwargs={})
+    950         # Validate user data.
+    951         x, y, sample_weights = self._standardize_user_data(
+    952             x, y,
+    953             sample_weight=sample_weight,
+    954             class_weight=class_weight,
+--> 955             batch_size=batch_size)
+        batch_size = 100
+    956         # Prepare validation data.
+    957         do_validation = False
+    958         if validation_data:
+    959             do_validation = True
+
+...........................................................................
+/home/u8634/.local/lib/python3.6/site-packages/keras/engine/training.py in _standardize_user_data(self=<keras.engine.sequential.Sequential object>, x=[memmap([[0.02868145, 2.3555088 , 0.17170438, ......0.61895615,
+         0.        ]], dtype=float32)], y=array([[1., 0.],
+       [1., 0.],
+       [1., 0....       [1., 0.],
+       [1., 0.]], dtype=float32), sample_weight=array([0.00019984, 0.00019984, 0.00019984, ..., 0.00019984, 0.00019984,
+       0.00019984]), class_weight=None, check_array_lengths=True, batch_size=100)
+    787             y = standardize_input_data(
+    788                 y,
+    789                 feed_output_names,
+    790                 feed_output_shapes,
+    791                 check_batch_axis=False,  # Don't enforce the batch size.
+--> 792                 exception_prefix='target')
+    793 
+    794             # Generate sample-wise weight values given the `sample_weight` and
+    795             # `class_weight` arguments.
+    796             sample_weights = standardize_sample_weights(
+
+...........................................................................
+/home/u8634/.local/lib/python3.6/site-packages/keras/engine/training_utils.py in standardize_input_data(data=[array([[1., 0.],
+       [1., 0.],
+       [1., 0....       [1., 0.],
+       [1., 0.]], dtype=float32)], names=['dense_2'], shapes=[(None, 1)], check_batch_axis=False, exception_prefix='target')
+    131                     if ref_dim != dim and ref_dim:
+    132                         raise ValueError(
+    133                             'Error when checking ' + exception_prefix +
+    134                             ': expected ' + names[i] + ' to have shape ' +
+    135                             str(shape) + ' but got array with shape ' +
+--> 136                             str(data_shape))
+        data_shape = (2,)
+    137     return data
+    138 
+    139 
+    140 def standardize_sample_or_class_weights(x_weight,
+
+ValueError: Error when checking target: expected dense_2 to have shape (1,) but got array with shape (2,)
+___________________________________________________________________________
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/glob/intel-python/python3/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py", line 699, in retrieve
+    self._output.extend(job.get(timeout=self.timeout))
+  File "/glob/intel-python/python3/lib/python3.6/multiprocessing/pool.py", line 644, in get
+    raise self._value
+sklearn.externals.joblib.my_exceptions.TransportableException: TransportableException
+___________________________________________________________________________
+ValueError                                         Thu Jun 28 15:35:03 2018
+PID: 168761             Python 3.6.3: /glob/intel-python/python3/bin/python
+...........................................................................
+/glob/intel-python/python3/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py in __call__(self=<sklearn.externals.joblib.parallel.BatchedCalls object>)
+    126     def __init__(self, iterator_slice):
+    127         self.items = list(iterator_slice)
+    128         self._size = len(self.items)
+    129 
+    130     def __call__(self):
+--> 131         return [func(*args, **kwargs) for func, args, kwargs in self.items]
+        self.items = [(<function _fit_and_score>, (<keras.wrappers.scikit_learn.KerasClassifier object>, memmap([[0.02980869, 2.5701516 , 0.04040916, ......0.61895615,
+         0.        ]], dtype=float32), array([0, 0, 0, ..., 0, 0, 0], dtype=int32), {'accuracy': make_scorer(accuracy_score), 'f1': make_scorer(f1_score)}, array([1733, 1734, 1735, ..., 5196, 5197, 5198]), array([   0,    1,    2, ..., 1730, 1731, 1732]), 10, {'M1': 500, 'M2': None, 'dropout': 0.0}), {'error_score': 'raise', 'fit_params': {'sample_weight': array([0.00019984, 0.00019984, 0.00019984, ..., 0.00019984, 0.00019984,
+       0.00019984])}, 'return_n_test_samples': True, 'return_parameters': False, 'return_times': True, 'return_train_score': 'warn'})]
+    132 
+    133     def __len__(self):
+    134         return self._size
+    135 
+
+...........................................................................
+/glob/intel-python/python3/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py in <listcomp>(.0=<list_iterator object>)
+    126     def __init__(self, iterator_slice):
+    127         self.items = list(iterator_slice)
+    128         self._size = len(self.items)
+    129 
+    130     def __call__(self):
+--> 131         return [func(*args, **kwargs) for func, args, kwargs in self.items]
+        func = <function _fit_and_score>
+        args = (<keras.wrappers.scikit_learn.KerasClassifier object>, memmap([[0.02980869, 2.5701516 , 0.04040916, ......0.61895615,
+         0.        ]], dtype=float32), array([0, 0, 0, ..., 0, 0, 0], dtype=int32), {'accuracy': make_scorer(accuracy_score), 'f1': make_scorer(f1_score)}, array([1733, 1734, 1735, ..., 5196, 5197, 5198]), array([   0,    1,    2, ..., 1730, 1731, 1732]), 10, {'M1': 500, 'M2': None, 'dropout': 0.0})
+        kwargs = {'error_score': 'raise', 'fit_params': {'sample_weight': array([0.00019984, 0.00019984, 0.00019984, ..., 0.00019984, 0.00019984,
+       0.00019984])}, 'return_n_test_samples': True, 'return_parameters': False, 'return_times': True, 'return_train_score': 'warn'}
+    132 
+    133     def __len__(self):
+    134         return self._size
+    135 
+
+...........................................................................
+/glob/intel-python/python3/lib/python3.6/site-packages/sklearn/model_selection/_validation.py in _fit_and_score(estimator=<keras.wrappers.scikit_learn.KerasClassifier object>, X=memmap([[0.02980869, 2.5701516 , 0.04040916, ......0.61895615,
+         0.        ]], dtype=float32), y=array([0, 0, 0, ..., 0, 0, 0], dtype=int32), scorer={'accuracy': make_scorer(accuracy_score), 'f1': make_scorer(f1_score)}, train=array([1733, 1734, 1735, ..., 5196, 5197, 5198]), test=array([   0,    1,    2, ..., 1730, 1731, 1732]), verbose=10, parameters={'M1': 500, 'M2': None, 'dropout': 0.0}, fit_params={'sample_weight': array([0.00019984, 0.00019984, 0.00019984, ..., 0.00019984, 0.00019984,
+       0.00019984])}, return_train_score='warn', return_parameters=False, return_n_test_samples=True, return_times=True, error_score='raise')
+    453 
+    454     try:
+    455         if y_train is None:
+    456             estimator.fit(X_train, **fit_params)
+    457         else:
+--> 458             estimator.fit(X_train, y_train, **fit_params)
+        estimator.fit = <bound method KerasClassifier.fit of <keras.wrappers.scikit_learn.KerasClassifier object>>
+        X_train = memmap([[0.02868145, 2.3555088 , 0.17170438, ......0.61895615,
+         0.        ]], dtype=float32)
+        y_train = array([0, 0, 0, ..., 0, 0, 0], dtype=int32)
+        fit_params = {'sample_weight': array([0.00019984, 0.00019984, 0.00019984, ..., 0.00019984, 0.00019984,
+       0.00019984])}
+    459 
+    460     except Exception as e:
+    461         # Note fit time as time until error
+    462         fit_time = time.time() - start_time
+
+...........................................................................
+/home/u8634/.local/lib/python3.6/site-packages/keras/wrappers/scikit_learn.py in fit(self=<keras.wrappers.scikit_learn.KerasClassifier object>, x=memmap([[0.02868145, 2.3555088 , 0.17170438, ......0.61895615,
+         0.        ]], dtype=float32), y=array([0, 0, 0, ..., 0, 0, 0]), sample_weight=array([0.00019984, 0.00019984, 0.00019984, ..., 0.00019984, 0.00019984,
+       0.00019984]), **kwargs={'sample_weight': array([0.00019984, 0.00019984, 0.00019984, ..., 0.00019984, 0.00019984,
+       0.00019984])})
+    204         else:
+    205             raise ValueError('Invalid shape for y: ' + str(y.shape))
+    206         self.n_classes_ = len(self.classes_)
+    207         if sample_weight is not None:
+    208             kwargs['sample_weight'] = sample_weight
+--> 209         return super(KerasClassifier, self).fit(x, y, **kwargs)
+        self.fit = <bound method KerasClassifier.fit of <keras.wrappers.scikit_learn.KerasClassifier object>>
+        x = memmap([[0.02868145, 2.3555088 , 0.17170438, ......0.61895615,
+         0.        ]], dtype=float32)
+        y = array([0, 0, 0, ..., 0, 0, 0])
+        kwargs = {'sample_weight': array([0.00019984, 0.00019984, 0.00019984, ..., 0.00019984, 0.00019984,
+       0.00019984])}
+    210 
+    211     def predict(self, x, **kwargs):
+    212         """Returns the class predictions for the given test data.
+    213 
+
+...........................................................................
+/home/u8634/.local/lib/python3.6/site-packages/keras/wrappers/scikit_learn.py in fit(self=<keras.wrappers.scikit_learn.KerasClassifier object>, x=memmap([[0.02868145, 2.3555088 , 0.17170438, ......0.61895615,
+         0.        ]], dtype=float32), y=array([[1., 0.],
+       [1., 0.],
+       [1., 0....       [1., 0.],
+       [1., 0.]], dtype=float32), **kwargs={'sample_weight': array([0.00019984, 0.00019984, 0.00019984, ..., 0.00019984, 0.00019984,
+       0.00019984])})
+    146             y = to_categorical(y)
+    147 
+    148         fit_args = copy.deepcopy(self.filter_sk_params(Sequential.fit))
+    149         fit_args.update(kwargs)
+    150 
+--> 151         history = self.model.fit(x, y, **fit_args)
+        history = undefined
+        self.model.fit = <bound method Model.fit of <keras.engine.sequential.Sequential object>>
+        x = memmap([[0.02868145, 2.3555088 , 0.17170438, ......0.61895615,
+         0.        ]], dtype=float32)
+        y = array([[1., 0.],
+       [1., 0.],
+       [1., 0....       [1., 0.],
+       [1., 0.]], dtype=float32)
+        fit_args = {'batch_size': 100, 'epochs': 100, 'sample_weight': array([0.00019984, 0.00019984, 0.00019984, ..., 0.00019984, 0.00019984,
+       0.00019984]), 'verbose': 0}
+    152 
+    153         return history
+    154 
+    155     def filter_sk_params(self, fn, override=None):
+
+...........................................................................
+/home/u8634/.local/lib/python3.6/site-packages/keras/engine/training.py in fit(self=<keras.engine.sequential.Sequential object>, x=memmap([[0.02868145, 2.3555088 , 0.17170438, ......0.61895615,
+         0.        ]], dtype=float32), y=array([[1., 0.],
+       [1., 0.],
+       [1., 0....       [1., 0.],
+       [1., 0.]], dtype=float32), batch_size=100, epochs=100, verbose=0, callbacks=None, validation_split=0.0, validation_data=None, shuffle=True, class_weight=None, sample_weight=array([0.00019984, 0.00019984, 0.00019984, ..., 0.00019984, 0.00019984,
+       0.00019984]), initial_epoch=0, steps_per_epoch=None, validation_steps=None, **kwargs={})
+    950         # Validate user data.
+    951         x, y, sample_weights = self._standardize_user_data(
+    952             x, y,
+    953             sample_weight=sample_weight,
+    954             class_weight=class_weight,
+--> 955             batch_size=batch_size)
+        batch_size = 100
+    956         # Prepare validation data.
+    957         do_validation = False
+    958         if validation_data:
+    959             do_validation = True
+
+...........................................................................
+/home/u8634/.local/lib/python3.6/site-packages/keras/engine/training.py in _standardize_user_data(self=<keras.engine.sequential.Sequential object>, x=[memmap([[0.02868145, 2.3555088 , 0.17170438, ......0.61895615,
+         0.        ]], dtype=float32)], y=array([[1., 0.],
+       [1., 0.],
+       [1., 0....       [1., 0.],
+       [1., 0.]], dtype=float32), sample_weight=array([0.00019984, 0.00019984, 0.00019984, ..., 0.00019984, 0.00019984,
+       0.00019984]), class_weight=None, check_array_lengths=True, batch_size=100)
+    787             y = standardize_input_data(
+    788                 y,
+    789                 feed_output_names,
+    790                 feed_output_shapes,
+    791                 check_batch_axis=False,  # Don't enforce the batch size.
+--> 792                 exception_prefix='target')
+    793 
+    794             # Generate sample-wise weight values given the `sample_weight` and
+    795             # `class_weight` arguments.
+    796             sample_weights = standardize_sample_weights(
+
+...........................................................................
+/home/u8634/.local/lib/python3.6/site-packages/keras/engine/training_utils.py in standardize_input_data(data=[array([[1., 0.],
+       [1., 0.],
+       [1., 0....       [1., 0.],
+       [1., 0.]], dtype=float32)], names=['dense_2'], shapes=[(None, 1)], check_batch_axis=False, exception_prefix='target')
+    131                     if ref_dim != dim and ref_dim:
+    132                         raise ValueError(
+    133                             'Error when checking ' + exception_prefix +
+    134                             ': expected ' + names[i] + ' to have shape ' +
+    135                             str(shape) + ' but got array with shape ' +
+--> 136                             str(data_shape))
+        data_shape = (2,)
+    137     return data
+    138 
+    139 
+    140 def standardize_sample_or_class_weights(x_weight,
+
+ValueError: Error when checking target: expected dense_2 to have shape (1,) but got array with shape (2,)
+___________________________________________________________________________
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "NN.py", line 207, in <module>
+    grid_result = grid_search.fit(X_train, y_train, sample_weight=sample_weights)
+  File "/glob/intel-python/python3/lib/python3.6/site-packages/sklearn/model_selection/_search.py", line 639, in fit
+    cv.split(X, y, groups)))
+  File "/glob/intel-python/python3/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py", line 789, in __call__
+    self.retrieve()
+  File "/glob/intel-python/python3/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py", line 740, in retrieve
+    raise exception
+sklearn.externals.joblib.my_exceptions.JoblibValueError: JoblibValueError
+___________________________________________________________________________
+Multiprocessing exception:
+...........................................................................
+/home/u8634/EarthNetworks/src/EN_GNN/NN.py in <module>()
+    202     print("Training model...")
+    203     if categorical:
+    204         grid_result = grid_search.fit(X_train, y_train_cat, sample_weight=sample_weights)
+    205         pred = grid_search.predict(X_test)
+    206     else:
+--> 207         grid_result = grid_search.fit(X_train, y_train, sample_weight=sample_weights)
+    208         pred = grid_search.predict(X_test)
+    209     print(grid_result)
+    210     f1 = f1_score(y_test, pred)
+    211     accuracy = accuracy_score(y_test, pred)
+
+...........................................................................
+/glob/intel-python/python3/lib/python3.6/site-packages/sklearn/model_selection/_search.py in fit(self=GridSearchCV(cv=None, error_score='raise',
+     ...',
+       scoring=['f1', 'accuracy'], verbose=10), X=array([[0.02980869, 2.5701516 , 0.04040916, ...,... 0.61895615,
+        0.        ]], dtype=float32), y=array([0, 0, 0, ..., 0, 0, 0], dtype=int32), groups=None, **fit_params={'sample_weight': array([0.00019984, 0.00019984, 0.00019984, ..., 0.00019984, 0.00019984,
+       0.00019984])})
+    634                                   return_train_score=self.return_train_score,
+    635                                   return_n_test_samples=True,
+    636                                   return_times=True, return_parameters=False,
+    637                                   error_score=self.error_score)
+    638           for parameters, (train, test) in product(candidate_params,
+--> 639                                                    cv.split(X, y, groups)))
+        cv.split = <bound method _BaseKFold.split of KFold(n_splits=3, random_state=None, shuffle=False)>
+        X = array([[0.02980869, 2.5701516 , 0.04040916, ...,... 0.61895615,
+        0.        ]], dtype=float32)
+        y = array([0, 0, 0, ..., 0, 0, 0], dtype=int32)
+        groups = None
+    640 
+    641         # if one choose to see train score, "out" will contain train score info
+    642         if self.return_train_score:
+    643             (train_score_dicts, test_score_dicts, test_sample_counts, fit_time,
+
+...........................................................................
+/glob/intel-python/python3/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py in __call__(self=Parallel(n_jobs=8), iterable=<generator object BaseSearchCV.fit.<locals>.<genexpr>>)
+    784             if pre_dispatch == "all" or n_jobs == 1:
+    785                 # The iterable was consumed all at once by the above for loop.
+    786                 # No need to wait for async callbacks to trigger to
+    787                 # consumption.
+    788                 self._iterating = False
+--> 789             self.retrieve()
+        self.retrieve = <bound method Parallel.retrieve of Parallel(n_jobs=8)>
+    790             # Make sure that we get a last message telling us we are done
+    791             elapsed_time = time.time() - self._start_time
+    792             self._print('Done %3i out of %3i | elapsed: %s finished',
+    793                         (len(self._output), len(self._output),
+
+---------------------------------------------------------------------------
+Sub-process traceback:
+---------------------------------------------------------------------------
+ValueError                                         Thu Jun 28 15:35:03 2018
+PID: 168761             Python 3.6.3: /glob/intel-python/python3/bin/python
+...........................................................................
+/glob/intel-python/python3/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py in __call__(self=<sklearn.externals.joblib.parallel.BatchedCalls object>)
+    126     def __init__(self, iterator_slice):
+    127         self.items = list(iterator_slice)
+    128         self._size = len(self.items)
+    129 
+    130     def __call__(self):
+--> 131         return [func(*args, **kwargs) for func, args, kwargs in self.items]
+        self.items = [(<function _fit_and_score>, (<keras.wrappers.scikit_learn.KerasClassifier object>, memmap([[0.02980869, 2.5701516 , 0.04040916, ......0.61895615,
+         0.        ]], dtype=float32), array([0, 0, 0, ..., 0, 0, 0], dtype=int32), {'accuracy': make_scorer(accuracy_score), 'f1': make_scorer(f1_score)}, array([1733, 1734, 1735, ..., 5196, 5197, 5198]), array([   0,    1,    2, ..., 1730, 1731, 1732]), 10, {'M1': 500, 'M2': None, 'dropout': 0.0}), {'error_score': 'raise', 'fit_params': {'sample_weight': array([0.00019984, 0.00019984, 0.00019984, ..., 0.00019984, 0.00019984,
+       0.00019984])}, 'return_n_test_samples': True, 'return_parameters': False, 'return_times': True, 'return_train_score': 'warn'})]
+    132 
+    133     def __len__(self):
+    134         return self._size
+    135 
+
+...........................................................................
+/glob/intel-python/python3/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py in <listcomp>(.0=<list_iterator object>)
+    126     def __init__(self, iterator_slice):
+    127         self.items = list(iterator_slice)
+    128         self._size = len(self.items)
+    129 
+    130     def __call__(self):
+--> 131         return [func(*args, **kwargs) for func, args, kwargs in self.items]
+        func = <function _fit_and_score>
+        args = (<keras.wrappers.scikit_learn.KerasClassifier object>, memmap([[0.02980869, 2.5701516 , 0.04040916, ......0.61895615,
+         0.        ]], dtype=float32), array([0, 0, 0, ..., 0, 0, 0], dtype=int32), {'accuracy': make_scorer(accuracy_score), 'f1': make_scorer(f1_score)}, array([1733, 1734, 1735, ..., 5196, 5197, 5198]), array([   0,    1,    2, ..., 1730, 1731, 1732]), 10, {'M1': 500, 'M2': None, 'dropout': 0.0})
+        kwargs = {'error_score': 'raise', 'fit_params': {'sample_weight': array([0.00019984, 0.00019984, 0.00019984, ..., 0.00019984, 0.00019984,
+       0.00019984])}, 'return_n_test_samples': True, 'return_parameters': False, 'return_times': True, 'return_train_score': 'warn'}
+    132 
+    133     def __len__(self):
+    134         return self._size
+    135 
+
+...........................................................................
+/glob/intel-python/python3/lib/python3.6/site-packages/sklearn/model_selection/_validation.py in _fit_and_score(estimator=<keras.wrappers.scikit_learn.KerasClassifier object>, X=memmap([[0.02980869, 2.5701516 , 0.04040916, ......0.61895615,
+         0.        ]], dtype=float32), y=array([0, 0, 0, ..., 0, 0, 0], dtype=int32), scorer={'accuracy': make_scorer(accuracy_score), 'f1': make_scorer(f1_score)}, train=array([1733, 1734, 1735, ..., 5196, 5197, 5198]), test=array([   0,    1,    2, ..., 1730, 1731, 1732]), verbose=10, parameters={'M1': 500, 'M2': None, 'dropout': 0.0}, fit_params={'sample_weight': array([0.00019984, 0.00019984, 0.00019984, ..., 0.00019984, 0.00019984,
+       0.00019984])}, return_train_score='warn', return_parameters=False, return_n_test_samples=True, return_times=True, error_score='raise')
+    453 
+    454     try:
+    455         if y_train is None:
+    456             estimator.fit(X_train, **fit_params)
+    457         else:
+--> 458             estimator.fit(X_train, y_train, **fit_params)
+        estimator.fit = <bound method KerasClassifier.fit of <keras.wrappers.scikit_learn.KerasClassifier object>>
+        X_train = memmap([[0.02868145, 2.3555088 , 0.17170438, ......0.61895615,
+         0.        ]], dtype=float32)
+        y_train = array([0, 0, 0, ..., 0, 0, 0], dtype=int32)
+        fit_params = {'sample_weight': array([0.00019984, 0.00019984, 0.00019984, ..., 0.00019984, 0.00019984,
+       0.00019984])}
+    459 
+    460     except Exception as e:
+    461         # Note fit time as time until error
+    462         fit_time = time.time() - start_time
+
+...........................................................................
+/home/u8634/.local/lib/python3.6/site-packages/keras/wrappers/scikit_learn.py in fit(self=<keras.wrappers.scikit_learn.KerasClassifier object>, x=memmap([[0.02868145, 2.3555088 , 0.17170438, ......0.61895615,
+         0.        ]], dtype=float32), y=array([0, 0, 0, ..., 0, 0, 0]), sample_weight=array([0.00019984, 0.00019984, 0.00019984, ..., 0.00019984, 0.00019984,
+       0.00019984]), **kwargs={'sample_weight': array([0.00019984, 0.00019984, 0.00019984, ..., 0.00019984, 0.00019984,
+       0.00019984])})
+    204         else:
+    205             raise ValueError('Invalid shape for y: ' + str(y.shape))
+    206         self.n_classes_ = len(self.classes_)
+    207         if sample_weight is not None:
+    208             kwargs['sample_weight'] = sample_weight
+--> 209         return super(KerasClassifier, self).fit(x, y, **kwargs)
+        self.fit = <bound method KerasClassifier.fit of <keras.wrappers.scikit_learn.KerasClassifier object>>
+        x = memmap([[0.02868145, 2.3555088 , 0.17170438, ......0.61895615,
+         0.        ]], dtype=float32)
+        y = array([0, 0, 0, ..., 0, 0, 0])
+        kwargs = {'sample_weight': array([0.00019984, 0.00019984, 0.00019984, ..., 0.00019984, 0.00019984,
+       0.00019984])}
+    210 
+    211     def predict(self, x, **kwargs):
+    212         """Returns the class predictions for the given test data.
+    213 
+
+...........................................................................
+/home/u8634/.local/lib/python3.6/site-packages/keras/wrappers/scikit_learn.py in fit(self=<keras.wrappers.scikit_learn.KerasClassifier object>, x=memmap([[0.02868145, 2.3555088 , 0.17170438, ......0.61895615,
+         0.        ]], dtype=float32), y=array([[1., 0.],
+       [1., 0.],
+       [1., 0....       [1., 0.],
+       [1., 0.]], dtype=float32), **kwargs={'sample_weight': array([0.00019984, 0.00019984, 0.00019984, ..., 0.00019984, 0.00019984,
+       0.00019984])})
+    146             y = to_categorical(y)
+    147 
+    148         fit_args = copy.deepcopy(self.filter_sk_params(Sequential.fit))
+    149         fit_args.update(kwargs)
+    150 
+--> 151         history = self.model.fit(x, y, **fit_args)
+        history = undefined
+        self.model.fit = <bound method Model.fit of <keras.engine.sequential.Sequential object>>
+        x = memmap([[0.02868145, 2.3555088 , 0.17170438, ......0.61895615,
+         0.        ]], dtype=float32)
+        y = array([[1., 0.],
+       [1., 0.],
+       [1., 0....       [1., 0.],
+       [1., 0.]], dtype=float32)
+        fit_args = {'batch_size': 100, 'epochs': 100, 'sample_weight': array([0.00019984, 0.00019984, 0.00019984, ..., 0.00019984, 0.00019984,
+       0.00019984]), 'verbose': 0}
+    152 
+    153         return history
+    154 
+    155     def filter_sk_params(self, fn, override=None):
+
+...........................................................................
+/home/u8634/.local/lib/python3.6/site-packages/keras/engine/training.py in fit(self=<keras.engine.sequential.Sequential object>, x=memmap([[0.02868145, 2.3555088 , 0.17170438, ......0.61895615,
+         0.        ]], dtype=float32), y=array([[1., 0.],
+       [1., 0.],
+       [1., 0....       [1., 0.],
+       [1., 0.]], dtype=float32), batch_size=100, epochs=100, verbose=0, callbacks=None, validation_split=0.0, validation_data=None, shuffle=True, class_weight=None, sample_weight=array([0.00019984, 0.00019984, 0.00019984, ..., 0.00019984, 0.00019984,
+       0.00019984]), initial_epoch=0, steps_per_epoch=None, validation_steps=None, **kwargs={})
+    950         # Validate user data.
+    951         x, y, sample_weights = self._standardize_user_data(
+    952             x, y,
+    953             sample_weight=sample_weight,
+    954             class_weight=class_weight,
+--> 955             batch_size=batch_size)
+        batch_size = 100
+    956         # Prepare validation data.
+    957         do_validation = False
+    958         if validation_data:
+    959             do_validation = True
+
+...........................................................................
+/home/u8634/.local/lib/python3.6/site-packages/keras/engine/training.py in _standardize_user_data(self=<keras.engine.sequential.Sequential object>, x=[memmap([[0.02868145, 2.3555088 , 0.17170438, ......0.61895615,
+         0.        ]], dtype=float32)], y=array([[1., 0.],
+       [1., 0.],
+       [1., 0....       [1., 0.],
+       [1., 0.]], dtype=float32), sample_weight=array([0.00019984, 0.00019984, 0.00019984, ..., 0.00019984, 0.00019984,
+       0.00019984]), class_weight=None, check_array_lengths=True, batch_size=100)
+    787             y = standardize_input_data(
+    788                 y,
+    789                 feed_output_names,
+    790                 feed_output_shapes,
+    791                 check_batch_axis=False,  # Don't enforce the batch size.
+--> 792                 exception_prefix='target')
+    793 
+    794             # Generate sample-wise weight values given the `sample_weight` and
+    795             # `class_weight` arguments.
+    796             sample_weights = standardize_sample_weights(
+
+...........................................................................
+/home/u8634/.local/lib/python3.6/site-packages/keras/engine/training_utils.py in standardize_input_data(data=[array([[1., 0.],
+       [1., 0.],
+       [1., 0....       [1., 0.],
+       [1., 0.]], dtype=float32)], names=['dense_2'], shapes=[(None, 1)], check_batch_axis=False, exception_prefix='target')
+    131                     if ref_dim != dim and ref_dim:
+    132                         raise ValueError(
+    133                             'Error when checking ' + exception_prefix +
+    134                             ': expected ' + names[i] + ' to have shape ' +
+    135                             str(shape) + ' but got array with shape ' +
+--> 136                             str(data_shape))
+        data_shape = (2,)
+    137     return data
+    138 
+    139 
+    140 def standardize_sample_or_class_weights(x_weight,
+
+ValueError: Error when checking target: expected dense_2 to have shape (1,) but got array with shape (2,)
+___________________________________________________________________________
+
+########################################################################
+# End of output for job 105641.c009
+# Date: Thu Jun 28 15:35:07 PDT 2018
+########################################################################
+

@@ -1,0 +1,387 @@
+Setting up problem parameters... DONE
+Gathering data... Numbmer of datapoints: 5777
+Building graph support... DONE
+Running Neural Networks: BEGINNING
+ 
+Training model: c_cheb_a
+ 
+  architecture/L = 2
+  architecture/N = [28, 14, 7]
+CNNGS Architecture: c_cheb_a (clustering)
+  input: M_0 = N = 28
+  l_1: gsconv_1
+    input dimension : M_0 = F_0 N_0 =  1 * 28 = 28
+    output dimension: M_1 = F_1 N_1 = 14 * 14 = 196
+    parameters: K_1 F_1 F_0 = 7 * 14 * 1 = 98
+  l_2: gsconv_2
+    input dimension : M_1 = F_1 N_1 = 14 * 14 = 196
+    output dimension: M_2 = F_2 N_2 = 28 *  7 = 196
+    parameters: K_2 F_2 F_1 = 14 * 28 * 14 = 5488
+  l_3: softmax
+    input dimension : M_2 = 196
+    output dimension: M_3 = 2
+    parameters: M_3 M_2 = 2 * 196 = 392
+  Total parameters = 5978
+ 
+[c_cheb_a] step 500 / 5199 (epoch 9.62 / 100):
+  learning_rate = 9.91e-04, loss_average = 8.73e+04
+  validation accuracy: 95.33 (551 / 578), f1 (weighted): 94.44, loss: 6.74e+04
+  time: 825s (wall 37s)
+[c_cheb_a] step 1000 / 5199 (epoch 19.23 / 100):
+  learning_rate = 9.81e-04, loss_average = 9.56e+04
+  validation accuracy: 95.85 (554 / 578), f1 (weighted): 93.98, loss: 1.09e+05
+  time: 1659s (wall 72s)
+[c_cheb_a] step 1500 / 5199 (epoch 28.85 / 100):
+  learning_rate = 9.72e-04, loss_average = 3.69e+04
+  validation accuracy: 95.50 (552 / 578), f1 (weighted): 94.55, loss: 3.01e+04
+  time: 2462s (wall 106s)
+[c_cheb_a] step 2000 / 5199 (epoch 38.47 / 100):
+  learning_rate = 9.63e-04, loss_average = 3.41e+04
+  validation accuracy: 96.19 (556 / 578), f1 (weighted): 95.54, loss: 2.63e+04
+  time: 3256s (wall 140s)
+[c_cheb_a] step 2500 / 5199 (epoch 48.09 / 100):
+  learning_rate = 9.53e-04, loss_average = 3.13e+04
+  validation accuracy: 96.37 (557 / 578), f1 (weighted): 95.94, loss: 1.75e+04
+  time: 4090s (wall 176s)
+[c_cheb_a] step 3000 / 5199 (epoch 57.70 / 100):
+  learning_rate = 9.45e-04, loss_average = 1.86e+04
+  validation accuracy: 97.06 (561 / 578), f1 (weighted): 96.71, loss: 1.28e+04
+  time: 4911s (wall 210s)
+[c_cheb_a] step 3500 / 5199 (epoch 67.32 / 100):
+  learning_rate = 9.35e-04, loss_average = 7.98e+03
+  validation accuracy: 96.89 (560 / 578), f1 (weighted): 96.08, loss: 1.15e+04
+  time: 5722s (wall 245s)
+[c_cheb_a] step 4000 / 5199 (epoch 76.94 / 100):
+  learning_rate = 9.27e-04, loss_average = 2.34e+04
+  validation accuracy: 96.02 (555 / 578), f1 (weighted): 94.07, loss: 3.01e+04
+  time: 6545s (wall 280s)
+[c_cheb_a] step 4500 / 5199 (epoch 86.56 / 100):
+  learning_rate = 9.18e-04, loss_average = 7.47e+03
+  validation accuracy: 96.19 (556 / 578), f1 (weighted): 94.76, loss: 1.90e+04
+  time: 7371s (wall 315s)
+[c_cheb_a] step 5000 / 5199 (epoch 96.17 / 100):
+  learning_rate = 9.08e-04, loss_average = 4.47e+04
+  validation accuracy: 88.58 (512 / 578), f1 (weighted): 91.55, loss: 3.71e+04
+  time: 8213s (wall 351s)
+[c_cheb_a] step 5199 / 5199 (epoch 100.00 / 100):
+  learning_rate = 9.06e-04, loss_average = 1.22e+04
+  validation accuracy: 97.06 (561 / 578), f1 (weighted): 96.37, loss: 8.58e+03
+  time: 8547s (wall 365s)
+validation accuracy: peak = 97.06, mean = 95.57
+train accuracy: 97.29 (5058 / 5199), f1 (weighted): 96.91, loss: 5.74e+03
+time: 19s (wall 1s)
+test  accuracy: 97.06 (561 / 578), f1 (weighted): 96.37, loss: 8.58e+03
+time: 7s (wall 1s)
+ 
+Training model: np_3
+ 
+  architecture/L = 2
+  architecture/N = [25, 25, 25]
+CNNGS Architecture: np_3 (no-pooling)
+  input: M_0 = N = 25
+  l_1: gsconv_1
+    input dimension : M_0 = F_0 N_0 =  1 * 25 = 25
+    output dimension: M_1 = F_1 N_1 = 14 * 25 = 350
+    parameters: K_1 F_1 F_0 = 7 * 14 * 1 = 98
+  l_2: gsconv_2
+    input dimension : M_1 = F_1 N_1 = 14 * 25 = 350
+    output dimension: M_2 = F_2 N_2 = 28 * 25 = 700
+    parameters: K_2 F_2 F_1 = 14 * 28 * 14 = 5488
+  l_3: softmax
+    input dimension : M_2 = 700
+    output dimension: M_3 = 2
+    parameters: M_3 M_2 = 2 * 700 = 1400
+  Total parameters = 6986
+ 
+[np_3] step 500 / 5199 (epoch 9.62 / 100):
+  learning_rate = 9.91e-04, loss_average = 2.35e+02
+  validation accuracy: 96.37 (557 / 578), f1 (weighted): 95.33, loss: 2.18e+02
+  time: 941s (wall 41s)
+[np_3] step 1000 / 5199 (epoch 19.23 / 100):
+  learning_rate = 9.81e-04, loss_average = 1.63e+02
+  validation accuracy: 96.37 (557 / 578), f1 (weighted): 96.40, loss: 1.38e+02
+  time: 1864s (wall 80s)
+[np_3] step 1500 / 5199 (epoch 28.85 / 100):
+  learning_rate = 9.72e-04, loss_average = 2.42e+02
+  validation accuracy: 95.85 (554 / 578), f1 (weighted): 93.98, loss: 4.81e+02
+  time: 2804s (wall 120s)
+[np_3] step 2000 / 5199 (epoch 38.47 / 100):
+  learning_rate = 9.63e-04, loss_average = 1.11e+02
+  validation accuracy: 96.54 (558 / 578), f1 (weighted): 96.07, loss: 1.29e+02
+  time: 3714s (wall 158s)
+[np_3] step 2500 / 5199 (epoch 48.09 / 100):
+  learning_rate = 9.53e-04, loss_average = 8.08e+01
+  validation accuracy: 97.23 (562 / 578), f1 (weighted): 97.23, loss: 7.30e+01
+  time: 4657s (wall 198s)
+[np_3] step 3000 / 5199 (epoch 57.70 / 100):
+  learning_rate = 9.45e-04, loss_average = 8.22e+01
+  validation accuracy: 96.54 (558 / 578), f1 (weighted): 96.07, loss: 1.15e+02
+  time: 5581s (wall 237s)
+[np_3] step 3500 / 5199 (epoch 67.32 / 100):
+  learning_rate = 9.35e-04, loss_average = 4.63e+01
+  validation accuracy: 96.71 (559 / 578), f1 (weighted): 96.08, loss: 5.57e+01
+  time: 6503s (wall 276s)
+[np_3] step 4000 / 5199 (epoch 76.94 / 100):
+  learning_rate = 9.27e-04, loss_average = 5.79e+01
+  validation accuracy: 96.54 (558 / 578), f1 (weighted): 95.64, loss: 9.95e+01
+  time: 7422s (wall 315s)
+[np_3] step 4500 / 5199 (epoch 86.56 / 100):
+  learning_rate = 9.18e-04, loss_average = 2.46e+01
+  validation accuracy: 97.06 (561 / 578), f1 (weighted): 96.50, loss: 7.18e+01
+  time: 8366s (wall 355s)
+[np_3] step 5000 / 5199 (epoch 96.17 / 100):
+  learning_rate = 9.08e-04, loss_average = 5.49e+01
+  validation accuracy: 96.37 (557 / 578), f1 (weighted): 96.60, loss: 6.60e+01
+  time: 9297s (wall 394s)
+[np_3] step 5199 / 5199 (epoch 100.00 / 100):
+  learning_rate = 9.06e-04, loss_average = 3.30e+01
+  validation accuracy: 97.06 (561 / 578), f1 (weighted): 96.80, loss: 4.89e+01
+  time: 9682s (wall 411s)
+validation accuracy: peak = 97.23, mean = 96.63
+train accuracy: 97.98 (5094 / 5199), f1 (weighted): 98.03, loss: 1.83e+01
+time: 32s (wall 2s)
+test  accuracy: 97.06 (561 / 578), f1 (weighted): 96.80, loss: 4.89e+01
+time: 7s (wall 1s)
+ 
+Training model: selection_pooling
+ 
+  architecture/L = 2
+  architecture/N = [25, 25, 15]
+CNNGS Architecture: selection_pooling (selection)
+  input: M_0 = N = 25
+  l_1: gsconv_1
+    input dimension : M_0 = F_0 N_0 =  1 * 25 = 25
+    output dimension: M_1 = F_1 N_1 = 14 * 25 = 350
+    parameters: K_1 F_1 F_0 = 7 * 14 * 1 = 98
+  l_2: gsconv_2
+    input dimension : M_1 = F_1 N_1 = 14 * 25 = 350
+    output dimension: M_2 = F_2 N_2 = 28 * 15 = 420
+    parameters: K_2 F_2 F_1 = 14 * 28 * 14 = 5488
+  l_3: softmax
+    input dimension : M_2 = 420
+    output dimension: M_3 = 2
+    parameters: M_3 M_2 = 2 * 420 = 840
+  Total parameters = 6426
+ 
+[selection_pooling] step 500 / 5199 (epoch 9.62 / 100):
+  learning_rate = 9.91e-04, loss_average = 1.96e+01
+  validation accuracy: 96.02 (555 / 578), f1 (weighted): 94.07, loss: 2.29e+01
+  time: 1106s (wall 48s)
+[selection_pooling] step 1000 / 5199 (epoch 19.23 / 100):
+  learning_rate = 9.81e-04, loss_average = 4.22e+00
+  validation accuracy: 96.02 (555 / 578), f1 (weighted): 94.07, loss: 2.85e+00
+  time: 2202s (wall 94s)
+[selection_pooling] step 1500 / 5199 (epoch 28.85 / 100):
+  learning_rate = 9.72e-04, loss_average = 2.61e+00
+  validation accuracy: 96.02 (555 / 578), f1 (weighted): 94.07, loss: 4.12e+00
+  time: 3327s (wall 142s)
+[selection_pooling] step 2000 / 5199 (epoch 38.47 / 100):
+  learning_rate = 9.63e-04, loss_average = 2.60e+00
+  validation accuracy: 90.66 (524 / 578), f1 (weighted): 92.23, loss: 1.97e+00
+  time: 4445s (wall 189s)
+[selection_pooling] step 2500 / 5199 (epoch 48.09 / 100):
+  learning_rate = 9.53e-04, loss_average = 1.79e+00
+  validation accuracy: 96.02 (555 / 578), f1 (weighted): 94.07, loss: 2.19e+00
+  time: 5543s (wall 235s)
+[selection_pooling] step 3000 / 5199 (epoch 57.70 / 100):
+  learning_rate = 9.45e-04, loss_average = 1.59e+00
+  validation accuracy: 81.66 (472 / 578), f1 (weighted): 86.86, loss: 3.07e+00
+  time: 6635s (wall 281s)
+[selection_pooling] step 3500 / 5199 (epoch 67.32 / 100):
+  learning_rate = 9.35e-04, loss_average = 1.71e+00
+  validation accuracy: 93.25 (539 / 578), f1 (weighted): 93.32, loss: 1.14e+00
+  time: 7733s (wall 328s)
+[selection_pooling] step 4000 / 5199 (epoch 76.94 / 100):
+  learning_rate = 9.27e-04, loss_average = 5.45e-01
+  validation accuracy: 96.02 (555 / 578), f1 (weighted): 94.07, loss: 6.09e-01
+  time: 8818s (wall 373s)
+[selection_pooling] step 4500 / 5199 (epoch 86.56 / 100):
+  learning_rate = 9.18e-04, loss_average = 4.58e-01
+  validation accuracy: 96.02 (555 / 578), f1 (weighted): 94.07, loss: 1.13e+00
+  time: 9904s (wall 419s)
+[selection_pooling] step 5000 / 5199 (epoch 96.17 / 100):
+  learning_rate = 9.08e-04, loss_average = 8.87e-01
+  validation accuracy: 90.14 (521 / 578), f1 (weighted): 92.05, loss: 6.04e-01
+  time: 11001s (wall 466s)
+[selection_pooling] step 5199 / 5199 (epoch 100.00 / 100):
+  learning_rate = 9.06e-04, loss_average = 2.37e-01
+  validation accuracy: 89.97 (520 / 578), f1 (weighted): 91.57, loss: 3.02e-01
+  time: 11446s (wall 485s)
+validation accuracy: peak = 96.02, mean = 92.58
+train accuracy: 92.02 (4784 / 5199), f1 (weighted): 93.02, loss: 2.17e-01
+time: 36s (wall 2s)
+test  accuracy: 89.97 (520 / 578), f1 (weighted): 91.57, loss: 3.02e-01
+time: 9s (wall 1s)
+ 
+Training model: aggregation_pooling
+ 
+  architecture/L = 2
+  architecture/N = [25, 12, 6]
+CNNGS Architecture: aggregation_pooling (aggregation)
+  input: M_0 = N = 25
+  l_1: gsconv_1
+    input dimension : M_0 = F_0 N_0 =  1 * 25 = 25
+    output dimension: M_1 = F_1 N_1 = 14 * 12 = 168
+    parameters: K_1 F_1 F_0 = 7 * 14 * 1 = 98
+  l_2: gsconv_2
+    input dimension : M_1 = F_1 N_1 = 14 * 12 = 168
+    output dimension: M_2 = F_2 N_2 = 28 *  6 = 168
+    parameters: K_2 F_2 F_1 = 14 * 28 * 14 = 5488
+  l_3: softmax
+    input dimension : M_2 = 168
+    output dimension: M_3 = 2
+    parameters: M_3 M_2 = 2 * 168 = 336
+  Total parameters = 5922
+ 
+[aggregation_pooling] step 500 / 5199 (epoch 9.62 / 100):
+  learning_rate = 9.91e-04, loss_average = 1.74e-01
+  validation accuracy: 94.46 (546 / 578), f1 (weighted): 93.52, loss: 2.20e-01
+  time: 448s (wall 20s)
+[aggregation_pooling] step 1000 / 5199 (epoch 19.23 / 100):
+  learning_rate = 9.81e-04, loss_average = 2.92e-01
+  validation accuracy: 90.83 (525 / 578), f1 (weighted): 92.26, loss: 2.73e-01
+  time: 870s (wall 38s)
+[aggregation_pooling] step 1500 / 5199 (epoch 28.85 / 100):
+  learning_rate = 9.72e-04, loss_average = 1.23e-01
+  validation accuracy: 96.19 (556 / 578), f1 (weighted): 94.76, loss: 1.60e-01
+  time: 1303s (wall 56s)
+[aggregation_pooling] step 2000 / 5199 (epoch 38.47 / 100):
+  learning_rate = 9.63e-04, loss_average = 1.25e-01
+  validation accuracy: 96.02 (555 / 578), f1 (weighted): 94.39, loss: 1.68e-01
+  time: 1734s (wall 74s)
+[aggregation_pooling] step 2500 / 5199 (epoch 48.09 / 100):
+  learning_rate = 9.53e-04, loss_average = 1.26e-01
+  validation accuracy: 96.02 (555 / 578), f1 (weighted): 94.07, loss: 2.50e-01
+  time: 2160s (wall 92s)
+[aggregation_pooling] step 3000 / 5199 (epoch 57.70 / 100):
+  learning_rate = 9.45e-04, loss_average = 1.26e-01
+  validation accuracy: 95.85 (554 / 578), f1 (weighted): 94.29, loss: 1.66e-01
+  time: 2592s (wall 111s)
+[aggregation_pooling] step 3500 / 5199 (epoch 67.32 / 100):
+  learning_rate = 9.35e-04, loss_average = 9.09e-02
+  validation accuracy: 96.02 (555 / 578), f1 (weighted): 94.39, loss: 1.94e-01
+  time: 3026s (wall 129s)
+[aggregation_pooling] step 4000 / 5199 (epoch 76.94 / 100):
+  learning_rate = 9.27e-04, loss_average = 1.32e-01
+  validation accuracy: 95.85 (554 / 578), f1 (weighted): 93.98, loss: 2.25e-01
+  time: 3436s (wall 146s)
+[aggregation_pooling] step 4500 / 5199 (epoch 86.56 / 100):
+  learning_rate = 9.18e-04, loss_average = 1.18e-01
+  validation accuracy: 95.85 (554 / 578), f1 (weighted): 95.14, loss: 1.49e-01
+  time: 3870s (wall 165s)
+[aggregation_pooling] step 5000 / 5199 (epoch 96.17 / 100):
+  learning_rate = 9.08e-04, loss_average = 1.42e-01
+  validation accuracy: 96.02 (555 / 578), f1 (weighted): 94.39, loss: 2.00e-01
+  time: 4303s (wall 183s)
+[aggregation_pooling] step 5199 / 5199 (epoch 100.00 / 100):
+  learning_rate = 9.06e-04, loss_average = 9.21e-02
+  validation accuracy: 96.02 (555 / 578), f1 (weighted): 94.39, loss: 1.76e-01
+  time: 4468s (wall 190s)
+validation accuracy: peak = 96.19, mean = 95.47
+train accuracy: 96.75 (5030 / 5199), f1 (weighted): 95.56, loss: 9.72e-02
+time: 18s (wall 1s)
+test  accuracy: 96.02 (555 / 578), f1 (weighted): 94.39, loss: 1.76e-01
+time: 6s (wall 0s)
+ 
+Training model: hybrid_pooling
+ 
+  architecture/L = 2
+  architecture/N = [25, 25, 10]
+CNNGS Architecture: hybrid_pooling (hybrid)
+  input: M_0 = N = 25
+  l_1: gsconv_1
+    input dimension : M_0 = F_0 N_0 =  1 * 25 = 25
+    output dimension: M_1 = F_1 N_1 = 16 * 25 = 400
+    parameters_1 detail:
+      parameters_(1,1): K_(1,1) F_(1,1) F_(1,0) = 7 * 8 * 1 = 56
+      parameters_(1,2): K_(1,2) F_(1,2) F_(1,1) = 14 * 16 * 8 = 1792
+    parameters = parameters_1 N_1 = 1848 * 25 = 46200
+  l_2: gsconv_2
+    input dimension : M_1 = F_1 N_1 = 16 * 25 = 400
+    output dimension: M_2 = F_2 N_2 = 16 * 10 = 160
+    parameters_2 detail:
+      parameters_(2,1): K_(2,1) F_(2,1) F_(2,0) = 7 * 8 * 16 = 896
+      parameters_(2,2): K_(2,2) F_(2,2) F_(2,1) = 14 * 16 * 8 = 1792
+    parameters = parameters_2 N_2 = 2688 * 10 = 26880
+  l_3: softmax
+    input dimension : M_2 = 160
+    output dimension: M_3 = 2
+    parameters: M_3 M_2 = 2 * 160 = 320
+  Total parameters = 73400
+ 
+[hybrid_pooling] step 500 / 5199 (epoch 9.62 / 100):
+  learning_rate = 9.91e-04, loss_average = 1.08e-01
+  validation accuracy: 96.54 (558 / 578), f1 (weighted): 95.46, loss: 1.38e-01
+  time: 3824s (wall 172s)
+[hybrid_pooling] step 1000 / 5199 (epoch 19.23 / 100):
+  learning_rate = 9.81e-04, loss_average = 9.93e-02
+  validation accuracy: 96.71 (559 / 578), f1 (weighted): 95.58, loss: 1.47e-01
+  time: 7524s (wall 333s)
+[hybrid_pooling] step 1500 / 5199 (epoch 28.85 / 100):
+  learning_rate = 9.72e-04, loss_average = 8.05e-02
+  validation accuracy: 95.67 (553 / 578), f1 (weighted): 95.72, loss: 1.52e-01
+  time: 11297s (wall 495s)
+[hybrid_pooling] step 2000 / 5199 (epoch 38.47 / 100):
+  learning_rate = 9.63e-04, loss_average = 7.34e-02
+  validation accuracy: 96.89 (560 / 578), f1 (weighted): 96.22, loss: 1.33e-01
+  time: 14990s (wall 654s)
+[hybrid_pooling] step 2500 / 5199 (epoch 48.09 / 100):
+  learning_rate = 9.53e-04, loss_average = 5.97e-02
+  validation accuracy: 96.89 (560 / 578), f1 (weighted): 95.91, loss: 1.73e-01
+  time: 18686s (wall 813s)
+[hybrid_pooling] step 3000 / 5199 (epoch 57.70 / 100):
+  learning_rate = 9.45e-04, loss_average = 4.52e-02
+  validation accuracy: 96.89 (560 / 578), f1 (weighted): 96.47, loss: 1.26e-01
+  time: 22384s (wall 972s)
+[hybrid_pooling] step 3500 / 5199 (epoch 67.32 / 100):
+  learning_rate = 9.35e-04, loss_average = 5.52e-02
+  validation accuracy: 96.02 (555 / 578), f1 (weighted): 96.06, loss: 1.34e-01
+  time: 25994s (wall 1128s)
+[hybrid_pooling] step 4000 / 5199 (epoch 76.94 / 100):
+  learning_rate = 9.27e-04, loss_average = 4.13e-02
+  validation accuracy: 97.06 (561 / 578), f1 (weighted): 96.71, loss: 1.23e-01
+  time: 29838s (wall 1293s)
+[hybrid_pooling] step 4500 / 5199 (epoch 86.56 / 100):
+  learning_rate = 9.18e-04, loss_average = 4.26e-02
+  validation accuracy: 97.06 (561 / 578), f1 (weighted): 97.03, loss: 1.40e-01
+  time: 33730s (wall 1460s)
+[hybrid_pooling] step 5000 / 5199 (epoch 96.17 / 100):
+  learning_rate = 9.08e-04, loss_average = 2.21e-02
+  validation accuracy: 97.40 (563 / 578), f1 (weighted): 97.18, loss: 1.60e-01
+  time: 37543s (wall 1624s)
+[hybrid_pooling] step 5199 / 5199 (epoch 100.00 / 100):
+  learning_rate = 9.06e-04, loss_average = 4.47e-02
+  validation accuracy: 96.71 (559 / 578), f1 (weighted): 95.77, loss: 1.39e-01
+  time: 39064s (wall 1692s)
+validation accuracy: peak = 97.40, mean = 96.73
+train accuracy: 98.04 (5097 / 5199), f1 (weighted): 97.74, loss: 4.70e-02
+time: 198s (wall 11s)
+test  accuracy: 96.71 (559 / 578), f1 (weighted): 95.77, loss: 1.39e-01
+time: 33s (wall 4s)
+ 
+Showing results...
+ 
+    {n = 25, norm-Laplacian, num_epochs = 100, batch_size = 100, 
+     reg = 0, dropout = 0.5, momentum = 0
+     ADAM, learning_rate = 0.001}
+ 
+    aggregation_pooling = {F = [14, 28], K = [7, 14], M = [2]}
+    c_cheb_a = {F = [14, 28], K = [7, 14], M = [2]}
+    hybrid_pooling = {F = [[8, 16], [8, 16]], K = [[7, 14], [7, 14]], M = [2]}
+    np_3 = {F = [14, 28], K = [7, 14], M = [2]}
+    selection_pooling = {F = [14, 28], K = [7, 14], M = [2]}
+ 
+    Results:
+      accuracy        F1        parameters    time [ms]  name
+    test  train   test  train   
+    96.02 96.75   94.39 95.56      5922         37       aggregation_pooling
+    97.06 97.29   96.37 96.91      5978         70       c_cheb_a
+    96.71 98.04   95.77 97.74     73400        327       hybrid_pooling
+    97.06 97.98   96.80 98.03      6986         79       np_3
+    89.97 92.02   91.57 93.02      6426         93       selection_pooling
+ 
+ 
+Clustering graph sizes:
+S_c[0]: 28
+S_c[1]: 14
+S_c[2]: 7

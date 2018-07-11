@@ -1,0 +1,37 @@
+
+########################################################################
+#      Date:           Thu Jun 28 15:10:58 PDT 2018
+#    Job ID:           105635.c009
+#      User:           u8634
+# Resources:           neednodes=1:ppn=2,nodes=1:ppn=2,walltime=06:00:00
+########################################################################
+
+
+Region: NYC
+N stations: 25
+Normalize data: True
+fields: ['PressureSeaLevelMBar', 'TemperatureC', 'WindSpeedKph', 'PressureSeaLevelMBarRatePerHour', 'Humidity', 'HumidityRatePerHour', 'RainMillimetersRatePerHour']
+
+/glob/intel-python/python3/lib/python3.6/site-packages/h5py/__init__.py:34: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+Using TensorFlow backend.
+
+Negative weight: 1 | Positive weight: 1
+
+Training model...
+Fitting 3 folds for each of 36 candidates, totalling 108 fits
+[CV] M1=500, M2=None, dropout=0.5, learning_rate=0.001 ...............
+[CV] M1=500, M2=None, dropout=0.5, learning_rate=0.001 ...............
+[CV] M1=500, M2=None, dropout=0.5, learning_rate=0.001 ...............
+[CV] M1=500, M2=None, dropout=0.5, learning_rate=0.0005 ..............
+[CV] M1=500, M2=None, dropout=0.5, learning_rate=0.0005 ..............
+[CV] M1=500, M2=None, dropout=0.5, learning_rate=0.0005 ..............
+[CV] M1=500, M2=None, dropout=0.5, learning_rate=0.0001 ..............
+[CV] M1=500, M2=None, dropout=0.5, learning_rate=0.0001 ..............
+[CV] M1=500, M2=None, dropout=0.5, learning_rate=0.0001 ..............
+
+########################################################################
+# End of output for job 105635.c009
+# Date: Thu Jun 28 15:35:58 PDT 2018
+########################################################################
+

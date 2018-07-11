@@ -1,0 +1,16 @@
+path=~/EarthNetworks/src/EN_GNN
+cd ~/EarthNetworks/src/EN_GNN
+
+jupyter nbconvert --to script "EarthNetworks.ipynb"
+
+i=1
+dir=$path/log
+while [[ -e $dir/$i ]] ; do
+    let i++
+done
+file=$dir/$i
+
+#PBS -N $i -o $file.o -e $file.e
+touch $file
+export PYTHONUNBUFFERED=1
+stdbuf -oL python EarthNetworks.py |& tee $file

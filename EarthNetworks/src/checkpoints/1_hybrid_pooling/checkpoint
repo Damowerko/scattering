@@ -1,0 +1,6 @@
+model_checkpoint_path: "/home/u8634/EarthNetworks/src/cnngs/../checkpoints/1_hybrid_pooling/model-51990"
+all_model_checkpoint_paths: "/home/u8634/EarthNetworks/src/cnngs/../checkpoints/1_hybrid_pooling/model-48000"
+all_model_checkpoint_paths: "/home/u8634/EarthNetworks/src/cnngs/../checkpoints/1_hybrid_pooling/model-49000"
+all_model_checkpoint_paths: "/home/u8634/EarthNetworks/src/cnngs/../checkpoints/1_hybrid_pooling/model-50000"
+all_model_checkpoint_paths: "/home/u8634/EarthNetworks/src/cnngs/../checkpoints/1_hybrid_pooling/model-51000"
+all_model_checkpoint_paths: "/home/u8634/EarthNetworks/src/cnngs/../checkpoints/1_hybrid_pooling/model-51990"

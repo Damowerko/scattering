@@ -1,0 +1,376 @@
+/glob/intel-python/python3/lib/python3.6/site-packages/sklearn/cross_validation.py:41: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
+  "This module will be removed in 0.20.", DeprecationWarning)
+/glob/intel-python/python3/lib/python3.6/site-packages/sklearn/grid_search.py:42: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. This module will be removed in 0.20.
+  DeprecationWarning)
+Setting up problem parameters... DONE
+Gathering data... Numbmer of datapoints: 5777
+Building graph support... DONE
+Running Neural Networks: BEGINNING
+ 
+Training model: np_3
+ 
+  architecture/L = 2
+  architecture/N = [25, 25, 25]
+CNNGS Architecture: np_3 (no-pooling)
+  input: M_0 = N = 25
+  l_1: gsconv_1
+    input dimension : M_0 = F_0 N_0 =  1 * 25 = 25
+    output dimension: M_1 = F_1 N_1 = 16 * 25 = 400
+    parameters: K_1 F_1 F_0 = 16 * 16 * 1 = 256
+  l_2: gsconv_2
+    input dimension : M_1 = F_1 N_1 = 16 * 25 = 400
+    output dimension: M_2 = F_2 N_2 = 16 * 25 = 400
+    parameters: K_2 F_2 F_1 = 16 * 16 * 16 = 4096
+  l_3: softmax
+    input dimension : M_2 = 400
+    output dimension: M_3 = 2
+    parameters: M_3 M_2 = 2 * 400 = 800
+  Total parameters = 5152
+ 
+2018-06-25 13:05:50.947153: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2018-06-25 13:05:50.947180: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-06-25 13:05:50.947185: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX512F instructions, but these are available on your machine and could speed up CPU computations.
+2018-06-25 13:05:50.947189: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+[np_3] step 500 / 5199 (epoch 9.62 / 100):
+  learning_rate = 9.91e-04, loss_average = 9.64e+05
+  validation accuracy: 96.19 (556 / 578), f1 (weighted): 94.50, loss: 8.92e+05
+  time: 1083s (wall 47s)
+[np_3] step 1000 / 5199 (epoch 19.23 / 100):
+  learning_rate = 9.81e-04, loss_average = 2.26e+05
+  validation accuracy: 96.02 (555 / 578), f1 (weighted): 94.41, loss: 2.88e+05
+  time: 2176s (wall 94s)
+[np_3] step 1500 / 5199 (epoch 28.85 / 100):
+  learning_rate = 9.72e-04, loss_average = 3.38e+05
+  validation accuracy: 91.87 (531 / 578), f1 (weighted): 93.22, loss: 2.34e+05
+  time: 3267s (wall 140s)
+2018-06-25 13:08:10.858177: E tensorflow/core/util/events_writer.cc:162] The events file /home/u8634/EarthNetworks/src/cnngs/../summaries/1_np_3/events.out.tfevents.1529957151.c009-n009 has disappeared.
+2018-06-25 13:08:10.858222: E tensorflow/core/util/events_writer.cc:131] Failed to flush 4 events to /home/u8634/EarthNetworks/src/cnngs/../summaries/1_np_3/events.out.tfevents.1529957151.c009-n009
+[np_3] step 2000 / 5199 (epoch 38.47 / 100):
+  learning_rate = 9.63e-04, loss_average = 2.87e+05
+  validation accuracy: 96.54 (558 / 578), f1 (weighted): 95.70, loss: 9.96e+04
+  time: 4373s (wall 187s)
+[np_3] step 2500 / 5199 (epoch 48.09 / 100):
+  learning_rate = 9.53e-04, loss_average = 1.17e+05
+  validation accuracy: 91.35 (528 / 578), f1 (weighted): 93.15, loss: 1.10e+05
+  time: 5473s (wall 233s)
+[np_3] step 3000 / 5199 (epoch 57.70 / 100):
+  learning_rate = 9.45e-04, loss_average = 7.17e+04
+  validation accuracy: 96.37 (557 / 578), f1 (weighted): 96.13, loss: 5.80e+04
+  time: 6565s (wall 279s)
+2018-06-25 13:10:30.298462: E tensorflow/core/util/events_writer.cc:162] The events file /home/u8634/EarthNetworks/src/cnngs/../summaries/1_np_3/events.out.tfevents.1529957151.c009-n009 has disappeared.
+2018-06-25 13:10:30.298502: E tensorflow/core/util/events_writer.cc:131] Failed to flush 7 events to /home/u8634/EarthNetworks/src/cnngs/../summaries/1_np_3/events.out.tfevents.1529957151.c009-n009
+[np_3] step 3500 / 5199 (epoch 67.32 / 100):
+  learning_rate = 9.35e-04, loss_average = 5.68e+05
+  validation accuracy: 96.89 (560 / 578), f1 (weighted): 96.53, loss: 1.26e+05
+  time: 7656s (wall 325s)
+[np_3] step 4000 / 5199 (epoch 76.94 / 100):
+  learning_rate = 9.27e-04, loss_average = 5.57e+04
+  validation accuracy: 96.19 (556 / 578), f1 (weighted): 96.28, loss: 3.34e+04
+  time: 8782s (wall 373s)
+[np_3] step 4500 / 5199 (epoch 86.56 / 100):
+  learning_rate = 9.18e-04, loss_average = 6.35e+04
+  validation accuracy: 96.89 (560 / 578), f1 (weighted): 96.28, loss: 5.56e+04
+  time: 9860s (wall 419s)
+2018-06-25 13:12:49.603531: E tensorflow/core/util/events_writer.cc:162] The events file /home/u8634/EarthNetworks/src/cnngs/../summaries/1_np_3/events.out.tfevents.1529957151.c009-n009 has disappeared.
+2018-06-25 13:12:49.603573: E tensorflow/core/util/events_writer.cc:131] Failed to flush 10 events to /home/u8634/EarthNetworks/src/cnngs/../summaries/1_np_3/events.out.tfevents.1529957151.c009-n009
+[np_3] step 5000 / 5199 (epoch 96.17 / 100):
+  learning_rate = 9.08e-04, loss_average = 5.76e+04
+  validation accuracy: 96.71 (559 / 578), f1 (weighted): 95.62, loss: 5.42e+04
+  time: 10980s (wall 466s)
+[np_3] step 5199 / 5199 (epoch 100.00 / 100):
+  learning_rate = 9.06e-04, loss_average = 9.64e+04
+/glob/intel-python/python3/lib/python3.6/site-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+  validation accuracy: 96.37 (557 / 578), f1 (weighted): 94.58, loss: 1.09e+05
+  time: 11426s (wall 485s)
+validation accuracy: peak = 96.89, mean = 95.52
+2018-06-25 13:13:56.889759: E tensorflow/core/util/events_writer.cc:162] The events file /home/u8634/EarthNetworks/src/cnngs/../summaries/1_np_3/events.out.tfevents.1529957151.c009-n009 has disappeared.
+2018-06-25 13:13:56.889801: E tensorflow/core/util/events_writer.cc:131] Failed to flush 12 events to /home/u8634/EarthNetworks/src/cnngs/../summaries/1_np_3/events.out.tfevents.1529957151.c009-n009
+2018-06-25 13:13:56.889845: E tensorflow/core/util/events_writer.cc:162] The events file /home/u8634/EarthNetworks/src/cnngs/../summaries/1_np_3/events.out.tfevents.1529957151.c009-n009 has disappeared.
+2018-06-25 13:13:56.889855: E tensorflow/core/util/events_writer.cc:131] Failed to flush 12 events to /home/u8634/EarthNetworks/src/cnngs/../summaries/1_np_3/events.out.tfevents.1529957151.c009-n009
+train accuracy: 96.35 (5009 / 5199), f1 (weighted): 94.68, loss: 1.17e+05
+time: 42s (wall 2s)
+test  accuracy: 96.37 (557 / 578), f1 (weighted): 94.58, loss: 1.09e+05
+time: 7s (wall 1s)
+ 
+Training model: selection_pooling
+ 
+  architecture/L = 2
+  architecture/N = [25, 25, 15]
+CNNGS Architecture: selection_pooling (selection)
+  input: M_0 = N = 25
+  l_1: gsconv_1
+    input dimension : M_0 = F_0 N_0 =  1 * 25 = 25
+    output dimension: M_1 = F_1 N_1 = 16 * 25 = 400
+    parameters: K_1 F_1 F_0 = 16 * 16 * 1 = 256
+  l_2: gsconv_2
+    input dimension : M_1 = F_1 N_1 = 16 * 25 = 400
+    output dimension: M_2 = F_2 N_2 = 16 * 15 = 240
+    parameters: K_2 F_2 F_1 = 16 * 16 * 16 = 4096
+  l_3: softmax
+    input dimension : M_2 = 240
+    output dimension: M_3 = 2
+    parameters: M_3 M_2 = 2 * 240 = 480
+  Total parameters = 4832
+ 
+[selection_pooling] step 500 / 5199 (epoch 9.62 / 100):
+  learning_rate = 9.91e-04, loss_average = 2.89e+03
+  validation accuracy: 96.37 (557 / 578), f1 (weighted): 94.58, loss: 4.27e+03
+  time: 1247s (wall 54s)
+[selection_pooling] step 1000 / 5199 (epoch 19.23 / 100):
+  learning_rate = 9.81e-04, loss_average = 6.80e+02
+  validation accuracy: 96.37 (557 / 578), f1 (weighted): 94.58, loss: 5.56e+02
+  time: 2500s (wall 107s)
+[selection_pooling] step 1500 / 5199 (epoch 28.85 / 100):
+  learning_rate = 9.72e-04, loss_average = 2.03e+02
+  validation accuracy: 96.37 (557 / 578), f1 (weighted): 94.90, loss: 1.13e+02
+  time: 3720s (wall 159s)
+2018-06-25 13:16:40.227604: E tensorflow/core/util/events_writer.cc:162] The events file /home/u8634/EarthNetworks/src/cnngs/../summaries/1_selection_pooling/events.out.tfevents.1529957641.c009-n009 has disappeared.
+2018-06-25 13:16:40.227647: E tensorflow/core/util/events_writer.cc:131] Failed to flush 4 events to /home/u8634/EarthNetworks/src/cnngs/../summaries/1_selection_pooling/events.out.tfevents.1529957641.c009-n009
+[selection_pooling] step 2000 / 5199 (epoch 38.47 / 100):
+  learning_rate = 9.63e-04, loss_average = 7.83e+01
+  validation accuracy: 96.37 (557 / 578), f1 (weighted): 94.58, loss: 6.98e+01
+  time: 4954s (wall 211s)
+[selection_pooling] step 2500 / 5199 (epoch 48.09 / 100):
+  learning_rate = 9.53e-04, loss_average = 3.49e+01
+  validation accuracy: 96.37 (557 / 578), f1 (weighted): 94.58, loss: 2.04e+01
+  time: 6228s (wall 265s)
+[selection_pooling] step 3000 / 5199 (epoch 57.70 / 100):
+  learning_rate = 9.45e-04, loss_average = 2.31e+02
+  validation accuracy: 96.37 (557 / 578), f1 (weighted): 94.58, loss: 1.09e+02
+  time: 7494s (wall 319s)
+2018-06-25 13:19:19.839269: E tensorflow/core/util/events_writer.cc:162] The events file /home/u8634/EarthNetworks/src/cnngs/../summaries/1_selection_pooling/events.out.tfevents.1529957641.c009-n009 has disappeared.
+2018-06-25 13:19:19.839312: E tensorflow/core/util/events_writer.cc:131] Failed to flush 7 events to /home/u8634/EarthNetworks/src/cnngs/../summaries/1_selection_pooling/events.out.tfevents.1529957641.c009-n009
+[selection_pooling] step 3500 / 5199 (epoch 67.32 / 100):
+  learning_rate = 9.35e-04, loss_average = 7.89e+00
+  validation accuracy: 96.37 (557 / 578), f1 (weighted): 94.58, loss: 3.69e+00
+  time: 8754s (wall 372s)
+[selection_pooling] step 4000 / 5199 (epoch 76.94 / 100):
+  learning_rate = 9.27e-04, loss_average = 2.72e+02
+  validation accuracy: 96.37 (557 / 578), f1 (weighted): 94.58, loss: 1.94e+02
+  time: 9984s (wall 424s)
+[selection_pooling] step 4500 / 5199 (epoch 86.56 / 100):
+  learning_rate = 9.18e-04, loss_average = 2.32e+01
+  validation accuracy: 96.37 (557 / 578), f1 (weighted): 94.58, loss: 3.72e+01
+  time: 11219s (wall 476s)
+2018-06-25 13:21:57.182821: E tensorflow/core/util/events_writer.cc:162] The events file /home/u8634/EarthNetworks/src/cnngs/../summaries/1_selection_pooling/events.out.tfevents.1529957641.c009-n009 has disappeared.
+2018-06-25 13:21:57.182861: E tensorflow/core/util/events_writer.cc:131] Failed to flush 10 events to /home/u8634/EarthNetworks/src/cnngs/../summaries/1_selection_pooling/events.out.tfevents.1529957641.c009-n009
+[selection_pooling] step 5000 / 5199 (epoch 96.17 / 100):
+  learning_rate = 9.08e-04, loss_average = 6.44e+00
+  validation accuracy: 92.39 (534 / 578), f1 (weighted): 93.38, loss: 2.66e+00
+  time: 12433s (wall 527s)
+[selection_pooling] step 5199 / 5199 (epoch 100.00 / 100):
+  learning_rate = 9.06e-04, loss_average = 6.48e+01
+  validation accuracy: 96.37 (557 / 578), f1 (weighted): 94.58, loss: 4.52e+01
+  time: 12949s (wall 550s)
+validation accuracy: peak = 96.37, mean = 95.97
+2018-06-25 13:23:11.461858: E tensorflow/core/util/events_writer.cc:162] The events file /home/u8634/EarthNetworks/src/cnngs/../summaries/1_selection_pooling/events.out.tfevents.1529957641.c009-n009 has disappeared.
+2018-06-25 13:23:11.461904: E tensorflow/core/util/events_writer.cc:131] Failed to flush 12 events to /home/u8634/EarthNetworks/src/cnngs/../summaries/1_selection_pooling/events.out.tfevents.1529957641.c009-n009
+2018-06-25 13:23:11.462125: E tensorflow/core/util/events_writer.cc:162] The events file /home/u8634/EarthNetworks/src/cnngs/../summaries/1_selection_pooling/events.out.tfevents.1529957641.c009-n009 has disappeared.
+2018-06-25 13:23:11.462162: E tensorflow/core/util/events_writer.cc:131] Failed to flush 12 events to /home/u8634/EarthNetworks/src/cnngs/../summaries/1_selection_pooling/events.out.tfevents.1529957641.c009-n009
+train accuracy: 96.21 (5002 / 5199), f1 (weighted): 94.35, loss: 4.81e+01
+time: 47s (wall 2s)
+test  accuracy: 96.37 (557 / 578), f1 (weighted): 94.58, loss: 4.52e+01
+time: 8s (wall 1s)
+ 
+Training model: aggregation_pooling
+ 
+  architecture/L = 2
+  architecture/N = [25, 6, 1]
+CNNGS Architecture: aggregation_pooling (aggregation)
+  input: M_0 = N = 25
+  l_1: gsconv_1
+    input dimension : M_0 = F_0 N_0 =  1 * 25 = 25
+    output dimension: M_1 = F_1 N_1 = 16 *  6 = 96
+    parameters: K_1 F_1 F_0 = 16 * 16 * 1 = 256
+  l_2: gsconv_2
+    input dimension : M_1 = F_1 N_1 = 16 *  6 = 96
+    output dimension: M_2 = F_2 N_2 = 16 *  1 = 16
+    parameters: K_2 F_2 F_1 = 16 * 16 * 16 = 4096
+  l_3: softmax
+    input dimension : M_2 = 16
+    output dimension: M_3 = 2
+    parameters: M_3 M_2 = 2 * 16 = 32
+  Total parameters = 4384
+ 
+[aggregation_pooling] step 500 / 5199 (epoch 9.62 / 100):
+  learning_rate = 9.91e-04, loss_average = 1.47e-01
+  validation accuracy: 96.37 (557 / 578), f1 (weighted): 94.58, loss: 1.60e-01
+  time: 441s (wall 19s)
+[aggregation_pooling] step 1000 / 5199 (epoch 19.23 / 100):
+  learning_rate = 9.81e-04, loss_average = 1.40e-01
+  validation accuracy: 96.37 (557 / 578), f1 (weighted): 94.58, loss: 1.67e-01
+  time: 882s (wall 38s)
+[aggregation_pooling] step 1500 / 5199 (epoch 28.85 / 100):
+  learning_rate = 9.72e-04, loss_average = 1.45e-01
+  validation accuracy: 96.37 (557 / 578), f1 (weighted): 94.58, loss: 1.49e-01
+  time: 1340s (wall 57s)
+[aggregation_pooling] step 2000 / 5199 (epoch 38.47 / 100):
+  learning_rate = 9.63e-04, loss_average = 1.32e-01
+  validation accuracy: 96.37 (557 / 578), f1 (weighted): 94.58, loss: 1.58e-01
+  time: 1763s (wall 75s)
+[aggregation_pooling] step 2500 / 5199 (epoch 48.09 / 100):
+  learning_rate = 9.53e-04, loss_average = 1.25e-01
+  validation accuracy: 93.25 (539 / 578), f1 (weighted): 94.01, loss: 1.97e-01
+  time: 2209s (wall 94s)
+[aggregation_pooling] step 3000 / 5199 (epoch 57.70 / 100):
+  learning_rate = 9.45e-04, loss_average = 1.24e-01
+  validation accuracy: 96.37 (557 / 578), f1 (weighted): 94.58, loss: 1.38e-01
+  time: 2647s (wall 113s)
+[aggregation_pooling] step 3500 / 5199 (epoch 67.32 / 100):
+  learning_rate = 9.35e-04, loss_average = 1.10e-01
+  validation accuracy: 96.37 (557 / 578), f1 (weighted): 94.58, loss: 1.88e-01
+  time: 3090s (wall 132s)
+2018-06-25 13:25:26.631541: E tensorflow/core/util/events_writer.cc:162] The events file /home/u8634/EarthNetworks/src/cnngs/../summaries/1_aggregation_pooling/events.out.tfevents.1529958195.c009-n009 has disappeared.
+2018-06-25 13:25:26.631582: E tensorflow/core/util/events_writer.cc:131] Failed to flush 8 events to /home/u8634/EarthNetworks/src/cnngs/../summaries/1_aggregation_pooling/events.out.tfevents.1529958195.c009-n009
+[aggregation_pooling] step 4000 / 5199 (epoch 76.94 / 100):
+  learning_rate = 9.27e-04, loss_average = 1.50e-01
+  validation accuracy: 96.37 (557 / 578), f1 (weighted): 95.57, loss: 1.43e-01
+  time: 3540s (wall 151s)
+[aggregation_pooling] step 4500 / 5199 (epoch 86.56 / 100):
+  learning_rate = 9.18e-04, loss_average = 1.29e-01
+  validation accuracy: 96.37 (557 / 578), f1 (weighted): 94.58, loss: 1.66e-01
+  time: 3986s (wall 170s)
+[aggregation_pooling] step 5000 / 5199 (epoch 96.17 / 100):
+  learning_rate = 9.08e-04, loss_average = 1.04e-01
+  validation accuracy: 96.19 (556 / 578), f1 (weighted): 95.76, loss: 1.48e-01
+  time: 4437s (wall 189s)
+[aggregation_pooling] step 5199 / 5199 (epoch 100.00 / 100):
+  learning_rate = 9.06e-04, loss_average = 9.30e-02
+  validation accuracy: 96.37 (557 / 578), f1 (weighted): 94.90, loss: 1.34e-01
+  time: 4612s (wall 196s)
+validation accuracy: peak = 96.37, mean = 96.04
+2018-06-25 13:26:31.701064: E tensorflow/core/util/events_writer.cc:162] The events file /home/u8634/EarthNetworks/src/cnngs/../summaries/1_aggregation_pooling/events.out.tfevents.1529958195.c009-n009 has disappeared.
+2018-06-25 13:26:31.701108: E tensorflow/core/util/events_writer.cc:131] Failed to flush 12 events to /home/u8634/EarthNetworks/src/cnngs/../summaries/1_aggregation_pooling/events.out.tfevents.1529958195.c009-n009
+2018-06-25 13:26:31.701161: E tensorflow/core/util/events_writer.cc:162] The events file /home/u8634/EarthNetworks/src/cnngs/../summaries/1_aggregation_pooling/events.out.tfevents.1529958195.c009-n009 has disappeared.
+2018-06-25 13:26:31.701176: E tensorflow/core/util/events_writer.cc:131] Failed to flush 12 events to /home/u8634/EarthNetworks/src/cnngs/../summaries/1_aggregation_pooling/events.out.tfevents.1529958195.c009-n009
+train accuracy: 96.69 (5027 / 5199), f1 (weighted): 95.56, loss: 9.82e-02
+time: 15s (wall 1s)
+test  accuracy: 96.37 (557 / 578), f1 (weighted): 94.90, loss: 1.34e-01
+time: 5s (wall 0s)
+ 
+Training model: hybrid_pooling
+ 
+  architecture/L = 2
+  architecture/N = [25, 25, 10]
+CNNGS Architecture: hybrid_pooling (hybrid)
+  input: M_0 = N = 25
+  l_1: gsconv_1
+    input dimension : M_0 = F_0 N_0 =  1 * 25 = 25
+    output dimension: M_1 = F_1 N_1 = 16 * 25 = 400
+    parameters_1 detail:
+      parameters_(1,1): K_(1,1) F_(1,1) F_(1,0) = 8 * 8 * 1 = 64
+      parameters_(1,2): K_(1,2) F_(1,2) F_(1,1) = 8 * 16 * 8 = 1024
+    parameters = parameters_1 N_1 = 1088 * 25 = 27200
+  l_2: gsconv_2
+    input dimension : M_1 = F_1 N_1 = 16 * 25 = 400
+    output dimension: M_2 = F_2 N_2 = 16 * 10 = 160
+    parameters_2 detail:
+      parameters_(2,1): K_(2,1) F_(2,1) F_(2,0) = 8 * 8 * 16 = 1024
+      parameters_(2,2): K_(2,2) F_(2,2) F_(2,1) = 8 * 16 * 8 = 1024
+    parameters = parameters_2 N_2 = 2048 * 10 = 20480
+  l_3: softmax
+    input dimension : M_2 = 160
+    output dimension: M_3 = 2
+    parameters: M_3 M_2 = 2 * 160 = 320
+  Total parameters = 48000
+ 
+[hybrid_pooling] step 500 / 5199 (epoch 9.62 / 100):
+  learning_rate = 9.91e-04, loss_average = 1.01e-01
+  validation accuracy: 95.33 (551 / 578), f1 (weighted): 95.27, loss: 1.40e-01
+  time: 3957s (wall 178s)
+2018-06-25 13:29:41.512322: E tensorflow/core/util/events_writer.cc:162] The events file /home/u8634/EarthNetworks/src/cnngs/../summaries/1_hybrid_pooling/events.out.tfevents.1529958405.c009-n009 has disappeared.
+2018-06-25 13:29:41.512368: E tensorflow/core/util/events_writer.cc:131] Failed to flush 2 events to /home/u8634/EarthNetworks/src/cnngs/../summaries/1_hybrid_pooling/events.out.tfevents.1529958405.c009-n009
+[hybrid_pooling] step 1000 / 5199 (epoch 19.23 / 100):
+  learning_rate = 9.81e-04, loss_average = 7.81e-02
+  validation accuracy: 96.54 (558 / 578), f1 (weighted): 95.00, loss: 1.61e-01
+  time: 7853s (wall 347s)
+2018-06-25 13:32:28.282451: E tensorflow/core/util/events_writer.cc:162] The events file /home/u8634/EarthNetworks/src/cnngs/../summaries/1_hybrid_pooling/events.out.tfevents.1529958405.c009-n009 has disappeared.
+2018-06-25 13:32:28.282483: E tensorflow/core/util/events_writer.cc:131] Failed to flush 3 events to /home/u8634/EarthNetworks/src/cnngs/../summaries/1_hybrid_pooling/events.out.tfevents.1529958405.c009-n009
+[hybrid_pooling] step 1500 / 5199 (epoch 28.85 / 100):
+  learning_rate = 9.72e-04, loss_average = 6.05e-02
+  validation accuracy: 96.71 (559 / 578), f1 (weighted): 95.62, loss: 1.22e-01
+  time: 11852s (wall 519s)
+2018-06-25 13:35:20.529758: E tensorflow/core/util/events_writer.cc:162] The events file /home/u8634/EarthNetworks/src/cnngs/../summaries/1_hybrid_pooling/events.out.tfevents.1529958405.c009-n009 has disappeared.
+2018-06-25 13:35:20.529792: E tensorflow/core/util/events_writer.cc:131] Failed to flush 4 events to /home/u8634/EarthNetworks/src/cnngs/../summaries/1_hybrid_pooling/events.out.tfevents.1529958405.c009-n009
+[hybrid_pooling] step 2000 / 5199 (epoch 38.47 / 100):
+  learning_rate = 9.63e-04, loss_average = 5.87e-02
+  validation accuracy: 96.89 (560 / 578), f1 (weighted): 95.74, loss: 1.49e-01
+  time: 15779s (wall 687s)
+2018-06-25 13:38:09.165875: E tensorflow/core/util/events_writer.cc:162] The events file /home/u8634/EarthNetworks/src/cnngs/../summaries/1_hybrid_pooling/events.out.tfevents.1529958405.c009-n009 has disappeared.
+2018-06-25 13:38:09.165935: E tensorflow/core/util/events_writer.cc:131] Failed to flush 5 events to /home/u8634/EarthNetworks/src/cnngs/../summaries/1_hybrid_pooling/events.out.tfevents.1529958405.c009-n009
+[hybrid_pooling] step 2500 / 5199 (epoch 48.09 / 100):
+  learning_rate = 9.53e-04, loss_average = 6.39e-02
+  validation accuracy: 96.89 (560 / 578), f1 (weighted): 96.13, loss: 1.16e-01
+  time: 19567s (wall 850s)
+2018-06-25 13:40:51.430448: E tensorflow/core/util/events_writer.cc:162] The events file /home/u8634/EarthNetworks/src/cnngs/../summaries/1_hybrid_pooling/events.out.tfevents.1529958405.c009-n009 has disappeared.
+2018-06-25 13:40:51.430479: E tensorflow/core/util/events_writer.cc:131] Failed to flush 6 events to /home/u8634/EarthNetworks/src/cnngs/../summaries/1_hybrid_pooling/events.out.tfevents.1529958405.c009-n009
+[hybrid_pooling] step 3000 / 5199 (epoch 57.70 / 100):
+  learning_rate = 9.45e-04, loss_average = 5.17e-02
+  validation accuracy: 95.85 (554 / 578), f1 (weighted): 95.85, loss: 1.25e-01
+  time: 23543s (wall 1021s)
+2018-06-25 13:43:42.077765: E tensorflow/core/util/events_writer.cc:162] The events file /home/u8634/EarthNetworks/src/cnngs/../summaries/1_hybrid_pooling/events.out.tfevents.1529958405.c009-n009 has disappeared.
+2018-06-25 13:43:42.077825: E tensorflow/core/util/events_writer.cc:131] Failed to flush 7 events to /home/u8634/EarthNetworks/src/cnngs/../summaries/1_hybrid_pooling/events.out.tfevents.1529958405.c009-n009
+[hybrid_pooling] step 3500 / 5199 (epoch 67.32 / 100):
+  learning_rate = 9.35e-04, loss_average = 5.06e-02
+  validation accuracy: 96.54 (558 / 578), f1 (weighted): 96.01, loss: 1.28e-01
+  time: 27403s (wall 1186s)
+2018-06-25 13:46:27.467334: E tensorflow/core/util/events_writer.cc:162] The events file /home/u8634/EarthNetworks/src/cnngs/../summaries/1_hybrid_pooling/events.out.tfevents.1529958405.c009-n009 has disappeared.
+2018-06-25 13:46:27.467365: E tensorflow/core/util/events_writer.cc:131] Failed to flush 8 events to /home/u8634/EarthNetworks/src/cnngs/../summaries/1_hybrid_pooling/events.out.tfevents.1529958405.c009-n009
+[hybrid_pooling] step 4000 / 5199 (epoch 76.94 / 100):
+  learning_rate = 9.27e-04, loss_average = 4.77e-02
+  validation accuracy: 95.85 (554 / 578), f1 (weighted): 95.94, loss: 1.35e-01
+  time: 31219s (wall 1350s)
+2018-06-25 13:49:11.433756: E tensorflow/core/util/events_writer.cc:162] The events file /home/u8634/EarthNetworks/src/cnngs/../summaries/1_hybrid_pooling/events.out.tfevents.1529958405.c009-n009 has disappeared.
+2018-06-25 13:49:11.433786: E tensorflow/core/util/events_writer.cc:131] Failed to flush 9 events to /home/u8634/EarthNetworks/src/cnngs/../summaries/1_hybrid_pooling/events.out.tfevents.1529958405.c009-n009
+[hybrid_pooling] step 4500 / 5199 (epoch 86.56 / 100):
+  learning_rate = 9.18e-04, loss_average = 3.72e-02
+  validation accuracy: 96.02 (555 / 578), f1 (weighted): 95.76, loss: 1.51e-01
+  time: 35354s (wall 1527s)
+2018-06-25 13:52:08.615068: E tensorflow/core/util/events_writer.cc:162] The events file /home/u8634/EarthNetworks/src/cnngs/../summaries/1_hybrid_pooling/events.out.tfevents.1529958405.c009-n009 has disappeared.
+2018-06-25 13:52:08.615123: E tensorflow/core/util/events_writer.cc:131] Failed to flush 10 events to /home/u8634/EarthNetworks/src/cnngs/../summaries/1_hybrid_pooling/events.out.tfevents.1529958405.c009-n009
+[hybrid_pooling] step 5000 / 5199 (epoch 96.17 / 100):
+  learning_rate = 9.08e-04, loss_average = 1.61e-02
+  validation accuracy: 97.58 (564 / 578), f1 (weighted): 96.99, loss: 1.64e-01
+  time: 39147s (wall 1690s)
+2018-06-25 13:54:51.535834: E tensorflow/core/util/events_writer.cc:162] The events file /home/u8634/EarthNetworks/src/cnngs/../summaries/1_hybrid_pooling/events.out.tfevents.1529958405.c009-n009 has disappeared.
+2018-06-25 13:54:51.535867: E tensorflow/core/util/events_writer.cc:131] Failed to flush 11 events to /home/u8634/EarthNetworks/src/cnngs/../summaries/1_hybrid_pooling/events.out.tfevents.1529958405.c009-n009
+[hybrid_pooling] step 5199 / 5199 (epoch 100.00 / 100):
+  learning_rate = 9.06e-04, loss_average = 4.92e-02
+  validation accuracy: 96.37 (557 / 578), f1 (weighted): 95.74, loss: 2.18e-01
+  time: 40743s (wall 1762s)
+validation accuracy: peak = 97.58, mean = 96.52
+2018-06-25 13:56:07.690624: E tensorflow/core/util/events_writer.cc:162] The events file /home/u8634/EarthNetworks/src/cnngs/../summaries/1_hybrid_pooling/events.out.tfevents.1529958405.c009-n009 has disappeared.
+2018-06-25 13:56:07.690680: E tensorflow/core/util/events_writer.cc:131] Failed to flush 12 events to /home/u8634/EarthNetworks/src/cnngs/../summaries/1_hybrid_pooling/events.out.tfevents.1529958405.c009-n009
+2018-06-25 13:56:07.690778: E tensorflow/core/util/events_writer.cc:162] The events file /home/u8634/EarthNetworks/src/cnngs/../summaries/1_hybrid_pooling/events.out.tfevents.1529958405.c009-n009 has disappeared.
+2018-06-25 13:56:07.690793: E tensorflow/core/util/events_writer.cc:131] Failed to flush 12 events to /home/u8634/EarthNetworks/src/cnngs/../summaries/1_hybrid_pooling/events.out.tfevents.1529958405.c009-n009
+train accuracy: 98.33 (5112 / 5199), f1 (weighted): 98.22, loss: 5.88e-02
+time: 192s (wall 11s)
+test  accuracy: 98.79 (571 / 578), f1 (weighted): 98.85, loss: 5.37e-02
+time: 41s (wall 4s)
+ 
+Showing results...
+ 
+    {n = 25, norm-Laplacian, num_epochs = 100, batch_size = 100, 
+     reg = 0, dropout = 0.5, momentum = 0
+     ADAM, learning_rate = 0.001}
+ 
+Region: NYC
+    aggregation_pooling = {F = [16, 16], K = [16, 16], M = [2]}
+    hybrid_pooling = {F = [[8, 16], [8, 16]], K = [[8, 8], [8, 8]], M = [2]}
+    np_3 = {F = [16, 16], K = [16, 16], M = [2]}
+    selection_pooling = {F = [16, 16], K = [16, 16], M = [2]}
+ 
+    Results:
+      accuracy        F1        parameters    time [ms]  name
+    test  train   test  train   
+    96.37 96.69   94.90 95.56      4384         38       aggregation_pooling
+    98.79 98.33   98.85 98.22     48000        340       hybrid_pooling
+    96.37 96.35   94.58 94.68      5152         93       np_3
+    96.37 96.21   94.58 94.35      4832        106       selection_pooling
+ 
+ 
+Clustering graph sizes:
+S_c[0]: 32
+S_c[1]: 16
+S_c[2]: 8

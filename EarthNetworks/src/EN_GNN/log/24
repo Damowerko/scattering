@@ -1,0 +1,3437 @@
+/glob/intel-python/python3/lib/python3.6/site-packages/h5py/__init__.py:34: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+/glob/intel-python/python3/lib/python3.6/site-packages/sklearn/cross_validation.py:41: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
+  "This module will be removed in 0.20.", DeprecationWarning)
+/glob/intel-python/python3/lib/python3.6/site-packages/sklearn/grid_search.py:42: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. This module will be removed in 0.20.
+  DeprecationWarning)
+Setting up problem parameters... DONE
+Gathering data... Numbmer of datapoints: 5777
+Building graph support... DONE
+Running Neural Networks: BEGINNING
+ 
+Training model: c_cheb_a
+ 
+  architecture/L = 2
+  architecture/N = [28, 14, 7]
+CNNGS Architecture: c_cheb_a (clustering)
+  input: M_0 = N = 28
+  l_1: gsconv_1
+    input dimension : M_0 = F_0 N_0 =  1 * 28 = 28
+    output dimension: M_1 = F_1 N_1 = 14 * 14 = 196
+    parameters: K_1 F_1 F_0 = 7 * 14 * 1 = 98
+  l_2: gsconv_2
+    input dimension : M_1 = F_1 N_1 = 14 * 14 = 196
+    output dimension: M_2 = F_2 N_2 = 28 *  7 = 196
+    parameters: K_2 F_2 F_1 = 14 * 28 * 14 = 5488
+  l_3: softmax
+    input dimension : M_2 = 196
+    output dimension: M_3 = 2
+    parameters: M_3 M_2 = 2 * 196 = 392
+  Total parameters = 5978
+ 
+2018-06-29 00:28:32.840424: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+[c_cheb_a] step 500 / 81234 (epoch 3.08 / 500):
+  learning_rate = 9.97e-04, loss_average = 1.42e+05
+  validation accuracy: 72.32 (418 / 578), f1 (binary): 21.57, loss: 2.45e+05
+  time: 28s (wall 5s)
+[c_cheb_a] step 1000 / 81234 (epoch 6.16 / 500):
+  learning_rate = 9.94e-04, loss_average = 2.33e+04
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 31.25, loss: 1.84e+04
+  time: 57s (wall 11s)
+[c_cheb_a] step 1500 / 81234 (epoch 9.23 / 500):
+  learning_rate = 9.91e-04, loss_average = 1.97e+04
+  validation accuracy: 87.37 (505 / 578), f1 (binary): 34.23, loss: 2.30e+04
+  time: 85s (wall 16s)
+[c_cheb_a] step 2000 / 81234 (epoch 12.31 / 500):
+  learning_rate = 9.88e-04, loss_average = 1.41e+04
+  validation accuracy: 94.12 (544 / 578), f1 (binary): 45.16, loss: 1.06e+04
+  time: 113s (wall 21s)
+[c_cheb_a] step 2500 / 81234 (epoch 15.39 / 500):
+  learning_rate = 9.85e-04, loss_average = 2.36e+04
+  validation accuracy: 95.33 (551 / 578), f1 (binary): 22.86, loss: 1.70e+04
+  time: 142s (wall 27s)
+[c_cheb_a] step 3000 / 81234 (epoch 18.47 / 500):
+  learning_rate = 9.82e-04, loss_average = 1.92e+04
+/glob/intel-python/python3/lib/python3.6/site-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 3.69e+04
+  time: 170s (wall 32s)
+[c_cheb_a] step 3500 / 81234 (epoch 21.54 / 500):
+  learning_rate = 9.79e-04, loss_average = 1.35e+04
+  validation accuracy: 92.21 (533 / 578), f1 (binary): 36.62, loss: 1.37e+04
+  time: 198s (wall 37s)
+[c_cheb_a] step 4000 / 81234 (epoch 24.62 / 500):
+  learning_rate = 9.76e-04, loss_average = 1.44e+04
+  validation accuracy: 95.50 (552 / 578), f1 (binary): 27.78, loss: 1.19e+04
+  time: 226s (wall 42s)
+[c_cheb_a] step 4500 / 81234 (epoch 27.70 / 500):
+  learning_rate = 9.73e-04, loss_average = 7.77e+03
+  validation accuracy: 96.37 (557 / 578), f1 (binary): 51.16, loss: 8.09e+03
+  time: 254s (wall 47s)
+[c_cheb_a] step 5000 / 81234 (epoch 30.78 / 500):
+  learning_rate = 9.70e-04, loss_average = 4.90e+03
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 42.42, loss: 3.13e+03
+  time: 282s (wall 52s)
+[c_cheb_a] step 5500 / 81234 (epoch 33.85 / 500):
+  learning_rate = 9.68e-04, loss_average = 3.04e+03
+  validation accuracy: 88.06 (509 / 578), f1 (binary): 35.51, loss: 8.09e+03
+  time: 310s (wall 58s)
+[c_cheb_a] step 6000 / 81234 (epoch 36.93 / 500):
+  learning_rate = 9.65e-04, loss_average = 3.17e+04
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 3.36e+04
+  time: 338s (wall 63s)
+[c_cheb_a] step 6500 / 81234 (epoch 40.01 / 500):
+  learning_rate = 9.61e-04, loss_average = 5.96e+03
+  validation accuracy: 95.50 (552 / 578), f1 (binary): 0.00, loss: 6.49e+03
+  time: 366s (wall 68s)
+[c_cheb_a] step 7000 / 81234 (epoch 43.09 / 500):
+  learning_rate = 9.58e-04, loss_average = 2.98e+03
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 44.44, loss: 2.17e+03
+  time: 395s (wall 73s)
+[c_cheb_a] step 7500 / 81234 (epoch 46.16 / 500):
+  learning_rate = 9.55e-04, loss_average = 3.28e+03
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 5.81e+03
+  time: 423s (wall 78s)
+[c_cheb_a] step 8000 / 81234 (epoch 49.24 / 500):
+  learning_rate = 9.52e-04, loss_average = 3.27e+03
+  validation accuracy: 94.64 (547 / 578), f1 (binary): 52.31, loss: 1.58e+03
+  time: 451s (wall 84s)
+[c_cheb_a] step 8500 / 81234 (epoch 52.32 / 500):
+  learning_rate = 9.49e-04, loss_average = 3.37e+03
+  validation accuracy: 93.77 (542 / 578), f1 (binary): 37.93, loss: 2.17e+03
+  time: 479s (wall 89s)
+[c_cheb_a] step 9000 / 81234 (epoch 55.40 / 500):
+  learning_rate = 9.46e-04, loss_average = 1.11e+03
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 14.81, loss: 1.50e+03
+  time: 507s (wall 94s)
+[c_cheb_a] step 9500 / 81234 (epoch 58.47 / 500):
+  learning_rate = 9.44e-04, loss_average = 2.25e+03
+  validation accuracy: 95.67 (553 / 578), f1 (binary): 52.83, loss: 7.27e+02
+  time: 535s (wall 99s)
+[c_cheb_a] step 10000 / 81234 (epoch 61.55 / 500):
+  learning_rate = 9.41e-04, loss_average = 2.02e+03
+  validation accuracy: 95.50 (552 / 578), f1 (binary): 7.14, loss: 1.56e+03
+  time: 563s (wall 104s)
+[c_cheb_a] step 10500 / 81234 (epoch 64.63 / 500):
+  learning_rate = 9.38e-04, loss_average = 2.27e+03
+  validation accuracy: 81.49 (471 / 578), f1 (binary): 29.14, loss: 7.11e+03
+  time: 591s (wall 109s)
+[c_cheb_a] step 11000 / 81234 (epoch 67.71 / 500):
+  learning_rate = 9.35e-04, loss_average = 1.81e+03
+  validation accuracy: 87.72 (507 / 578), f1 (binary): 32.38, loss: 3.07e+03
+  time: 619s (wall 114s)
+[c_cheb_a] step 11500 / 81234 (epoch 70.78 / 500):
+  learning_rate = 9.32e-04, loss_average = 1.38e+03
+  validation accuracy: 92.21 (533 / 578), f1 (binary): 32.84, loss: 1.01e+03
+  time: 647s (wall 120s)
+[c_cheb_a] step 12000 / 81234 (epoch 73.86 / 500):
+  learning_rate = 9.30e-04, loss_average = 1.25e+03
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 14.81, loss: 1.43e+03
+  time: 675s (wall 125s)
+[c_cheb_a] step 12500 / 81234 (epoch 76.94 / 500):
+  learning_rate = 9.27e-04, loss_average = 1.88e+03
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 8.33, loss: 1.78e+03
+  time: 703s (wall 130s)
+[c_cheb_a] step 13000 / 81234 (epoch 80.02 / 500):
+  learning_rate = 9.23e-04, loss_average = 4.84e+02
+  validation accuracy: 93.94 (543 / 578), f1 (binary): 31.37, loss: 3.15e+02
+  time: 731s (wall 135s)
+[c_cheb_a] step 13500 / 81234 (epoch 83.09 / 500):
+  learning_rate = 9.20e-04, loss_average = 4.53e+02
+  validation accuracy: 94.81 (548 / 578), f1 (binary): 28.57, loss: 4.56e+02
+  time: 759s (wall 140s)
+[c_cheb_a] step 14000 / 81234 (epoch 86.17 / 500):
+  learning_rate = 9.18e-04, loss_average = 1.96e+02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 46.51, loss: 1.30e+02
+  time: 788s (wall 146s)
+[c_cheb_a] step 14500 / 81234 (epoch 89.25 / 500):
+  learning_rate = 9.15e-04, loss_average = 6.33e+02
+  validation accuracy: 95.85 (554 / 578), f1 (binary): 0.00, loss: 8.46e+02
+  time: 816s (wall 151s)
+[c_cheb_a] step 15000 / 81234 (epoch 92.33 / 500):
+  learning_rate = 9.12e-04, loss_average = 1.15e+02
+  validation accuracy: 94.64 (547 / 578), f1 (binary): 45.61, loss: 9.49e+01
+  time: 844s (wall 156s)
+[c_cheb_a] step 15500 / 81234 (epoch 95.40 / 500):
+  learning_rate = 9.09e-04, loss_average = 1.13e+02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 2.47e+02
+  time: 872s (wall 161s)
+[c_cheb_a] step 16000 / 81234 (epoch 98.48 / 500):
+  learning_rate = 9.07e-04, loss_average = 2.03e+02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 7.35e+02
+  time: 900s (wall 166s)
+[c_cheb_a] step 16500 / 81234 (epoch 101.56 / 500):
+  learning_rate = 9.04e-04, loss_average = 2.61e+02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.68e+02
+  time: 928s (wall 172s)
+[c_cheb_a] step 17000 / 81234 (epoch 104.64 / 500):
+  learning_rate = 9.01e-04, loss_average = 1.52e+02
+  validation accuracy: 78.55 (454 / 578), f1 (binary): 24.39, loss: 1.73e+02
+  time: 956s (wall 177s)
+[c_cheb_a] step 17500 / 81234 (epoch 107.71 / 500):
+  learning_rate = 8.98e-04, loss_average = 6.91e+01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.05e+02
+  time: 984s (wall 182s)
+[c_cheb_a] step 18000 / 81234 (epoch 110.79 / 500):
+  learning_rate = 8.96e-04, loss_average = 1.04e+02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.11e+02
+  time: 1012s (wall 187s)
+[c_cheb_a] step 18500 / 81234 (epoch 113.87 / 500):
+  learning_rate = 8.93e-04, loss_average = 5.72e+01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 9.47e+01
+  time: 1040s (wall 192s)
+[c_cheb_a] step 19000 / 81234 (epoch 116.95 / 500):
+  learning_rate = 8.90e-04, loss_average = 1.99e+01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 8.00, loss: 1.86e+01
+  time: 1068s (wall 197s)
+[c_cheb_a] step 19500 / 81234 (epoch 120.02 / 500):
+  learning_rate = 8.87e-04, loss_average = 7.05e+02
+  validation accuracy: 94.29 (545 / 578), f1 (binary): 32.65, loss: 4.52e+02
+  time: 1096s (wall 203s)
+[c_cheb_a] step 20000 / 81234 (epoch 123.10 / 500):
+  learning_rate = 8.84e-04, loss_average = 6.25e+02
+  validation accuracy: 91.18 (527 / 578), f1 (binary): 26.09, loss: 3.47e+02
+  time: 1124s (wall 208s)
+[c_cheb_a] step 20500 / 81234 (epoch 126.18 / 500):
+  learning_rate = 8.82e-04, loss_average = 8.60e+01
+  validation accuracy: 94.98 (549 / 578), f1 (binary): 21.62, loss: 8.08e+01
+  time: 1152s (wall 213s)
+[c_cheb_a] step 21000 / 81234 (epoch 129.26 / 500):
+  learning_rate = 8.79e-04, loss_average = 6.72e+01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 8.00, loss: 1.85e+02
+  time: 1180s (wall 218s)
+[c_cheb_a] step 21500 / 81234 (epoch 132.33 / 500):
+  learning_rate = 8.76e-04, loss_average = 2.13e+02
+  validation accuracy: 90.48 (523 / 578), f1 (binary): 32.10, loss: 1.61e+02
+  time: 1209s (wall 223s)
+[c_cheb_a] step 22000 / 81234 (epoch 135.41 / 500):
+  learning_rate = 8.74e-04, loss_average = 4.90e+01
+  validation accuracy: 93.77 (542 / 578), f1 (binary): 30.77, loss: 6.65e+01
+  time: 1237s (wall 228s)
+[c_cheb_a] step 22500 / 81234 (epoch 138.49 / 500):
+  learning_rate = 8.71e-04, loss_average = 7.01e+01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.05e+02
+  time: 1265s (wall 233s)
+[c_cheb_a] step 23000 / 81234 (epoch 141.57 / 500):
+  learning_rate = 8.68e-04, loss_average = 3.46e+01
+  validation accuracy: 95.67 (553 / 578), f1 (binary): 13.79, loss: 2.48e+01
+  time: 1293s (wall 239s)
+[c_cheb_a] step 23500 / 81234 (epoch 144.64 / 500):
+  learning_rate = 8.66e-04, loss_average = 4.55e+01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 5.00e+01
+  time: 1321s (wall 244s)
+[c_cheb_a] step 24000 / 81234 (epoch 147.72 / 500):
+  learning_rate = 8.63e-04, loss_average = 1.57e+03
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.36e+03
+  time: 1349s (wall 249s)
+[c_cheb_a] step 24500 / 81234 (epoch 150.80 / 500):
+  learning_rate = 8.61e-04, loss_average = 4.18e+02
+  validation accuracy: 95.16 (550 / 578), f1 (binary): 17.65, loss: 2.94e+02
+  time: 1377s (wall 254s)
+[c_cheb_a] step 25000 / 81234 (epoch 153.88 / 500):
+  learning_rate = 8.58e-04, loss_average = 3.61e+01
+  validation accuracy: 91.70 (530 / 578), f1 (binary): 40.00, loss: 5.14e+01
+  time: 1405s (wall 259s)
+[c_cheb_a] step 25500 / 81234 (epoch 156.95 / 500):
+  learning_rate = 8.55e-04, loss_average = 9.06e+01
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 15.38, loss: 6.27e+01
+  time: 1433s (wall 264s)
+[c_cheb_a] step 26000 / 81234 (epoch 160.03 / 500):
+  learning_rate = 8.52e-04, loss_average = 4.34e+01
+  validation accuracy: 92.39 (534 / 578), f1 (binary): 40.54, loss: 3.56e+01
+  time: 1461s (wall 270s)
+[c_cheb_a] step 26500 / 81234 (epoch 163.11 / 500):
+  learning_rate = 8.50e-04, loss_average = 1.55e+01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 4.83e+01
+  time: 1489s (wall 275s)
+[c_cheb_a] step 27000 / 81234 (epoch 166.19 / 500):
+  learning_rate = 8.47e-04, loss_average = 3.59e+01
+  validation accuracy: 92.56 (535 / 578), f1 (binary): 44.16, loss: 1.64e+01
+  time: 1517s (wall 280s)
+[c_cheb_a] step 27500 / 81234 (epoch 169.26 / 500):
+  learning_rate = 8.44e-04, loss_average = 1.87e+02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.40e+02
+  time: 1545s (wall 285s)
+[c_cheb_a] step 28000 / 81234 (epoch 172.34 / 500):
+  learning_rate = 8.42e-04, loss_average = 3.02e+01
+  validation accuracy: 95.50 (552 / 578), f1 (binary): 35.00, loss: 1.71e+01
+  time: 1573s (wall 290s)
+[c_cheb_a] step 28500 / 81234 (epoch 175.42 / 500):
+  learning_rate = 8.39e-04, loss_average = 1.71e+01
+  validation accuracy: 94.29 (545 / 578), f1 (binary): 42.11, loss: 1.32e+01
+  time: 1602s (wall 295s)
+[c_cheb_a] step 29000 / 81234 (epoch 178.50 / 500):
+  learning_rate = 8.37e-04, loss_average = 2.27e+01
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 53.66, loss: 1.16e+01
+  time: 1630s (wall 301s)
+[c_cheb_a] step 29500 / 81234 (epoch 181.57 / 500):
+  learning_rate = 8.34e-04, loss_average = 4.49e+01
+  validation accuracy: 95.67 (553 / 578), f1 (binary): 13.79, loss: 4.52e+01
+  time: 1658s (wall 306s)
+[c_cheb_a] step 30000 / 81234 (epoch 184.65 / 500):
+  learning_rate = 8.32e-04, loss_average = 5.93e+01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 8.13e+01
+  time: 1686s (wall 311s)
+[c_cheb_a] step 30500 / 81234 (epoch 187.73 / 500):
+  learning_rate = 8.29e-04, loss_average = 5.87e+01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 8.00, loss: 4.50e+01
+  time: 1714s (wall 316s)
+[c_cheb_a] step 31000 / 81234 (epoch 190.81 / 500):
+  learning_rate = 8.27e-04, loss_average = 1.43e+02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.25e+02
+  time: 1742s (wall 321s)
+[c_cheb_a] step 31500 / 81234 (epoch 193.88 / 500):
+  learning_rate = 8.24e-04, loss_average = 3.32e+01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 6.52e+01
+  time: 1770s (wall 327s)
+[c_cheb_a] step 32000 / 81234 (epoch 196.96 / 500):
+  learning_rate = 8.22e-04, loss_average = 2.60e+01
+  validation accuracy: 87.02 (503 / 578), f1 (binary): 31.19, loss: 2.90e+01
+  time: 1799s (wall 332s)
+[c_cheb_a] step 32500 / 81234 (epoch 200.04 / 500):
+  learning_rate = 8.19e-04, loss_average = 3.23e+01
+  validation accuracy: 93.08 (538 / 578), f1 (binary): 25.93, loss: 1.25e+01
+  time: 1827s (wall 337s)
+[c_cheb_a] step 33000 / 81234 (epoch 203.12 / 500):
+  learning_rate = 8.16e-04, loss_average = 3.03e+01
+  validation accuracy: 84.95 (491 / 578), f1 (binary): 23.01, loss: 4.41e+01
+  time: 1855s (wall 342s)
+[c_cheb_a] step 33500 / 81234 (epoch 206.19 / 500):
+  learning_rate = 8.14e-04, loss_average = 1.35e+04
+  validation accuracy: 92.73 (536 / 578), f1 (binary): 0.00, loss: 6.41e+03
+  time: 1883s (wall 347s)
+[c_cheb_a] step 34000 / 81234 (epoch 209.27 / 500):
+  learning_rate = 8.11e-04, loss_average = 1.91e+02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 2.79e+02
+  time: 1911s (wall 352s)
+[c_cheb_a] step 34500 / 81234 (epoch 212.35 / 500):
+  learning_rate = 8.09e-04, loss_average = 4.52e+01
+  validation accuracy: 96.37 (557 / 578), f1 (binary): 36.36, loss: 3.77e+01
+  time: 1939s (wall 358s)
+[c_cheb_a] step 35000 / 81234 (epoch 215.43 / 500):
+  learning_rate = 8.06e-04, loss_average = 7.88e+02
+  validation accuracy: 95.16 (550 / 578), f1 (binary): 6.67, loss: 3.05e+02
+  time: 1967s (wall 363s)
+[c_cheb_a] step 35500 / 81234 (epoch 218.50 / 500):
+  learning_rate = 8.04e-04, loss_average = 8.65e+01
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 8.33, loss: 5.48e+01
+  time: 1995s (wall 368s)
+[c_cheb_a] step 36000 / 81234 (epoch 221.58 / 500):
+  learning_rate = 8.02e-04, loss_average = 3.72e+01
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 33.33, loss: 3.88e+01
+  time: 2023s (wall 373s)
+[c_cheb_a] step 36500 / 81234 (epoch 224.66 / 500):
+  learning_rate = 7.99e-04, loss_average = 2.33e+02
+  validation accuracy: 89.10 (515 / 578), f1 (binary): 24.10, loss: 1.29e+02
+  time: 2051s (wall 378s)
+[c_cheb_a] step 37000 / 81234 (epoch 227.74 / 500):
+  learning_rate = 7.97e-04, loss_average = 1.11e+02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 8.89e+01
+  time: 2079s (wall 383s)
+[c_cheb_a] step 37500 / 81234 (epoch 230.81 / 500):
+  learning_rate = 7.94e-04, loss_average = 8.06e+01
+  validation accuracy: 90.14 (521 / 578), f1 (binary): 32.94, loss: 4.79e+01
+  time: 2107s (wall 389s)
+[c_cheb_a] step 38000 / 81234 (epoch 233.89 / 500):
+  learning_rate = 7.92e-04, loss_average = 3.04e+01
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 40.00, loss: 2.66e+01
+  time: 2135s (wall 394s)
+[c_cheb_a] step 38500 / 81234 (epoch 236.97 / 500):
+  learning_rate = 7.90e-04, loss_average = 4.62e+01
+  validation accuracy: 95.67 (553 / 578), f1 (binary): 39.02, loss: 4.07e+01
+  time: 2163s (wall 399s)
+[c_cheb_a] step 39000 / 81234 (epoch 240.05 / 500):
+  learning_rate = 7.87e-04, loss_average = 2.25e+02
+  validation accuracy: 92.39 (534 / 578), f1 (binary): 29.03, loss: 8.52e+01
+  time: 2192s (wall 404s)
+[c_cheb_a] step 39500 / 81234 (epoch 243.12 / 500):
+  learning_rate = 7.84e-04, loss_average = 3.24e+01
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 21.43, loss: 3.17e+01
+  time: 2220s (wall 409s)
+[c_cheb_a] step 40000 / 81234 (epoch 246.20 / 500):
+  learning_rate = 7.82e-04, loss_average = 2.24e+01
+  validation accuracy: 83.74 (484 / 578), f1 (binary): 27.69, loss: 4.53e+01
+  time: 2248s (wall 414s)
+[c_cheb_a] step 40500 / 81234 (epoch 249.28 / 500):
+  learning_rate = 7.79e-04, loss_average = 9.12e+00
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 47.06, loss: 1.02e+01
+  time: 2276s (wall 420s)
+[c_cheb_a] step 41000 / 81234 (epoch 252.36 / 500):
+  learning_rate = 7.77e-04, loss_average = 7.51e+00
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 15.38, loss: 1.01e+01
+  time: 2304s (wall 425s)
+[c_cheb_a] step 41500 / 81234 (epoch 255.43 / 500):
+  learning_rate = 7.75e-04, loss_average = 1.02e+01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.33e+01
+  time: 2332s (wall 430s)
+[c_cheb_a] step 42000 / 81234 (epoch 258.51 / 500):
+  learning_rate = 7.72e-04, loss_average = 1.59e+03
+  validation accuracy: 95.67 (553 / 578), f1 (binary): 0.00, loss: 1.80e+03
+  time: 2361s (wall 435s)
+[c_cheb_a] step 42500 / 81234 (epoch 261.59 / 500):
+  learning_rate = 7.70e-04, loss_average = 1.20e+02
+  validation accuracy: 96.37 (557 / 578), f1 (binary): 16.00, loss: 1.69e+02
+  time: 2389s (wall 440s)
+[c_cheb_a] step 43000 / 81234 (epoch 264.67 / 500):
+  learning_rate = 7.68e-04, loss_average = 1.29e+02
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 8.33, loss: 1.32e+02
+  time: 2417s (wall 445s)
+[c_cheb_a] step 43500 / 81234 (epoch 267.74 / 500):
+  learning_rate = 7.66e-04, loss_average = 6.23e+01
+  validation accuracy: 95.16 (550 / 578), f1 (binary): 17.65, loss: 5.03e+01
+  time: 2445s (wall 451s)
+[c_cheb_a] step 44000 / 81234 (epoch 270.82 / 500):
+  learning_rate = 7.63e-04, loss_average = 1.23e+02
+  validation accuracy: 94.81 (548 / 578), f1 (binary): 40.00, loss: 5.11e+01
+  time: 2473s (wall 456s)
+[c_cheb_a] step 44500 / 81234 (epoch 273.90 / 500):
+  learning_rate = 7.61e-04, loss_average = 3.99e+01
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 42.11, loss: 2.79e+01
+  time: 2501s (wall 461s)
+[c_cheb_a] step 45000 / 81234 (epoch 276.98 / 500):
+  learning_rate = 7.59e-04, loss_average = 4.76e+01
+  validation accuracy: 96.37 (557 / 578), f1 (binary): 16.00, loss: 8.53e+01
+  time: 2529s (wall 466s)
+[c_cheb_a] step 45500 / 81234 (epoch 280.05 / 500):
+  learning_rate = 7.56e-04, loss_average = 5.89e+01
+  validation accuracy: 95.50 (552 / 578), f1 (binary): 43.48, loss: 2.22e+01
+  time: 2557s (wall 471s)
+[c_cheb_a] step 46000 / 81234 (epoch 283.13 / 500):
+  learning_rate = 7.53e-04, loss_average = 4.77e+01
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 15.38, loss: 5.10e+01
+  time: 2585s (wall 477s)
+[c_cheb_a] step 46500 / 81234 (epoch 286.21 / 500):
+  learning_rate = 7.51e-04, loss_average = 7.63e+01
+  validation accuracy: 94.46 (546 / 578), f1 (binary): 5.88, loss: 1.16e+02
+  time: 2613s (wall 482s)
+[c_cheb_a] step 47000 / 81234 (epoch 289.29 / 500):
+  learning_rate = 7.49e-04, loss_average = 2.64e+01
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 26.67, loss: 2.78e+01
+  time: 2641s (wall 487s)
+[c_cheb_a] step 47500 / 81234 (epoch 292.36 / 500):
+  learning_rate = 7.47e-04, loss_average = 7.76e+01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.85e+02
+  time: 2670s (wall 492s)
+[c_cheb_a] step 48000 / 81234 (epoch 295.44 / 500):
+  learning_rate = 7.44e-04, loss_average = 2.93e+01
+  validation accuracy: 95.50 (552 / 578), f1 (binary): 23.53, loss: 2.81e+01
+  time: 2698s (wall 497s)
+[c_cheb_a] step 48500 / 81234 (epoch 298.52 / 500):
+  learning_rate = 7.42e-04, loss_average = 1.30e+01
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 23.08, loss: 2.38e+01
+  time: 2726s (wall 502s)
+[c_cheb_a] step 49000 / 81234 (epoch 301.60 / 500):
+  learning_rate = 7.40e-04, loss_average = 1.69e+01
+  validation accuracy: 93.60 (541 / 578), f1 (binary): 46.38, loss: 1.71e+01
+  time: 2754s (wall 508s)
+[c_cheb_a] step 49500 / 81234 (epoch 304.67 / 500):
+  learning_rate = 7.38e-04, loss_average = 1.13e+01
+  validation accuracy: 93.94 (543 / 578), f1 (binary): 40.68, loss: 6.47e+00
+  time: 2782s (wall 513s)
+[c_cheb_a] step 50000 / 81234 (epoch 307.75 / 500):
+  learning_rate = 7.36e-04, loss_average = 2.24e+03
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.29e+03
+  time: 2810s (wall 518s)
+[c_cheb_a] step 50500 / 81234 (epoch 310.83 / 500):
+  learning_rate = 7.33e-04, loss_average = 3.45e+02
+  validation accuracy: 95.85 (554 / 578), f1 (binary): 0.00, loss: 1.06e+02
+  time: 2839s (wall 523s)
+[c_cheb_a] step 51000 / 81234 (epoch 313.91 / 500):
+  learning_rate = 7.31e-04, loss_average = 4.08e+01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.17e+02
+  time: 2867s (wall 528s)
+[c_cheb_a] step 51500 / 81234 (epoch 316.98 / 500):
+  learning_rate = 7.29e-04, loss_average = 5.96e+01
+  validation accuracy: 90.31 (522 / 578), f1 (binary): 12.50, loss: 1.00e+02
+  time: 2895s (wall 534s)
+[c_cheb_a] step 52000 / 81234 (epoch 320.06 / 500):
+  learning_rate = 7.26e-04, loss_average = 9.13e+01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e+02
+  time: 2923s (wall 539s)
+[c_cheb_a] step 52500 / 81234 (epoch 323.14 / 500):
+  learning_rate = 7.24e-04, loss_average = 4.44e+01
+  validation accuracy: 94.12 (544 / 578), f1 (binary): 34.62, loss: 3.74e+01
+  time: 2951s (wall 544s)
+[c_cheb_a] step 53000 / 81234 (epoch 326.22 / 500):
+  learning_rate = 7.22e-04, loss_average = 1.68e+01
+  validation accuracy: 96.37 (557 / 578), f1 (binary): 32.26, loss: 2.25e+01
+  time: 2979s (wall 549s)
+[c_cheb_a] step 53500 / 81234 (epoch 329.29 / 500):
+  learning_rate = 7.20e-04, loss_average = 1.22e+02
+  validation accuracy: 95.85 (554 / 578), f1 (binary): 0.00, loss: 1.25e+02
+  time: 3007s (wall 554s)
+[c_cheb_a] step 54000 / 81234 (epoch 332.37 / 500):
+  learning_rate = 7.17e-04, loss_average = 3.78e+01
+  validation accuracy: 94.12 (544 / 578), f1 (binary): 19.05, loss: 9.05e+01
+  time: 3035s (wall 559s)
+[c_cheb_a] step 54500 / 81234 (epoch 335.45 / 500):
+  learning_rate = 7.15e-04, loss_average = 2.81e+02
+  validation accuracy: 91.52 (529 / 578), f1 (binary): 22.22, loss: 1.49e+02
+  time: 3063s (wall 565s)
+[c_cheb_a] step 55000 / 81234 (epoch 338.53 / 500):
+  learning_rate = 7.13e-04, loss_average = 3.96e+01
+  validation accuracy: 95.67 (553 / 578), f1 (binary): 0.00, loss: 2.78e+02
+  time: 3091s (wall 570s)
+[c_cheb_a] step 55500 / 81234 (epoch 341.60 / 500):
+  learning_rate = 7.11e-04, loss_average = 1.15e+01
+  validation accuracy: 96.37 (557 / 578), f1 (binary): 48.78, loss: 1.72e+01
+  time: 3119s (wall 575s)
+[c_cheb_a] step 56000 / 81234 (epoch 344.68 / 500):
+  learning_rate = 7.09e-04, loss_average = 2.32e+01
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 23.08, loss: 4.30e+01
+  time: 3147s (wall 580s)
+[c_cheb_a] step 56500 / 81234 (epoch 347.76 / 500):
+  learning_rate = 7.07e-04, loss_average = 3.86e+01
+  validation accuracy: 94.64 (547 / 578), f1 (binary): 36.73, loss: 3.00e+01
+  time: 3176s (wall 585s)
+[c_cheb_a] step 57000 / 81234 (epoch 350.84 / 500):
+  learning_rate = 7.05e-04, loss_average = 4.44e+01
+  validation accuracy: 85.81 (496 / 578), f1 (binary): 28.07, loss: 5.48e+01
+  time: 3204s (wall 590s)
+[c_cheb_a] step 57500 / 81234 (epoch 353.91 / 500):
+  learning_rate = 7.02e-04, loss_average = 9.08e+02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 3.10e+03
+  time: 3232s (wall 596s)
+[c_cheb_a] step 58000 / 81234 (epoch 356.99 / 500):
+  learning_rate = 7.00e-04, loss_average = 3.72e+01
+  validation accuracy: 95.85 (554 / 578), f1 (binary): 0.00, loss: 1.20e+02
+  time: 3260s (wall 601s)
+[c_cheb_a] step 58500 / 81234 (epoch 360.07 / 500):
+  learning_rate = 6.98e-04, loss_average = 3.70e+01
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 8.33, loss: 6.22e+01
+  time: 3288s (wall 606s)
+[c_cheb_a] step 59000 / 81234 (epoch 363.15 / 500):
+  learning_rate = 6.95e-04, loss_average = 7.55e+01
+  validation accuracy: 95.85 (554 / 578), f1 (binary): 0.00, loss: 2.42e+02
+  time: 3316s (wall 611s)
+[c_cheb_a] step 59500 / 81234 (epoch 366.22 / 500):
+  learning_rate = 6.93e-04, loss_average = 2.87e+01
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 15.38, loss: 4.37e+01
+  time: 3345s (wall 616s)
+[c_cheb_a] step 60000 / 81234 (epoch 369.30 / 500):
+  learning_rate = 6.91e-04, loss_average = 6.81e+01
+  validation accuracy: 91.87 (531 / 578), f1 (binary): 35.62, loss: 5.10e+01
+  time: 3373s (wall 621s)
+[c_cheb_a] step 60500 / 81234 (epoch 372.38 / 500):
+  learning_rate = 6.89e-04, loss_average = 2.89e+01
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 38.71, loss: 2.12e+01
+  time: 3401s (wall 627s)
+[c_cheb_a] step 61000 / 81234 (epoch 375.46 / 500):
+  learning_rate = 6.87e-04, loss_average = 1.50e+01
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 23.08, loss: 2.24e+01
+  time: 3429s (wall 632s)
+[c_cheb_a] step 61500 / 81234 (epoch 378.53 / 500):
+  learning_rate = 6.85e-04, loss_average = 1.51e+01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 43.90, loss: 2.14e+01
+  time: 3457s (wall 637s)
+[c_cheb_a] step 62000 / 81234 (epoch 381.61 / 500):
+  learning_rate = 6.83e-04, loss_average = 6.66e+00
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 56.00, loss: 9.44e+00
+  time: 3485s (wall 642s)
+[c_cheb_a] step 62500 / 81234 (epoch 384.69 / 500):
+  learning_rate = 6.81e-04, loss_average = 9.40e+00
+  validation accuracy: 96.37 (557 / 578), f1 (binary): 58.82, loss: 6.36e+00
+  time: 3514s (wall 648s)
+[c_cheb_a] step 63000 / 81234 (epoch 387.77 / 500):
+  learning_rate = 6.79e-04, loss_average = 9.28e+00
+  validation accuracy: 95.85 (554 / 578), f1 (binary): 47.83, loss: 7.54e+00
+  time: 3541s (wall 653s)
+[c_cheb_a] step 63500 / 81234 (epoch 390.84 / 500):
+  learning_rate = 6.77e-04, loss_average = 2.82e+03
+  validation accuracy: 91.18 (527 / 578), f1 (binary): 16.39, loss: 5.43e+02
+  time: 3570s (wall 658s)
+[c_cheb_a] step 64000 / 81234 (epoch 393.92 / 500):
+  learning_rate = 6.75e-04, loss_average = 5.42e+01
+  validation accuracy: 95.85 (554 / 578), f1 (binary): 14.29, loss: 5.80e+01
+  time: 3598s (wall 663s)
+[c_cheb_a] step 64500 / 81234 (epoch 397.00 / 500):
+  learning_rate = 6.73e-04, loss_average = 4.56e+01
+  validation accuracy: 96.37 (557 / 578), f1 (binary): 40.00, loss: 3.80e+01
+  time: 3626s (wall 668s)
+[c_cheb_a] step 65000 / 81234 (epoch 400.08 / 500):
+  learning_rate = 6.70e-04, loss_average = 3.80e+01
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 38.89, loss: 2.34e+01
+  time: 3654s (wall 673s)
+[c_cheb_a] step 65500 / 81234 (epoch 403.15 / 500):
+  learning_rate = 6.68e-04, loss_average = 2.31e+01
+  validation accuracy: 93.77 (542 / 578), f1 (binary): 21.74, loss: 3.88e+01
+  time: 3682s (wall 679s)
+[c_cheb_a] step 66000 / 81234 (epoch 406.23 / 500):
+  learning_rate = 6.66e-04, loss_average = 1.47e+02
+  validation accuracy: 84.95 (491 / 578), f1 (binary): 17.14, loss: 1.81e+02
+  time: 3710s (wall 684s)
+[c_cheb_a] step 66500 / 81234 (epoch 409.31 / 500):
+  learning_rate = 6.64e-04, loss_average = 7.26e+01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.20e+02
+  time: 3739s (wall 689s)
+[c_cheb_a] step 67000 / 81234 (epoch 412.39 / 500):
+  learning_rate = 6.62e-04, loss_average = 3.22e+01
+  validation accuracy: 94.98 (549 / 578), f1 (binary): 45.28, loss: 2.58e+01
+  time: 3767s (wall 694s)
+[c_cheb_a] step 67500 / 81234 (epoch 415.46 / 500):
+  learning_rate = 6.60e-04, loss_average = 3.70e+01
+  validation accuracy: 96.37 (557 / 578), f1 (binary): 22.22, loss: 5.06e+01
+  time: 3795s (wall 699s)
+[c_cheb_a] step 68000 / 81234 (epoch 418.54 / 500):
+  learning_rate = 6.58e-04, loss_average = 1.71e+02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 2.59e+02
+  time: 3823s (wall 705s)
+[c_cheb_a] step 68500 / 81234 (epoch 421.62 / 500):
+  learning_rate = 6.56e-04, loss_average = 1.11e+02
+  validation accuracy: 95.85 (554 / 578), f1 (binary): 33.33, loss: 2.15e+01
+  time: 3851s (wall 710s)
+[c_cheb_a] step 69000 / 81234 (epoch 424.70 / 500):
+  learning_rate = 6.54e-04, loss_average = 2.99e+01
+  validation accuracy: 95.50 (552 / 578), f1 (binary): 51.85, loss: 1.82e+01
+  time: 3879s (wall 715s)
+[c_cheb_a] step 69500 / 81234 (epoch 427.77 / 500):
+  learning_rate = 6.52e-04, loss_average = 1.27e+02
+  validation accuracy: 94.81 (548 / 578), f1 (binary): 21.05, loss: 8.45e+01
+  time: 3907s (wall 720s)
+[c_cheb_a] step 70000 / 81234 (epoch 430.85 / 500):
+  learning_rate = 6.50e-04, loss_average = 2.99e+01
+  validation accuracy: 95.67 (553 / 578), f1 (binary): 28.57, loss: 2.66e+01
+  time: 3936s (wall 725s)
+[c_cheb_a] step 70500 / 81234 (epoch 433.93 / 500):
+  learning_rate = 6.48e-04, loss_average = 4.73e+01
+  validation accuracy: 95.50 (552 / 578), f1 (binary): 48.00, loss: 1.94e+01
+  time: 3964s (wall 730s)
+[c_cheb_a] step 71000 / 81234 (epoch 437.01 / 500):
+  learning_rate = 6.46e-04, loss_average = 1.93e+01
+  validation accuracy: 95.33 (551 / 578), f1 (binary): 18.18, loss: 3.26e+01
+  time: 3992s (wall 736s)
+[c_cheb_a] step 71500 / 81234 (epoch 440.08 / 500):
+  learning_rate = 6.44e-04, loss_average = 4.45e+01
+  validation accuracy: 95.85 (554 / 578), f1 (binary): 0.00, loss: 1.47e+02
+  time: 4020s (wall 741s)
+[c_cheb_a] step 72000 / 81234 (epoch 443.16 / 500):
+  learning_rate = 6.42e-04, loss_average = 1.70e+01
+  validation accuracy: 95.85 (554 / 578), f1 (binary): 25.00, loss: 2.47e+01
+  time: 4048s (wall 746s)
+[c_cheb_a] step 72500 / 81234 (epoch 446.24 / 500):
+  learning_rate = 6.40e-04, loss_average = 1.28e+01
+  validation accuracy: 95.33 (551 / 578), f1 (binary): 49.06, loss: 1.98e+01
+  time: 4076s (wall 751s)
+[c_cheb_a] step 73000 / 81234 (epoch 449.32 / 500):
+  learning_rate = 6.38e-04, loss_average = 2.80e+01
+  validation accuracy: 94.98 (549 / 578), f1 (binary): 12.12, loss: 3.29e+01
+  time: 4104s (wall 756s)
+[c_cheb_a] step 73500 / 81234 (epoch 452.39 / 500):
+  learning_rate = 6.36e-04, loss_average = 2.16e+01
+  validation accuracy: 95.67 (553 / 578), f1 (binary): 0.00, loss: 3.82e+01
+  time: 4132s (wall 761s)
+[c_cheb_a] step 74000 / 81234 (epoch 455.47 / 500):
+  learning_rate = 6.34e-04, loss_average = 2.13e+01
+  validation accuracy: 95.67 (553 / 578), f1 (binary): 41.86, loss: 9.50e+00
+  time: 4160s (wall 767s)
+[c_cheb_a] step 74500 / 81234 (epoch 458.55 / 500):
+  learning_rate = 6.32e-04, loss_average = 8.53e+00
+  validation accuracy: 92.04 (532 / 578), f1 (binary): 37.84, loss: 1.23e+01
+  time: 4188s (wall 772s)
+[c_cheb_a] step 75000 / 81234 (epoch 461.63 / 500):
+  learning_rate = 6.31e-04, loss_average = 1.77e+01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 4.63e+02
+  time: 4216s (wall 777s)
+[c_cheb_a] step 75500 / 81234 (epoch 464.70 / 500):
+  learning_rate = 6.29e-04, loss_average = 6.69e+00
+  validation accuracy: 85.99 (497 / 578), f1 (binary): 31.93, loss: 3.41e+01
+  time: 4244s (wall 782s)
+[c_cheb_a] step 76000 / 81234 (epoch 467.78 / 500):
+  learning_rate = 6.27e-04, loss_average = 2.76e+01
+  validation accuracy: 95.85 (554 / 578), f1 (binary): 14.29, loss: 7.42e+01
+  time: 4273s (wall 787s)
+[c_cheb_a] step 76500 / 81234 (epoch 470.86 / 500):
+  learning_rate = 6.25e-04, loss_average = 4.66e+00
+  validation accuracy: 95.33 (551 / 578), f1 (binary): 34.15, loss: 2.42e+01
+  time: 4301s (wall 792s)
+[c_cheb_a] step 77000 / 81234 (epoch 473.94 / 500):
+  learning_rate = 6.23e-04, loss_average = 4.80e+00
+  validation accuracy: 93.43 (540 / 578), f1 (binary): 44.12, loss: 2.01e+01
+  time: 4329s (wall 798s)
+[c_cheb_a] step 77500 / 81234 (epoch 477.01 / 500):
+  learning_rate = 6.20e-04, loss_average = 8.22e+00
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 8.00, loss: 2.61e+01
+  time: 4357s (wall 803s)
+[c_cheb_a] step 78000 / 81234 (epoch 480.09 / 500):
+  learning_rate = 6.19e-04, loss_average = 6.58e+00
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 40.00, loss: 2.91e+01
+  time: 4385s (wall 808s)
+[c_cheb_a] step 78500 / 81234 (epoch 483.17 / 500):
+  learning_rate = 6.17e-04, loss_average = 3.82e+00
+  validation accuracy: 95.33 (551 / 578), f1 (binary): 42.55, loss: 3.06e+01
+  time: 4414s (wall 813s)
+[c_cheb_a] step 79000 / 81234 (epoch 486.25 / 500):
+  learning_rate = 6.15e-04, loss_average = 3.68e+00
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 54.17, loss: 3.15e+01
+  time: 4442s (wall 819s)
+[c_cheb_a] step 79500 / 81234 (epoch 489.32 / 500):
+  learning_rate = 6.13e-04, loss_average = 2.23e+00
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 35.71, loss: 2.66e+01
+  time: 4470s (wall 824s)
+[c_cheb_a] step 80000 / 81234 (epoch 492.40 / 500):
+  learning_rate = 6.11e-04, loss_average = 1.99e+03
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.77e+03
+  time: 4498s (wall 829s)
+[c_cheb_a] step 80500 / 81234 (epoch 495.48 / 500):
+  learning_rate = 6.09e-04, loss_average = 2.21e+01
+  validation accuracy: 94.98 (549 / 578), f1 (binary): 43.14, loss: 5.44e+01
+  time: 4527s (wall 834s)
+[c_cheb_a] step 81000 / 81234 (epoch 498.56 / 500):
+  learning_rate = 6.08e-04, loss_average = 2.65e+01
+  validation accuracy: 90.66 (524 / 578), f1 (binary): 41.30, loss: 7.73e+01
+  time: 4555s (wall 839s)
+[c_cheb_a] step 81234 / 81234 (epoch 500.00 / 500):
+  learning_rate = 6.07e-04, loss_average = 2.50e+01
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 42.42, loss: 7.08e+01
+  time: 4568s (wall 842s)
+validation accuracy: peak = 96.89, mean = 95.31
+train accuracy: 96.81 (5033 / 5199), f1 (binary): 37.12, loss: 2.02e+01
+time: 5s (wall 1s)
+test  accuracy: 96.71 (559 / 578), f1 (binary): 42.42, loss: 7.08e+01
+time: 1s (wall 0s)
+ 
+Training model: np_3
+ 
+  architecture/L = 2
+  architecture/N = [25, 25, 25]
+CNNGS Architecture: np_3 (no-pooling)
+  input: M_0 = N = 25
+  l_1: gsconv_1
+    input dimension : M_0 = F_0 N_0 =  1 * 25 = 25
+    output dimension: M_1 = F_1 N_1 = 14 * 25 = 350
+    parameters: K_1 F_1 F_0 = 7 * 14 * 1 = 98
+  l_2: gsconv_2
+    input dimension : M_1 = F_1 N_1 = 14 * 25 = 350
+    output dimension: M_2 = F_2 N_2 = 28 * 25 = 700
+    parameters: K_2 F_2 F_1 = 14 * 28 * 14 = 5488
+  l_3: softmax
+    input dimension : M_2 = 700
+    output dimension: M_3 = 2
+    parameters: M_3 M_2 = 2 * 700 = 1400
+  Total parameters = 6986
+ 
+[np_3] step 500 / 81234 (epoch 3.08 / 500):
+  learning_rate = 9.97e-04, loss_average = 5.98e+02
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 34.48, loss: 2.08e+02
+  time: 42s (wall 5s)
+[np_3] step 1000 / 81234 (epoch 6.16 / 500):
+  learning_rate = 9.94e-04, loss_average = 2.13e+02
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 15.38, loss: 1.93e+02
+  time: 84s (wall 10s)
+[np_3] step 1500 / 81234 (epoch 9.23 / 500):
+  learning_rate = 9.91e-04, loss_average = 1.54e+02
+  validation accuracy: 97.58 (564 / 578), f1 (binary): 66.67, loss: 7.04e+01
+  time: 126s (wall 14s)
+[np_3] step 2000 / 81234 (epoch 12.31 / 500):
+  learning_rate = 9.88e-04, loss_average = 8.47e+01
+  validation accuracy: 88.24 (510 / 578), f1 (binary): 32.00, loss: 2.12e+02
+  time: 167s (wall 19s)
+[np_3] step 2500 / 81234 (epoch 15.39 / 500):
+  learning_rate = 9.85e-04, loss_average = 1.08e+02
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 8.33, loss: 1.86e+02
+  time: 209s (wall 23s)
+[np_3] step 3000 / 81234 (epoch 18.47 / 500):
+  learning_rate = 9.82e-04, loss_average = 6.81e+01
+  validation accuracy: 97.06 (561 / 578), f1 (binary): 54.05, loss: 5.99e+01
+  time: 251s (wall 28s)
+[np_3] step 3500 / 81234 (epoch 21.54 / 500):
+  learning_rate = 9.79e-04, loss_average = 7.33e+01
+  validation accuracy: 94.46 (546 / 578), f1 (binary): 55.56, loss: 3.86e+01
+  time: 292s (wall 32s)
+[np_3] step 4000 / 81234 (epoch 24.62 / 500):
+  learning_rate = 9.76e-04, loss_average = 5.88e+01
+  validation accuracy: 97.75 (565 / 578), f1 (binary): 66.67, loss: 1.17e+01
+  time: 334s (wall 37s)
+[np_3] step 4500 / 81234 (epoch 27.70 / 500):
+  learning_rate = 9.73e-04, loss_average = 1.73e+01
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 8.33, loss: 4.66e+01
+  time: 376s (wall 41s)
+[np_3] step 5000 / 81234 (epoch 30.78 / 500):
+  learning_rate = 9.70e-04, loss_average = 2.13e+01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 2.81e+01
+  time: 417s (wall 46s)
+[np_3] step 5500 / 81234 (epoch 33.85 / 500):
+  learning_rate = 9.68e-04, loss_average = 3.09e+01
+  validation accuracy: 94.46 (546 / 578), f1 (binary): 52.94, loss: 9.37e+00
+  time: 458s (wall 50s)
+[np_3] step 6000 / 81234 (epoch 36.93 / 500):
+  learning_rate = 9.65e-04, loss_average = 1.68e+01
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 60.00, loss: 4.88e+00
+  time: 500s (wall 55s)
+[np_3] step 6500 / 81234 (epoch 40.01 / 500):
+  learning_rate = 9.61e-04, loss_average = 2.98e+00
+  validation accuracy: 92.56 (535 / 578), f1 (binary): 48.19, loss: 6.68e+00
+  time: 541s (wall 59s)
+[np_3] step 7000 / 81234 (epoch 43.09 / 500):
+  learning_rate = 9.58e-04, loss_average = 6.20e+00
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 43.75, loss: 3.94e+00
+  time: 583s (wall 64s)
+[np_3] step 7500 / 81234 (epoch 46.16 / 500):
+  learning_rate = 9.55e-04, loss_average = 1.08e+01
+  validation accuracy: 93.94 (543 / 578), f1 (binary): 14.63, loss: 9.57e+00
+  time: 625s (wall 68s)
+[np_3] step 8000 / 81234 (epoch 49.24 / 500):
+  learning_rate = 9.52e-04, loss_average = 1.24e+01
+  validation accuracy: 97.58 (564 / 578), f1 (binary): 61.11, loss: 3.47e+00
+  time: 667s (wall 73s)
+[np_3] step 8500 / 81234 (epoch 52.32 / 500):
+  learning_rate = 9.49e-04, loss_average = 3.31e+00
+  validation accuracy: 95.67 (553 / 578), f1 (binary): 52.83, loss: 1.20e+00
+  time: 708s (wall 78s)
+[np_3] step 9000 / 81234 (epoch 55.40 / 500):
+  learning_rate = 9.46e-04, loss_average = 7.78e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 8.99e-01
+  time: 750s (wall 82s)
+[np_3] step 9500 / 81234 (epoch 58.47 / 500):
+  learning_rate = 9.44e-04, loss_average = 6.62e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.11e+00
+  time: 792s (wall 87s)
+[np_3] step 10000 / 81234 (epoch 61.55 / 500):
+  learning_rate = 9.41e-04, loss_average = 1.28e+00
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 7.29e-01
+  time: 833s (wall 91s)
+[np_3] step 10500 / 81234 (epoch 64.63 / 500):
+  learning_rate = 9.38e-04, loss_average = 8.93e+00
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.14e+00
+  time: 875s (wall 96s)
+[np_3] step 11000 / 81234 (epoch 67.71 / 500):
+  learning_rate = 9.35e-04, loss_average = 6.04e-01
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 34.48, loss: 2.95e-01
+  time: 916s (wall 100s)
+[np_3] step 11500 / 81234 (epoch 70.78 / 500):
+  learning_rate = 9.32e-04, loss_average = 3.25e-01
+  validation accuracy: 95.85 (554 / 578), f1 (binary): 0.00, loss: 3.70e-01
+  time: 958s (wall 105s)
+[np_3] step 12000 / 81234 (epoch 73.86 / 500):
+  learning_rate = 9.30e-04, loss_average = 3.81e-01
+  validation accuracy: 95.67 (553 / 578), f1 (binary): 13.79, loss: 3.12e-01
+  time: 999s (wall 109s)
+[np_3] step 12500 / 81234 (epoch 76.94 / 500):
+  learning_rate = 9.27e-04, loss_average = 2.46e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 3.69e-01
+  time: 1041s (wall 114s)
+[np_3] step 13000 / 81234 (epoch 80.02 / 500):
+  learning_rate = 9.23e-04, loss_average = 2.51e-01
+  validation accuracy: 95.33 (551 / 578), f1 (binary): 34.15, loss: 1.57e-01
+  time: 1083s (wall 118s)
+[np_3] step 13500 / 81234 (epoch 83.09 / 500):
+  learning_rate = 9.20e-04, loss_average = 1.33e-01
+  validation accuracy: 95.85 (554 / 578), f1 (binary): 0.00, loss: 2.14e-01
+  time: 1124s (wall 123s)
+[np_3] step 14000 / 81234 (epoch 86.17 / 500):
+  learning_rate = 9.18e-04, loss_average = 1.60e+00
+  validation accuracy: 79.41 (459 / 578), f1 (binary): 25.16, loss: 1.73e+00
+  time: 1166s (wall 127s)
+[np_3] step 14500 / 81234 (epoch 89.25 / 500):
+  learning_rate = 9.15e-04, loss_average = 1.27e-01
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 26.67, loss: 1.22e-01
+  time: 1207s (wall 132s)
+[np_3] step 15000 / 81234 (epoch 92.33 / 500):
+  learning_rate = 9.12e-04, loss_average = 9.47e-02
+  validation accuracy: 95.67 (553 / 578), f1 (binary): 0.00, loss: 2.96e-01
+  time: 1249s (wall 136s)
+[np_3] step 15500 / 81234 (epoch 95.40 / 500):
+  learning_rate = 9.09e-04, loss_average = 1.08e-01
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 40.00, loss: 1.18e-01
+  time: 1291s (wall 141s)
+[np_3] step 16000 / 81234 (epoch 98.48 / 500):
+  learning_rate = 9.07e-04, loss_average = 1.16e-01
+  validation accuracy: 94.98 (549 / 578), f1 (binary): 52.46, loss: 1.25e-01
+  time: 1332s (wall 145s)
+[np_3] step 16500 / 81234 (epoch 101.56 / 500):
+  learning_rate = 9.04e-04, loss_average = 1.39e-01
+  validation accuracy: 95.33 (551 / 578), f1 (binary): 54.24, loss: 1.31e-01
+  time: 1374s (wall 150s)
+[np_3] step 17000 / 81234 (epoch 104.64 / 500):
+  learning_rate = 9.01e-04, loss_average = 1.27e-01
+  validation accuracy: 95.50 (552 / 578), f1 (binary): 55.17, loss: 1.27e-01
+  time: 1415s (wall 154s)
+[np_3] step 17500 / 81234 (epoch 107.71 / 500):
+  learning_rate = 8.98e-04, loss_average = 8.08e-01
+  validation accuracy: 81.49 (471 / 578), f1 (binary): 20.74, loss: 9.90e-01
+  time: 1457s (wall 159s)
+[np_3] step 18000 / 81234 (epoch 110.79 / 500):
+  learning_rate = 8.96e-04, loss_average = 1.25e-01
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 47.06, loss: 1.42e-01
+  time: 1499s (wall 163s)
+[np_3] step 18500 / 81234 (epoch 113.87 / 500):
+  learning_rate = 8.93e-04, loss_average = 2.05e-01
+  validation accuracy: 95.67 (553 / 578), f1 (binary): 0.00, loss: 1.73e-01
+  time: 1540s (wall 168s)
+[np_3] step 19000 / 81234 (epoch 116.95 / 500):
+  learning_rate = 8.90e-04, loss_average = 8.88e-02
+  validation accuracy: 97.92 (566 / 578), f1 (binary): 70.00, loss: 8.90e-02
+  time: 1582s (wall 173s)
+[np_3] step 19500 / 81234 (epoch 120.02 / 500):
+  learning_rate = 8.87e-04, loss_average = 1.50e-01
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 48.65, loss: 1.28e-01
+  time: 1624s (wall 177s)
+[np_3] step 20000 / 81234 (epoch 123.10 / 500):
+  learning_rate = 8.84e-04, loss_average = 1.08e-01
+  validation accuracy: 97.06 (561 / 578), f1 (binary): 45.16, loss: 1.12e-01
+  time: 1665s (wall 182s)
+[np_3] step 20500 / 81234 (epoch 126.18 / 500):
+  learning_rate = 8.82e-04, loss_average = 6.61e-02
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 35.71, loss: 1.01e-01
+  time: 1707s (wall 186s)
+[np_3] step 21000 / 81234 (epoch 129.26 / 500):
+  learning_rate = 8.79e-04, loss_average = 1.08e-01
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 23.08, loss: 1.05e-01
+  time: 1749s (wall 191s)
+[np_3] step 21500 / 81234 (epoch 132.33 / 500):
+  learning_rate = 8.76e-04, loss_average = 7.75e-02
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 51.28, loss: 1.13e-01
+  time: 1790s (wall 195s)
+[np_3] step 22000 / 81234 (epoch 135.41 / 500):
+  learning_rate = 8.74e-04, loss_average = 8.78e-02
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 44.44, loss: 1.20e-01
+  time: 1832s (wall 200s)
+[np_3] step 22500 / 81234 (epoch 138.49 / 500):
+  learning_rate = 8.71e-04, loss_average = 1.14e-01
+  validation accuracy: 95.67 (553 / 578), f1 (binary): 0.00, loss: 1.36e-01
+  time: 1873s (wall 204s)
+[np_3] step 23000 / 81234 (epoch 141.57 / 500):
+  learning_rate = 8.68e-04, loss_average = 1.22e-01
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 8.33, loss: 1.35e-01
+  time: 1915s (wall 209s)
+[np_3] step 23500 / 81234 (epoch 144.64 / 500):
+  learning_rate = 8.66e-04, loss_average = 1.31e-01
+  validation accuracy: 95.50 (552 / 578), f1 (binary): 0.00, loss: 1.40e-01
+  time: 1957s (wall 213s)
+[np_3] step 24000 / 81234 (epoch 147.72 / 500):
+  learning_rate = 8.63e-04, loss_average = 3.11e-01
+  validation accuracy: 94.12 (544 / 578), f1 (binary): 0.00, loss: 2.28e-01
+  time: 1999s (wall 218s)
+[np_3] step 24500 / 81234 (epoch 150.80 / 500):
+  learning_rate = 8.61e-04, loss_average = 8.56e-02
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 15.38, loss: 1.29e-01
+  time: 2041s (wall 222s)
+[np_3] step 25000 / 81234 (epoch 153.88 / 500):
+  learning_rate = 8.58e-04, loss_average = 8.37e-02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 14.81, loss: 1.21e-01
+  time: 2083s (wall 227s)
+[np_3] step 25500 / 81234 (epoch 156.95 / 500):
+  learning_rate = 8.55e-04, loss_average = 1.04e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 25.81, loss: 1.41e-01
+  time: 2124s (wall 232s)
+[np_3] step 26000 / 81234 (epoch 160.03 / 500):
+  learning_rate = 8.52e-04, loss_average = 1.23e-01
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 35.29, loss: 1.42e-01
+  time: 2166s (wall 236s)
+[np_3] step 26500 / 81234 (epoch 163.11 / 500):
+  learning_rate = 8.50e-04, loss_average = 1.20e-01
+  validation accuracy: 95.85 (554 / 578), f1 (binary): 7.69, loss: 1.42e-01
+  time: 2208s (wall 241s)
+[np_3] step 27000 / 81234 (epoch 166.19 / 500):
+  learning_rate = 8.47e-04, loss_average = 8.03e-02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.30e-01
+  time: 2249s (wall 245s)
+[np_3] step 27500 / 81234 (epoch 169.26 / 500):
+  learning_rate = 8.44e-04, loss_average = 1.16e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.37e-01
+  time: 2291s (wall 250s)
+[np_3] step 28000 / 81234 (epoch 172.34 / 500):
+  learning_rate = 8.42e-04, loss_average = 9.10e-02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.86e-01
+  time: 2333s (wall 254s)
+[np_3] step 28500 / 81234 (epoch 175.42 / 500):
+  learning_rate = 8.39e-04, loss_average = 1.57e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.68e-01
+  time: 2374s (wall 259s)
+[np_3] step 29000 / 81234 (epoch 178.50 / 500):
+  learning_rate = 8.37e-04, loss_average = 8.42e-02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.46e-01
+  time: 2416s (wall 263s)
+[np_3] step 29500 / 81234 (epoch 181.57 / 500):
+  learning_rate = 8.34e-04, loss_average = 1.26e-01
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 26.67, loss: 1.36e-01
+  time: 2458s (wall 268s)
+[np_3] step 30000 / 81234 (epoch 184.65 / 500):
+  learning_rate = 8.32e-04, loss_average = 1.60e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.67e-01
+  time: 2500s (wall 272s)
+[np_3] step 30500 / 81234 (epoch 187.73 / 500):
+  learning_rate = 8.29e-04, loss_average = 1.43e-01
+  validation accuracy: 93.60 (541 / 578), f1 (binary): 21.28, loss: 2.62e-01
+  time: 2541s (wall 277s)
+[np_3] step 31000 / 81234 (epoch 190.81 / 500):
+  learning_rate = 8.27e-04, loss_average = 1.16e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.54e-01
+  time: 2583s (wall 281s)
+[np_3] step 31500 / 81234 (epoch 193.88 / 500):
+  learning_rate = 8.24e-04, loss_average = 8.68e-02
+  validation accuracy: 96.37 (557 / 578), f1 (binary): 16.00, loss: 1.22e-01
+  time: 2625s (wall 286s)
+[np_3] step 32000 / 81234 (epoch 196.96 / 500):
+  learning_rate = 8.22e-04, loss_average = 1.02e-01
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 35.29, loss: 1.27e-01
+  time: 2666s (wall 290s)
+[np_3] step 32500 / 81234 (epoch 200.04 / 500):
+  learning_rate = 8.19e-04, loss_average = 8.28e-02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.26e-01
+  time: 2708s (wall 295s)
+[np_3] step 33000 / 81234 (epoch 203.12 / 500):
+  learning_rate = 8.16e-04, loss_average = 1.16e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.23e-01
+  time: 2749s (wall 299s)
+[np_3] step 33500 / 81234 (epoch 206.19 / 500):
+  learning_rate = 8.14e-04, loss_average = 1.11e-01
+  validation accuracy: 95.85 (554 / 578), f1 (binary): 40.00, loss: 1.47e-01
+  time: 2791s (wall 304s)
+[np_3] step 34000 / 81234 (epoch 209.27 / 500):
+  learning_rate = 8.11e-04, loss_average = 1.04e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.39e-01
+  time: 2833s (wall 308s)
+[np_3] step 34500 / 81234 (epoch 212.35 / 500):
+  learning_rate = 8.09e-04, loss_average = 1.31e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.43e-01
+  time: 2874s (wall 313s)
+[np_3] step 35000 / 81234 (epoch 215.43 / 500):
+  learning_rate = 8.06e-04, loss_average = 1.07e-01
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 47.06, loss: 1.21e-01
+  time: 2916s (wall 317s)
+[np_3] step 35500 / 81234 (epoch 218.50 / 500):
+  learning_rate = 8.04e-04, loss_average = 1.05e-01
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 8.33, loss: 1.21e-01
+  time: 2957s (wall 322s)
+[np_3] step 36000 / 81234 (epoch 221.58 / 500):
+  learning_rate = 8.02e-04, loss_average = 9.17e-02
+  validation accuracy: 96.37 (557 / 578), f1 (binary): 22.22, loss: 1.11e-01
+  time: 2999s (wall 326s)
+[np_3] step 36500 / 81234 (epoch 224.66 / 500):
+  learning_rate = 7.99e-04, loss_average = 1.06e-01
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 52.38, loss: 1.14e-01
+  time: 3041s (wall 331s)
+[np_3] step 37000 / 81234 (epoch 227.74 / 500):
+  learning_rate = 7.97e-04, loss_average = 1.35e-01
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 15.38, loss: 1.41e-01
+  time: 3083s (wall 335s)
+[np_3] step 37500 / 81234 (epoch 230.81 / 500):
+  learning_rate = 7.94e-04, loss_average = 1.27e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.38e-01
+  time: 3124s (wall 340s)
+[np_3] step 38000 / 81234 (epoch 233.89 / 500):
+  learning_rate = 7.92e-04, loss_average = 1.01e-01
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 52.17, loss: 1.29e-01
+  time: 3166s (wall 344s)
+[np_3] step 38500 / 81234 (epoch 236.97 / 500):
+  learning_rate = 7.90e-04, loss_average = 1.09e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.43e-01
+  time: 3208s (wall 349s)
+[np_3] step 39000 / 81234 (epoch 240.05 / 500):
+  learning_rate = 7.87e-04, loss_average = 1.33e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.11e-01
+  time: 3250s (wall 354s)
+[np_3] step 39500 / 81234 (epoch 243.12 / 500):
+  learning_rate = 7.84e-04, loss_average = 9.84e-02
+  validation accuracy: 95.16 (550 / 578), f1 (binary): 44.00, loss: 1.40e-01
+  time: 3291s (wall 358s)
+[np_3] step 40000 / 81234 (epoch 246.20 / 500):
+  learning_rate = 7.82e-04, loss_average = 1.09e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.32e-01
+  time: 3333s (wall 363s)
+[np_3] step 40500 / 81234 (epoch 249.28 / 500):
+  learning_rate = 7.79e-04, loss_average = 1.03e+00
+  validation accuracy: 94.46 (546 / 578), f1 (binary): 0.00, loss: 1.36e+00
+  time: 3375s (wall 367s)
+[np_3] step 41000 / 81234 (epoch 252.36 / 500):
+  learning_rate = 7.77e-04, loss_average = 2.52e-01
+  validation accuracy: 94.12 (544 / 578), f1 (binary): 26.09, loss: 1.93e-01
+  time: 3416s (wall 372s)
+[np_3] step 41500 / 81234 (epoch 255.43 / 500):
+  learning_rate = 7.75e-04, loss_average = 8.25e-02
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 15.38, loss: 1.14e-01
+  time: 3458s (wall 376s)
+[np_3] step 42000 / 81234 (epoch 258.51 / 500):
+  learning_rate = 7.72e-04, loss_average = 1.72e-01
+  validation accuracy: 95.67 (553 / 578), f1 (binary): 44.44, loss: 1.44e-01
+  time: 3499s (wall 381s)
+[np_3] step 42500 / 81234 (epoch 261.59 / 500):
+  learning_rate = 7.70e-04, loss_average = 7.78e-02
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 29.63, loss: 1.02e-01
+  time: 3541s (wall 385s)
+[np_3] step 43000 / 81234 (epoch 264.67 / 500):
+  learning_rate = 7.68e-04, loss_average = 1.10e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 8.00, loss: 1.22e-01
+  time: 3583s (wall 390s)
+[np_3] step 43500 / 81234 (epoch 267.74 / 500):
+  learning_rate = 7.66e-04, loss_average = 7.79e-02
+  validation accuracy: 97.06 (561 / 578), f1 (binary): 56.41, loss: 1.02e-01
+  time: 3624s (wall 394s)
+[np_3] step 44000 / 81234 (epoch 270.82 / 500):
+  learning_rate = 7.63e-04, loss_average = 1.02e-01
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 8.33, loss: 1.31e-01
+  time: 3666s (wall 399s)
+[np_3] step 44500 / 81234 (epoch 273.90 / 500):
+  learning_rate = 7.61e-04, loss_average = 1.16e-01
+  validation accuracy: 97.23 (562 / 578), f1 (binary): 46.67, loss: 1.03e-01
+  time: 3708s (wall 403s)
+[np_3] step 45000 / 81234 (epoch 276.98 / 500):
+  learning_rate = 7.59e-04, loss_average = 8.70e-02
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 33.33, loss: 1.11e-01
+  time: 3750s (wall 408s)
+[np_3] step 45500 / 81234 (epoch 280.05 / 500):
+  learning_rate = 7.56e-04, loss_average = 6.95e-02
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 34.48, loss: 9.56e-02
+  time: 3791s (wall 413s)
+[np_3] step 46000 / 81234 (epoch 283.13 / 500):
+  learning_rate = 7.53e-04, loss_average = 1.26e+01
+  validation accuracy: 75.78 (438 / 578), f1 (binary): 17.65, loss: 4.87e+00
+  time: 3833s (wall 417s)
+[np_3] step 46500 / 81234 (epoch 286.21 / 500):
+  learning_rate = 7.51e-04, loss_average = 9.27e-02
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 38.71, loss: 1.18e-01
+  time: 3875s (wall 422s)
+[np_3] step 47000 / 81234 (epoch 289.29 / 500):
+  learning_rate = 7.49e-04, loss_average = 9.94e-02
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 57.78, loss: 1.13e-01
+  time: 3917s (wall 426s)
+[np_3] step 47500 / 81234 (epoch 292.36 / 500):
+  learning_rate = 7.47e-04, loss_average = 9.35e-02
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 26.67, loss: 1.23e-01
+  time: 3959s (wall 431s)
+[np_3] step 48000 / 81234 (epoch 295.44 / 500):
+  learning_rate = 7.44e-04, loss_average = 9.80e-02
+  validation accuracy: 96.37 (557 / 578), f1 (binary): 48.78, loss: 1.17e-01
+  time: 4001s (wall 435s)
+[np_3] step 48500 / 81234 (epoch 298.52 / 500):
+  learning_rate = 7.42e-04, loss_average = 1.13e-01
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 52.38, loss: 1.16e-01
+  time: 4043s (wall 440s)
+[np_3] step 49000 / 81234 (epoch 301.60 / 500):
+  learning_rate = 7.40e-04, loss_average = 1.09e-01
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 55.81, loss: 1.17e-01
+  time: 4084s (wall 445s)
+[np_3] step 49500 / 81234 (epoch 304.67 / 500):
+  learning_rate = 7.38e-04, loss_average = 1.50e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.81e-01
+  time: 4127s (wall 449s)
+[np_3] step 50000 / 81234 (epoch 307.75 / 500):
+  learning_rate = 7.36e-04, loss_average = 9.31e-02
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 38.89, loss: 1.10e-01
+  time: 4168s (wall 454s)
+[np_3] step 50500 / 81234 (epoch 310.83 / 500):
+  learning_rate = 7.33e-04, loss_average = 1.25e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 25.81, loss: 1.14e-01
+  time: 4210s (wall 458s)
+[np_3] step 51000 / 81234 (epoch 313.91 / 500):
+  learning_rate = 7.31e-04, loss_average = 1.24e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.30e-01
+  time: 4252s (wall 463s)
+[np_3] step 51500 / 81234 (epoch 316.98 / 500):
+  learning_rate = 7.29e-04, loss_average = 1.41e-01
+  validation accuracy: 94.64 (547 / 578), f1 (binary): 47.46, loss: 1.47e-01
+  time: 4294s (wall 467s)
+[np_3] step 52000 / 81234 (epoch 320.06 / 500):
+  learning_rate = 7.26e-04, loss_average = 1.18e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.48e-01
+  time: 4336s (wall 472s)
+[np_3] step 52500 / 81234 (epoch 323.14 / 500):
+  learning_rate = 7.24e-04, loss_average = 1.10e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.61e-01
+  time: 4378s (wall 477s)
+[np_3] step 53000 / 81234 (epoch 326.22 / 500):
+  learning_rate = 7.22e-04, loss_average = 1.20e-01
+  validation accuracy: 96.37 (557 / 578), f1 (binary): 16.00, loss: 1.21e-01
+  time: 4420s (wall 481s)
+[np_3] step 53500 / 81234 (epoch 329.29 / 500):
+  learning_rate = 7.20e-04, loss_average = 1.17e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.42e-01
+  time: 4462s (wall 486s)
+[np_3] step 54000 / 81234 (epoch 332.37 / 500):
+  learning_rate = 7.17e-04, loss_average = 1.11e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.44e-01
+  time: 4503s (wall 490s)
+[np_3] step 54500 / 81234 (epoch 335.45 / 500):
+  learning_rate = 7.15e-04, loss_average = 1.14e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.33e-01
+  time: 4545s (wall 495s)
+[np_3] step 55000 / 81234 (epoch 338.53 / 500):
+  learning_rate = 7.13e-04, loss_average = 1.09e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.21e-01
+  time: 4587s (wall 499s)
+[np_3] step 55500 / 81234 (epoch 341.60 / 500):
+  learning_rate = 7.11e-04, loss_average = 1.24e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 14.81, loss: 1.32e-01
+  time: 4629s (wall 504s)
+[np_3] step 56000 / 81234 (epoch 344.68 / 500):
+  learning_rate = 7.09e-04, loss_average = 9.01e-02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.14e-01
+  time: 4671s (wall 509s)
+[np_3] step 56500 / 81234 (epoch 347.76 / 500):
+  learning_rate = 7.07e-04, loss_average = 9.29e-02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.36e-01
+  time: 4713s (wall 513s)
+[np_3] step 57000 / 81234 (epoch 350.84 / 500):
+  learning_rate = 7.05e-04, loss_average = 1.19e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.38e-01
+  time: 4755s (wall 518s)
+[np_3] step 57500 / 81234 (epoch 353.91 / 500):
+  learning_rate = 7.02e-04, loss_average = 1.19e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.44e-01
+  time: 4797s (wall 522s)
+[np_3] step 58000 / 81234 (epoch 356.99 / 500):
+  learning_rate = 7.00e-04, loss_average = 1.18e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.39e-01
+  time: 4838s (wall 527s)
+[np_3] step 58500 / 81234 (epoch 360.07 / 500):
+  learning_rate = 6.98e-04, loss_average = 1.24e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.39e-01
+  time: 4879s (wall 531s)
+[np_3] step 59000 / 81234 (epoch 363.15 / 500):
+  learning_rate = 6.95e-04, loss_average = 1.30e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.42e-01
+  time: 4921s (wall 536s)
+[np_3] step 59500 / 81234 (epoch 366.22 / 500):
+  learning_rate = 6.93e-04, loss_average = 1.01e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.39e-01
+  time: 4962s (wall 540s)
+[np_3] step 60000 / 81234 (epoch 369.30 / 500):
+  learning_rate = 6.91e-04, loss_average = 1.37e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.47e-01
+  time: 5003s (wall 545s)
+[np_3] step 60500 / 81234 (epoch 372.38 / 500):
+  learning_rate = 6.89e-04, loss_average = 1.28e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.39e-01
+  time: 5045s (wall 549s)
+[np_3] step 61000 / 81234 (epoch 375.46 / 500):
+  learning_rate = 6.87e-04, loss_average = 1.21e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.41e-01
+  time: 5086s (wall 554s)
+[np_3] step 61500 / 81234 (epoch 378.53 / 500):
+  learning_rate = 6.85e-04, loss_average = 1.28e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.41e-01
+  time: 5128s (wall 558s)
+[np_3] step 62000 / 81234 (epoch 381.61 / 500):
+  learning_rate = 6.83e-04, loss_average = 1.11e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.37e-01
+  time: 5169s (wall 563s)
+[np_3] step 62500 / 81234 (epoch 384.69 / 500):
+  learning_rate = 6.81e-04, loss_average = 1.14e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.37e-01
+  time: 5210s (wall 567s)
+[np_3] step 63000 / 81234 (epoch 387.77 / 500):
+  learning_rate = 6.79e-04, loss_average = 1.34e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.39e-01
+  time: 5252s (wall 572s)
+[np_3] step 63500 / 81234 (epoch 390.84 / 500):
+  learning_rate = 6.77e-04, loss_average = 1.05e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.36e-01
+  time: 5294s (wall 576s)
+[np_3] step 64000 / 81234 (epoch 393.92 / 500):
+  learning_rate = 6.75e-04, loss_average = 1.31e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.54e-01
+  time: 5335s (wall 581s)
+[np_3] step 64500 / 81234 (epoch 397.00 / 500):
+  learning_rate = 6.73e-04, loss_average = 1.13e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.41e-01
+  time: 5377s (wall 585s)
+[np_3] step 65000 / 81234 (epoch 400.08 / 500):
+  learning_rate = 6.70e-04, loss_average = 9.69e-02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.38e-01
+  time: 5419s (wall 590s)
+[np_3] step 65500 / 81234 (epoch 403.15 / 500):
+  learning_rate = 6.68e-04, loss_average = 2.08e-01
+  validation accuracy: 95.85 (554 / 578), f1 (binary): 0.00, loss: 1.59e-01
+  time: 5461s (wall 594s)
+[np_3] step 66000 / 81234 (epoch 406.23 / 500):
+  learning_rate = 6.66e-04, loss_average = 1.25e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.46e-01
+  time: 5503s (wall 600s)
+[np_3] step 66500 / 81234 (epoch 409.31 / 500):
+  learning_rate = 6.64e-04, loss_average = 1.01e-01
+  validation accuracy: 96.37 (557 / 578), f1 (binary): 27.59, loss: 9.46e-02
+  time: 5545s (wall 604s)
+[np_3] step 67000 / 81234 (epoch 412.39 / 500):
+  learning_rate = 6.62e-04, loss_average = 1.10e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.06e-01
+  time: 5587s (wall 609s)
+[np_3] step 67500 / 81234 (epoch 415.46 / 500):
+  learning_rate = 6.60e-04, loss_average = 8.91e-02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.18e-01
+  time: 5629s (wall 613s)
+[np_3] step 68000 / 81234 (epoch 418.54 / 500):
+  learning_rate = 6.58e-04, loss_average = 1.29e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.07e-01
+  time: 5671s (wall 618s)
+[np_3] step 68500 / 81234 (epoch 421.62 / 500):
+  learning_rate = 6.56e-04, loss_average = 9.39e-02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 8.00, loss: 1.05e-01
+  time: 5713s (wall 623s)
+[np_3] step 69000 / 81234 (epoch 424.70 / 500):
+  learning_rate = 6.54e-04, loss_average = 8.85e-02
+  validation accuracy: 94.12 (544 / 578), f1 (binary): 29.17, loss: 1.40e-01
+  time: 5755s (wall 627s)
+[np_3] step 69500 / 81234 (epoch 427.77 / 500):
+  learning_rate = 6.52e-04, loss_average = 9.29e-02
+  validation accuracy: 95.85 (554 / 578), f1 (binary): 45.45, loss: 1.16e-01
+  time: 5797s (wall 632s)
+[np_3] step 70000 / 81234 (epoch 430.85 / 500):
+  learning_rate = 6.50e-04, loss_average = 9.82e-02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 8.00, loss: 1.08e-01
+  time: 5839s (wall 636s)
+[np_3] step 70500 / 81234 (epoch 433.93 / 500):
+  learning_rate = 6.48e-04, loss_average = 1.04e-01
+  validation accuracy: 95.85 (554 / 578), f1 (binary): 7.69, loss: 9.82e-02
+  time: 5881s (wall 641s)
+[np_3] step 71000 / 81234 (epoch 437.01 / 500):
+  learning_rate = 6.46e-04, loss_average = 1.62e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.35e-01
+  time: 5922s (wall 645s)
+[np_3] step 71500 / 81234 (epoch 440.08 / 500):
+  learning_rate = 6.44e-04, loss_average = 1.02e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 8.00, loss: 1.06e-01
+  time: 5964s (wall 650s)
+[np_3] step 72000 / 81234 (epoch 443.16 / 500):
+  learning_rate = 6.42e-04, loss_average = 9.41e-02
+  validation accuracy: 96.37 (557 / 578), f1 (binary): 27.59, loss: 9.89e-02
+  time: 6006s (wall 655s)
+[np_3] step 72500 / 81234 (epoch 446.24 / 500):
+  learning_rate = 6.40e-04, loss_average = 9.43e-02
+  validation accuracy: 95.85 (554 / 578), f1 (binary): 14.29, loss: 1.27e-01
+  time: 6048s (wall 659s)
+[np_3] step 73000 / 81234 (epoch 449.32 / 500):
+  learning_rate = 6.38e-04, loss_average = 8.54e-02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.00e-01
+  time: 6090s (wall 664s)
+[np_3] step 73500 / 81234 (epoch 452.39 / 500):
+  learning_rate = 6.36e-04, loss_average = 1.03e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.43e-01
+  time: 6132s (wall 668s)
+[np_3] step 74000 / 81234 (epoch 455.47 / 500):
+  learning_rate = 6.34e-04, loss_average = 1.06e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.15e-01
+  time: 6173s (wall 673s)
+[np_3] step 74500 / 81234 (epoch 458.55 / 500):
+  learning_rate = 6.32e-04, loss_average = 1.27e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.40e-01
+  time: 6215s (wall 677s)
+[np_3] step 75000 / 81234 (epoch 461.63 / 500):
+  learning_rate = 6.31e-04, loss_average = 1.09e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.45e-01
+  time: 6256s (wall 682s)
+[np_3] step 75500 / 81234 (epoch 464.70 / 500):
+  learning_rate = 6.29e-04, loss_average = 1.23e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.45e-01
+  time: 6298s (wall 686s)
+[np_3] step 76000 / 81234 (epoch 467.78 / 500):
+  learning_rate = 6.27e-04, loss_average = 1.42e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.36e-01
+  time: 6340s (wall 691s)
+[np_3] step 76500 / 81234 (epoch 470.86 / 500):
+  learning_rate = 6.25e-04, loss_average = 9.00e-02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.45e-01
+  time: 6382s (wall 695s)
+[np_3] step 77000 / 81234 (epoch 473.94 / 500):
+  learning_rate = 6.23e-04, loss_average = 1.19e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.76e-01
+  time: 6424s (wall 700s)
+[np_3] step 77500 / 81234 (epoch 477.01 / 500):
+  learning_rate = 6.20e-04, loss_average = 1.27e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.36e-01
+  time: 6466s (wall 705s)
+[np_3] step 78000 / 81234 (epoch 480.09 / 500):
+  learning_rate = 6.19e-04, loss_average = 1.27e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.39e-01
+  time: 6507s (wall 709s)
+[np_3] step 78500 / 81234 (epoch 483.17 / 500):
+  learning_rate = 6.17e-04, loss_average = 1.24e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.50e-01
+  time: 6549s (wall 714s)
+[np_3] step 79000 / 81234 (epoch 486.25 / 500):
+  learning_rate = 6.15e-04, loss_average = 1.06e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.52e-01
+  time: 6591s (wall 718s)
+[np_3] step 79500 / 81234 (epoch 489.32 / 500):
+  learning_rate = 6.13e-04, loss_average = 1.10e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.56e-01
+  time: 6632s (wall 723s)
+[np_3] step 80000 / 81234 (epoch 492.40 / 500):
+  learning_rate = 6.11e-04, loss_average = 1.20e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.41e-01
+  time: 6674s (wall 727s)
+[np_3] step 80500 / 81234 (epoch 495.48 / 500):
+  learning_rate = 6.09e-04, loss_average = 1.15e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.32e-01
+  time: 6716s (wall 732s)
+[np_3] step 81000 / 81234 (epoch 498.56 / 500):
+  learning_rate = 6.08e-04, loss_average = 1.15e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.38e-01
+  time: 6757s (wall 736s)
+[np_3] step 81234 / 81234 (epoch 500.00 / 500):
+  learning_rate = 6.07e-04, loss_average = 1.16e-01
+  validation accuracy: 95.85 (554 / 578), f1 (binary): 0.00, loss: 1.62e-01
+  time: 6778s (wall 739s)
+validation accuracy: peak = 97.92, mean = 96.00
+train accuracy: 96.17 (5000 / 5199), f1 (binary): 1.97, loss: 1.25e-01
+time: 8s (wall 1s)
+test  accuracy: 95.85 (554 / 578), f1 (binary): 0.00, loss: 1.62e-01
+time: 1s (wall 0s)
+ 
+Training model: selection_pooling
+ 
+  architecture/L = 2
+  architecture/N = [25, 25, 15]
+CNNGS Architecture: selection_pooling (selection)
+  input: M_0 = N = 25
+  l_1: gsconv_1
+    input dimension : M_0 = F_0 N_0 =  1 * 25 = 25
+    output dimension: M_1 = F_1 N_1 = 16 * 25 = 400
+    parameters: K_1 F_1 F_0 = 16 * 16 * 1 = 256
+  l_2: gsconv_2
+    input dimension : M_1 = F_1 N_1 = 16 * 25 = 400
+    output dimension: M_2 = F_2 N_2 = 16 * 15 = 240
+    parameters: K_2 F_2 F_1 = 16 * 16 * 16 = 4096
+  l_3: softmax
+    input dimension : M_2 = 240
+    output dimension: M_3 = 2
+    parameters: M_3 M_2 = 2 * 240 = 480
+  Total parameters = 4832
+ 
+[selection_pooling] step 500 / 81234 (epoch 3.08 / 500):
+  learning_rate = 9.97e-04, loss_average = 2.43e+03
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 3.50e+03
+  time: 72s (wall 8s)
+[selection_pooling] step 1000 / 81234 (epoch 6.16 / 500):
+  learning_rate = 9.94e-04, loss_average = 6.65e+02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 7.20e+02
+  time: 144s (wall 15s)
+[selection_pooling] step 1500 / 81234 (epoch 9.23 / 500):
+  learning_rate = 9.91e-04, loss_average = 2.36e+02
+  validation accuracy: 89.10 (515 / 578), f1 (binary): 18.18, loss: 2.03e+02
+  time: 216s (wall 23s)
+[selection_pooling] step 2000 / 81234 (epoch 12.31 / 500):
+  learning_rate = 9.88e-04, loss_average = 1.71e+02
+  validation accuracy: 95.85 (554 / 578), f1 (binary): 0.00, loss: 1.58e+02
+  time: 288s (wall 30s)
+[selection_pooling] step 2500 / 81234 (epoch 15.39 / 500):
+  learning_rate = 9.85e-04, loss_average = 2.35e+02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 2.36e+02
+  time: 359s (wall 38s)
+[selection_pooling] step 3000 / 81234 (epoch 18.47 / 500):
+  learning_rate = 9.82e-04, loss_average = 1.24e+02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.24e+02
+  time: 431s (wall 45s)
+[selection_pooling] step 3500 / 81234 (epoch 21.54 / 500):
+  learning_rate = 9.79e-04, loss_average = 5.05e+02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 2.99e+02
+  time: 503s (wall 53s)
+[selection_pooling] step 4000 / 81234 (epoch 24.62 / 500):
+  learning_rate = 9.76e-04, loss_average = 2.29e+03
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 8.86e+02
+  time: 575s (wall 60s)
+[selection_pooling] step 4500 / 81234 (epoch 27.70 / 500):
+  learning_rate = 9.73e-04, loss_average = 8.61e+01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.17e+02
+  time: 647s (wall 68s)
+[selection_pooling] step 5000 / 81234 (epoch 30.78 / 500):
+  learning_rate = 9.70e-04, loss_average = 8.04e+01
+  validation accuracy: 88.93 (514 / 578), f1 (binary): 25.58, loss: 5.11e+01
+  time: 719s (wall 75s)
+[selection_pooling] step 5500 / 81234 (epoch 33.85 / 500):
+  learning_rate = 9.68e-04, loss_average = 3.12e+01
+  validation accuracy: 74.39 (430 / 578), f1 (binary): 13.95, loss: 6.44e+01
+  time: 791s (wall 83s)
+[selection_pooling] step 6000 / 81234 (epoch 36.93 / 500):
+  learning_rate = 9.65e-04, loss_average = 1.61e+02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.68e+02
+  time: 863s (wall 91s)
+[selection_pooling] step 6500 / 81234 (epoch 40.01 / 500):
+  learning_rate = 9.61e-04, loss_average = 4.27e+01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 5.37e+01
+  time: 935s (wall 98s)
+[selection_pooling] step 7000 / 81234 (epoch 43.09 / 500):
+  learning_rate = 9.58e-04, loss_average = 1.44e+01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 2.18e+01
+  time: 1007s (wall 106s)
+[selection_pooling] step 7500 / 81234 (epoch 46.16 / 500):
+  learning_rate = 9.55e-04, loss_average = 9.10e+00
+  validation accuracy: 95.33 (551 / 578), f1 (binary): 12.90, loss: 3.56e+00
+  time: 1078s (wall 113s)
+[selection_pooling] step 8000 / 81234 (epoch 49.24 / 500):
+  learning_rate = 9.52e-04, loss_average = 2.66e+00
+  validation accuracy: 91.87 (531 / 578), f1 (binary): 25.40, loss: 2.19e+00
+  time: 1150s (wall 120s)
+[selection_pooling] step 8500 / 81234 (epoch 52.32 / 500):
+  learning_rate = 9.49e-04, loss_average = 4.03e+02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 5.84e+02
+  time: 1222s (wall 128s)
+[selection_pooling] step 9000 / 81234 (epoch 55.40 / 500):
+  learning_rate = 9.46e-04, loss_average = 5.67e-01
+  validation accuracy: 92.21 (533 / 578), f1 (binary): 23.73, loss: 3.12e-01
+  time: 1293s (wall 135s)
+[selection_pooling] step 9500 / 81234 (epoch 58.47 / 500):
+  learning_rate = 9.44e-04, loss_average = 4.97e-01
+  validation accuracy: 90.66 (524 / 578), f1 (binary): 20.59, loss: 2.61e-01
+  time: 1365s (wall 143s)
+[selection_pooling] step 10000 / 81234 (epoch 61.55 / 500):
+  learning_rate = 9.41e-04, loss_average = 2.92e-01
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 8.33, loss: 3.31e-01
+  time: 1436s (wall 150s)
+[selection_pooling] step 10500 / 81234 (epoch 64.63 / 500):
+  learning_rate = 9.38e-04, loss_average = 7.69e-01
+  validation accuracy: 95.85 (554 / 578), f1 (binary): 0.00, loss: 1.56e+00
+  time: 1508s (wall 158s)
+[selection_pooling] step 11000 / 81234 (epoch 67.71 / 500):
+  learning_rate = 9.35e-04, loss_average = 3.08e-01
+  validation accuracy: 71.45 (413 / 578), f1 (binary): 17.91, loss: 2.94e-01
+  time: 1580s (wall 165s)
+[selection_pooling] step 11500 / 81234 (epoch 70.78 / 500):
+  learning_rate = 9.32e-04, loss_average = 3.79e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 2.15e-01
+  time: 1652s (wall 173s)
+[selection_pooling] step 12000 / 81234 (epoch 73.86 / 500):
+  learning_rate = 9.30e-04, loss_average = 1.48e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.59e-01
+  time: 1724s (wall 180s)
+[selection_pooling] step 12500 / 81234 (epoch 76.94 / 500):
+  learning_rate = 9.27e-04, loss_average = 1.39e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.45e-01
+  time: 1795s (wall 188s)
+[selection_pooling] step 13000 / 81234 (epoch 80.02 / 500):
+  learning_rate = 9.23e-04, loss_average = 1.47e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.38e-01
+  time: 1867s (wall 195s)
+[selection_pooling] step 13500 / 81234 (epoch 83.09 / 500):
+  learning_rate = 9.20e-04, loss_average = 1.20e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.43e-01
+  time: 1940s (wall 203s)
+[selection_pooling] step 14000 / 81234 (epoch 86.17 / 500):
+  learning_rate = 9.18e-04, loss_average = 5.21e+02
+  validation accuracy: 94.46 (546 / 578), f1 (binary): 0.00, loss: 1.54e+02
+  time: 2012s (wall 210s)
+[selection_pooling] step 14500 / 81234 (epoch 89.25 / 500):
+  learning_rate = 9.15e-04, loss_average = 1.11e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.52e-01
+  time: 2084s (wall 218s)
+[selection_pooling] step 15000 / 81234 (epoch 92.33 / 500):
+  learning_rate = 9.12e-04, loss_average = 1.44e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.56e-01
+  time: 2155s (wall 225s)
+[selection_pooling] step 15500 / 81234 (epoch 95.40 / 500):
+  learning_rate = 9.09e-04, loss_average = 1.49e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.54e-01
+  time: 2227s (wall 233s)
+[selection_pooling] step 16000 / 81234 (epoch 98.48 / 500):
+  learning_rate = 9.07e-04, loss_average = 9.57e-02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 2299s (wall 241s)
+[selection_pooling] step 16500 / 81234 (epoch 101.56 / 500):
+  learning_rate = 9.04e-04, loss_average = 1.43e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 2371s (wall 248s)
+[selection_pooling] step 17000 / 81234 (epoch 104.64 / 500):
+  learning_rate = 9.01e-04, loss_average = 1.20e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 2443s (wall 256s)
+[selection_pooling] step 17500 / 81234 (epoch 107.71 / 500):
+  learning_rate = 8.98e-04, loss_average = 1.11e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 2514s (wall 263s)
+[selection_pooling] step 18000 / 81234 (epoch 110.79 / 500):
+  learning_rate = 8.96e-04, loss_average = 1.56e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 2585s (wall 270s)
+[selection_pooling] step 18500 / 81234 (epoch 113.87 / 500):
+  learning_rate = 8.93e-04, loss_average = 1.34e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 2657s (wall 278s)
+[selection_pooling] step 19000 / 81234 (epoch 116.95 / 500):
+  learning_rate = 8.90e-04, loss_average = 1.53e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 2729s (wall 285s)
+[selection_pooling] step 19500 / 81234 (epoch 120.02 / 500):
+  learning_rate = 8.87e-04, loss_average = 1.56e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 2800s (wall 293s)
+[selection_pooling] step 20000 / 81234 (epoch 123.10 / 500):
+  learning_rate = 8.84e-04, loss_average = 1.20e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 2871s (wall 300s)
+[selection_pooling] step 20500 / 81234 (epoch 126.18 / 500):
+  learning_rate = 8.82e-04, loss_average = 1.10e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 2942s (wall 308s)
+[selection_pooling] step 21000 / 81234 (epoch 129.26 / 500):
+  learning_rate = 8.79e-04, loss_average = 1.58e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 3014s (wall 315s)
+[selection_pooling] step 21500 / 81234 (epoch 132.33 / 500):
+  learning_rate = 8.76e-04, loss_average = 1.57e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 3086s (wall 323s)
+[selection_pooling] step 22000 / 81234 (epoch 135.41 / 500):
+  learning_rate = 8.74e-04, loss_average = 1.58e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 3158s (wall 330s)
+[selection_pooling] step 22500 / 81234 (epoch 138.49 / 500):
+  learning_rate = 8.71e-04, loss_average = 1.43e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 3229s (wall 338s)
+[selection_pooling] step 23000 / 81234 (epoch 141.57 / 500):
+  learning_rate = 8.68e-04, loss_average = 1.07e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 3301s (wall 345s)
+[selection_pooling] step 23500 / 81234 (epoch 144.64 / 500):
+  learning_rate = 8.66e-04, loss_average = 1.61e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 3373s (wall 353s)
+[selection_pooling] step 24000 / 81234 (epoch 147.72 / 500):
+  learning_rate = 8.63e-04, loss_average = 1.21e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 3445s (wall 360s)
+[selection_pooling] step 24500 / 81234 (epoch 150.80 / 500):
+  learning_rate = 8.61e-04, loss_average = 1.51e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 3517s (wall 368s)
+[selection_pooling] step 25000 / 81234 (epoch 153.88 / 500):
+  learning_rate = 8.58e-04, loss_average = 1.53e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 3588s (wall 375s)
+[selection_pooling] step 25500 / 81234 (epoch 156.95 / 500):
+  learning_rate = 8.55e-04, loss_average = 1.42e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 3660s (wall 383s)
+[selection_pooling] step 26000 / 81234 (epoch 160.03 / 500):
+  learning_rate = 8.52e-04, loss_average = 1.50e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 3732s (wall 390s)
+[selection_pooling] step 26500 / 81234 (epoch 163.11 / 500):
+  learning_rate = 8.50e-04, loss_average = 1.17e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 3804s (wall 398s)
+[selection_pooling] step 27000 / 81234 (epoch 166.19 / 500):
+  learning_rate = 8.47e-04, loss_average = 1.20e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 3875s (wall 405s)
+[selection_pooling] step 27500 / 81234 (epoch 169.26 / 500):
+  learning_rate = 8.44e-04, loss_average = 1.58e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 3947s (wall 413s)
+[selection_pooling] step 28000 / 81234 (epoch 172.34 / 500):
+  learning_rate = 8.42e-04, loss_average = 1.37e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 4019s (wall 420s)
+[selection_pooling] step 28500 / 81234 (epoch 175.42 / 500):
+  learning_rate = 8.39e-04, loss_average = 1.23e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 4091s (wall 428s)
+[selection_pooling] step 29000 / 81234 (epoch 178.50 / 500):
+  learning_rate = 8.37e-04, loss_average = 1.27e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 4163s (wall 435s)
+[selection_pooling] step 29500 / 81234 (epoch 181.57 / 500):
+  learning_rate = 8.34e-04, loss_average = 1.07e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 4235s (wall 443s)
+[selection_pooling] step 30000 / 81234 (epoch 184.65 / 500):
+  learning_rate = 8.32e-04, loss_average = 1.47e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 4306s (wall 450s)
+[selection_pooling] step 30500 / 81234 (epoch 187.73 / 500):
+  learning_rate = 8.29e-04, loss_average = 1.46e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 4378s (wall 458s)
+[selection_pooling] step 31000 / 81234 (epoch 190.81 / 500):
+  learning_rate = 8.27e-04, loss_average = 1.42e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.52e-01
+  time: 4450s (wall 465s)
+[selection_pooling] step 31500 / 81234 (epoch 193.88 / 500):
+  learning_rate = 8.24e-04, loss_average = 1.04e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 4522s (wall 473s)
+[selection_pooling] step 32000 / 81234 (epoch 196.96 / 500):
+  learning_rate = 8.22e-04, loss_average = 1.32e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 4593s (wall 480s)
+[selection_pooling] step 32500 / 81234 (epoch 200.04 / 500):
+  learning_rate = 8.19e-04, loss_average = 1.27e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 4665s (wall 488s)
+[selection_pooling] step 33000 / 81234 (epoch 203.12 / 500):
+  learning_rate = 8.16e-04, loss_average = 1.53e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 4736s (wall 495s)
+[selection_pooling] step 33500 / 81234 (epoch 206.19 / 500):
+  learning_rate = 8.14e-04, loss_average = 1.64e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 4808s (wall 503s)
+[selection_pooling] step 34000 / 81234 (epoch 209.27 / 500):
+  learning_rate = 8.11e-04, loss_average = 1.26e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.53e-01
+  time: 4880s (wall 510s)
+[selection_pooling] step 34500 / 81234 (epoch 212.35 / 500):
+  learning_rate = 8.09e-04, loss_average = 3.37e+01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 4.27e+00
+  time: 4952s (wall 518s)
+[selection_pooling] step 35000 / 81234 (epoch 215.43 / 500):
+  learning_rate = 8.06e-04, loss_average = 4.32e+00
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.58e-01
+  time: 5024s (wall 525s)
+[selection_pooling] step 35500 / 81234 (epoch 218.50 / 500):
+  learning_rate = 8.04e-04, loss_average = 1.99e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.58e-01
+  time: 5096s (wall 533s)
+[selection_pooling] step 36000 / 81234 (epoch 221.58 / 500):
+  learning_rate = 8.02e-04, loss_average = 1.51e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.58e-01
+  time: 5168s (wall 540s)
+[selection_pooling] step 36500 / 81234 (epoch 224.66 / 500):
+  learning_rate = 7.99e-04, loss_average = 1.25e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 5240s (wall 548s)
+[selection_pooling] step 37000 / 81234 (epoch 227.74 / 500):
+  learning_rate = 7.97e-04, loss_average = 1.30e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 5312s (wall 556s)
+[selection_pooling] step 37500 / 81234 (epoch 230.81 / 500):
+  learning_rate = 7.94e-04, loss_average = 1.58e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 5383s (wall 563s)
+[selection_pooling] step 38000 / 81234 (epoch 233.89 / 500):
+  learning_rate = 7.92e-04, loss_average = 1.22e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 5455s (wall 570s)
+[selection_pooling] step 38500 / 81234 (epoch 236.97 / 500):
+  learning_rate = 7.90e-04, loss_average = 1.32e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 5527s (wall 578s)
+[selection_pooling] step 39000 / 81234 (epoch 240.05 / 500):
+  learning_rate = 7.87e-04, loss_average = 1.74e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 5598s (wall 585s)
+[selection_pooling] step 39500 / 81234 (epoch 243.12 / 500):
+  learning_rate = 7.84e-04, loss_average = 1.57e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 5670s (wall 593s)
+[selection_pooling] step 40000 / 81234 (epoch 246.20 / 500):
+  learning_rate = 7.82e-04, loss_average = 1.26e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 5741s (wall 600s)
+[selection_pooling] step 40500 / 81234 (epoch 249.28 / 500):
+  learning_rate = 7.79e-04, loss_average = 1.63e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 5813s (wall 608s)
+[selection_pooling] step 41000 / 81234 (epoch 252.36 / 500):
+  learning_rate = 7.77e-04, loss_average = 1.60e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 5885s (wall 615s)
+[selection_pooling] step 41500 / 81234 (epoch 255.43 / 500):
+  learning_rate = 7.75e-04, loss_average = 1.25e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 5956s (wall 623s)
+[selection_pooling] step 42000 / 81234 (epoch 258.51 / 500):
+  learning_rate = 7.72e-04, loss_average = 1.46e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 6028s (wall 630s)
+[selection_pooling] step 42500 / 81234 (epoch 261.59 / 500):
+  learning_rate = 7.70e-04, loss_average = 1.24e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 6100s (wall 638s)
+[selection_pooling] step 43000 / 81234 (epoch 264.67 / 500):
+  learning_rate = 7.68e-04, loss_average = 1.47e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 6172s (wall 645s)
+[selection_pooling] step 43500 / 81234 (epoch 267.74 / 500):
+  learning_rate = 7.66e-04, loss_average = 1.23e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 6244s (wall 653s)
+[selection_pooling] step 44000 / 81234 (epoch 270.82 / 500):
+  learning_rate = 7.63e-04, loss_average = 1.32e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 6316s (wall 660s)
+[selection_pooling] step 44500 / 81234 (epoch 273.90 / 500):
+  learning_rate = 7.61e-04, loss_average = 1.61e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 6388s (wall 668s)
+[selection_pooling] step 45000 / 81234 (epoch 276.98 / 500):
+  learning_rate = 7.59e-04, loss_average = 1.62e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 6459s (wall 675s)
+[selection_pooling] step 45500 / 81234 (epoch 280.05 / 500):
+  learning_rate = 7.56e-04, loss_average = 1.02e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 6531s (wall 683s)
+[selection_pooling] step 46000 / 81234 (epoch 283.13 / 500):
+  learning_rate = 7.53e-04, loss_average = 3.45e+02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 5.38e+02
+  time: 6603s (wall 691s)
+[selection_pooling] step 46500 / 81234 (epoch 286.21 / 500):
+  learning_rate = 7.51e-04, loss_average = 3.61e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.49e-01
+  time: 6675s (wall 698s)
+[selection_pooling] step 47000 / 81234 (epoch 289.29 / 500):
+  learning_rate = 7.49e-04, loss_average = 1.33e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.49e-01
+  time: 6747s (wall 706s)
+[selection_pooling] step 47500 / 81234 (epoch 292.36 / 500):
+  learning_rate = 7.47e-04, loss_average = 1.48e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.49e-01
+  time: 6818s (wall 713s)
+[selection_pooling] step 48000 / 81234 (epoch 295.44 / 500):
+  learning_rate = 7.44e-04, loss_average = 1.36e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.49e-01
+  time: 6890s (wall 721s)
+[selection_pooling] step 48500 / 81234 (epoch 298.52 / 500):
+  learning_rate = 7.42e-04, loss_average = 1.33e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.49e-01
+  time: 6962s (wall 728s)
+[selection_pooling] step 49000 / 81234 (epoch 301.60 / 500):
+  learning_rate = 7.40e-04, loss_average = 1.28e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.49e-01
+  time: 7033s (wall 736s)
+[selection_pooling] step 49500 / 81234 (epoch 304.67 / 500):
+  learning_rate = 7.38e-04, loss_average = 1.11e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.49e-01
+  time: 7105s (wall 743s)
+[selection_pooling] step 50000 / 81234 (epoch 307.75 / 500):
+  learning_rate = 7.36e-04, loss_average = 1.26e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.49e-01
+  time: 7177s (wall 751s)
+[selection_pooling] step 50500 / 81234 (epoch 310.83 / 500):
+  learning_rate = 7.33e-04, loss_average = 1.50e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.49e-01
+  time: 7248s (wall 758s)
+[selection_pooling] step 51000 / 81234 (epoch 313.91 / 500):
+  learning_rate = 7.31e-04, loss_average = 1.84e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.49e-01
+  time: 7320s (wall 765s)
+[selection_pooling] step 51500 / 81234 (epoch 316.98 / 500):
+  learning_rate = 7.29e-04, loss_average = 1.29e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.49e-01
+  time: 7392s (wall 773s)
+[selection_pooling] step 52000 / 81234 (epoch 320.06 / 500):
+  learning_rate = 7.26e-04, loss_average = 1.17e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.49e-01
+  time: 7463s (wall 780s)
+[selection_pooling] step 52500 / 81234 (epoch 323.14 / 500):
+  learning_rate = 7.24e-04, loss_average = 1.29e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.49e-01
+  time: 7535s (wall 788s)
+[selection_pooling] step 53000 / 81234 (epoch 326.22 / 500):
+  learning_rate = 7.22e-04, loss_average = 1.49e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.49e-01
+  time: 7607s (wall 795s)
+[selection_pooling] step 53500 / 81234 (epoch 329.29 / 500):
+  learning_rate = 7.20e-04, loss_average = 1.20e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.49e-01
+  time: 7679s (wall 803s)
+[selection_pooling] step 54000 / 81234 (epoch 332.37 / 500):
+  learning_rate = 7.17e-04, loss_average = 1.19e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.49e-01
+  time: 7750s (wall 810s)
+[selection_pooling] step 54500 / 81234 (epoch 335.45 / 500):
+  learning_rate = 7.15e-04, loss_average = 1.33e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.49e-01
+  time: 7823s (wall 818s)
+[selection_pooling] step 55000 / 81234 (epoch 338.53 / 500):
+  learning_rate = 7.13e-04, loss_average = 1.19e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.49e-01
+  time: 7894s (wall 825s)
+[selection_pooling] step 55500 / 81234 (epoch 341.60 / 500):
+  learning_rate = 7.11e-04, loss_average = 1.40e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.49e-01
+  time: 7966s (wall 833s)
+[selection_pooling] step 56000 / 81234 (epoch 344.68 / 500):
+  learning_rate = 7.09e-04, loss_average = 1.17e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.49e-01
+  time: 8037s (wall 840s)
+[selection_pooling] step 56500 / 81234 (epoch 347.76 / 500):
+  learning_rate = 7.07e-04, loss_average = 1.53e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.49e-01
+  time: 8108s (wall 848s)
+[selection_pooling] step 57000 / 81234 (epoch 350.84 / 500):
+  learning_rate = 7.05e-04, loss_average = 1.19e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.49e-01
+  time: 8180s (wall 855s)
+[selection_pooling] step 57500 / 81234 (epoch 353.91 / 500):
+  learning_rate = 7.02e-04, loss_average = 4.88e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.68e-01
+  time: 8251s (wall 862s)
+[selection_pooling] step 58000 / 81234 (epoch 356.99 / 500):
+  learning_rate = 7.00e-04, loss_average = 6.40e+00
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 8323s (wall 870s)
+[selection_pooling] step 58500 / 81234 (epoch 360.07 / 500):
+  learning_rate = 6.98e-04, loss_average = 1.66e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 8395s (wall 877s)
+[selection_pooling] step 59000 / 81234 (epoch 363.15 / 500):
+  learning_rate = 6.95e-04, loss_average = 1.47e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 8466s (wall 885s)
+[selection_pooling] step 59500 / 81234 (epoch 366.22 / 500):
+  learning_rate = 6.93e-04, loss_average = 1.51e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 8538s (wall 893s)
+[selection_pooling] step 60000 / 81234 (epoch 369.30 / 500):
+  learning_rate = 6.91e-04, loss_average = 1.39e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 8610s (wall 900s)
+[selection_pooling] step 60500 / 81234 (epoch 372.38 / 500):
+  learning_rate = 6.89e-04, loss_average = 1.18e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 8682s (wall 908s)
+[selection_pooling] step 61000 / 81234 (epoch 375.46 / 500):
+  learning_rate = 6.87e-04, loss_average = 1.34e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 8754s (wall 915s)
+[selection_pooling] step 61500 / 81234 (epoch 378.53 / 500):
+  learning_rate = 6.85e-04, loss_average = 1.32e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 8826s (wall 923s)
+[selection_pooling] step 62000 / 81234 (epoch 381.61 / 500):
+  learning_rate = 6.83e-04, loss_average = 1.56e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 8898s (wall 930s)
+[selection_pooling] step 62500 / 81234 (epoch 384.69 / 500):
+  learning_rate = 6.81e-04, loss_average = 1.94e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 8970s (wall 938s)
+[selection_pooling] step 63000 / 81234 (epoch 387.77 / 500):
+  learning_rate = 6.79e-04, loss_average = 1.81e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 9041s (wall 945s)
+[selection_pooling] step 63500 / 81234 (epoch 390.84 / 500):
+  learning_rate = 6.77e-04, loss_average = 1.40e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 9113s (wall 953s)
+[selection_pooling] step 64000 / 81234 (epoch 393.92 / 500):
+  learning_rate = 6.75e-04, loss_average = 1.54e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 9184s (wall 960s)
+[selection_pooling] step 64500 / 81234 (epoch 397.00 / 500):
+  learning_rate = 6.73e-04, loss_average = 1.13e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 9256s (wall 968s)
+[selection_pooling] step 65000 / 81234 (epoch 400.08 / 500):
+  learning_rate = 6.70e-04, loss_average = 1.69e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 9328s (wall 975s)
+[selection_pooling] step 65500 / 81234 (epoch 403.15 / 500):
+  learning_rate = 6.68e-04, loss_average = 1.17e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 9400s (wall 983s)
+[selection_pooling] step 66000 / 81234 (epoch 406.23 / 500):
+  learning_rate = 6.66e-04, loss_average = 1.59e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 9471s (wall 990s)
+[selection_pooling] step 66500 / 81234 (epoch 409.31 / 500):
+  learning_rate = 6.64e-04, loss_average = 1.53e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 9543s (wall 998s)
+[selection_pooling] step 67000 / 81234 (epoch 412.39 / 500):
+  learning_rate = 6.62e-04, loss_average = 1.28e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 9615s (wall 1005s)
+[selection_pooling] step 67500 / 81234 (epoch 415.46 / 500):
+  learning_rate = 6.60e-04, loss_average = 1.24e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 9687s (wall 1013s)
+[selection_pooling] step 68000 / 81234 (epoch 418.54 / 500):
+  learning_rate = 6.58e-04, loss_average = 2.02e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 9758s (wall 1020s)
+[selection_pooling] step 68500 / 81234 (epoch 421.62 / 500):
+  learning_rate = 6.56e-04, loss_average = 1.34e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 9829s (wall 1027s)
+[selection_pooling] step 69000 / 81234 (epoch 424.70 / 500):
+  learning_rate = 6.54e-04, loss_average = 1.33e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 9901s (wall 1035s)
+[selection_pooling] step 69500 / 81234 (epoch 427.77 / 500):
+  learning_rate = 6.52e-04, loss_average = 1.53e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 9972s (wall 1042s)
+[selection_pooling] step 70000 / 81234 (epoch 430.85 / 500):
+  learning_rate = 6.50e-04, loss_average = 1.52e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 10044s (wall 1050s)
+[selection_pooling] step 70500 / 81234 (epoch 433.93 / 500):
+  learning_rate = 6.48e-04, loss_average = 1.74e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 10115s (wall 1057s)
+[selection_pooling] step 71000 / 81234 (epoch 437.01 / 500):
+  learning_rate = 6.46e-04, loss_average = 1.75e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 10187s (wall 1065s)
+[selection_pooling] step 71500 / 81234 (epoch 440.08 / 500):
+  learning_rate = 6.44e-04, loss_average = 1.64e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 10259s (wall 1072s)
+[selection_pooling] step 72000 / 81234 (epoch 443.16 / 500):
+  learning_rate = 6.42e-04, loss_average = 1.19e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 10331s (wall 1080s)
+[selection_pooling] step 72500 / 81234 (epoch 446.24 / 500):
+  learning_rate = 6.40e-04, loss_average = 2.14e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 10403s (wall 1087s)
+[selection_pooling] step 73000 / 81234 (epoch 449.32 / 500):
+  learning_rate = 6.38e-04, loss_average = 1.44e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 10475s (wall 1095s)
+[selection_pooling] step 73500 / 81234 (epoch 452.39 / 500):
+  learning_rate = 6.36e-04, loss_average = 1.04e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 10547s (wall 1102s)
+[selection_pooling] step 74000 / 81234 (epoch 455.47 / 500):
+  learning_rate = 6.34e-04, loss_average = 1.61e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 10619s (wall 1110s)
+[selection_pooling] step 74500 / 81234 (epoch 458.55 / 500):
+  learning_rate = 6.32e-04, loss_average = 1.57e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 10691s (wall 1117s)
+[selection_pooling] step 75000 / 81234 (epoch 461.63 / 500):
+  learning_rate = 6.31e-04, loss_average = 1.45e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 10762s (wall 1125s)
+[selection_pooling] step 75500 / 81234 (epoch 464.70 / 500):
+  learning_rate = 6.29e-04, loss_average = 1.46e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 10834s (wall 1132s)
+[selection_pooling] step 76000 / 81234 (epoch 467.78 / 500):
+  learning_rate = 6.27e-04, loss_average = 1.69e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 10906s (wall 1140s)
+[selection_pooling] step 76500 / 81234 (epoch 470.86 / 500):
+  learning_rate = 6.25e-04, loss_average = 1.52e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 10977s (wall 1147s)
+[selection_pooling] step 77000 / 81234 (epoch 473.94 / 500):
+  learning_rate = 6.23e-04, loss_average = 1.46e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 11049s (wall 1155s)
+[selection_pooling] step 77500 / 81234 (epoch 477.01 / 500):
+  learning_rate = 6.20e-04, loss_average = 1.78e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 11121s (wall 1162s)
+[selection_pooling] step 78000 / 81234 (epoch 480.09 / 500):
+  learning_rate = 6.19e-04, loss_average = 1.71e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 11193s (wall 1170s)
+[selection_pooling] step 78500 / 81234 (epoch 483.17 / 500):
+  learning_rate = 6.17e-04, loss_average = 1.41e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 11264s (wall 1177s)
+[selection_pooling] step 79000 / 81234 (epoch 486.25 / 500):
+  learning_rate = 6.15e-04, loss_average = 1.70e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 11336s (wall 1184s)
+[selection_pooling] step 79500 / 81234 (epoch 489.32 / 500):
+  learning_rate = 6.13e-04, loss_average = 1.58e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 11408s (wall 1192s)
+[selection_pooling] step 80000 / 81234 (epoch 492.40 / 500):
+  learning_rate = 6.11e-04, loss_average = 1.18e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 11480s (wall 1199s)
+[selection_pooling] step 80500 / 81234 (epoch 495.48 / 500):
+  learning_rate = 6.09e-04, loss_average = 1.42e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 11552s (wall 1207s)
+[selection_pooling] step 81000 / 81234 (epoch 498.56 / 500):
+  learning_rate = 6.08e-04, loss_average = 1.51e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 11624s (wall 1215s)
+[selection_pooling] step 81234 / 81234 (epoch 500.00 / 500):
+  learning_rate = 6.07e-04, loss_average = 1.54e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+  time: 11658s (wall 1218s)
+validation accuracy: peak = 96.19, mean = 96.02
+train accuracy: 96.27 (5005 / 5199), f1 (binary): 1.02, loss: 1.44e-01
+time: 13s (wall 2s)
+test  accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.57e-01
+time: 2s (wall 0s)
+ 
+Training model: aggregation_pooling
+ 
+  architecture/L = 2
+  architecture/N = [25, 12, 6]
+CNNGS Architecture: aggregation_pooling (aggregation)
+  input: M_0 = N = 25
+  l_1: gsconv_1
+    input dimension : M_0 = F_0 N_0 =  1 * 25 = 25
+    output dimension: M_1 = F_1 N_1 = 16 * 12 = 192
+    parameters: K_1 F_1 F_0 = 16 * 16 * 1 = 256
+  l_2: gsconv_2
+    input dimension : M_1 = F_1 N_1 = 16 * 12 = 192
+    output dimension: M_2 = F_2 N_2 = 16 *  6 = 96
+    parameters: K_2 F_2 F_1 = 16 * 16 * 16 = 4096
+  l_3: softmax
+    input dimension : M_2 = 96
+    output dimension: M_3 = 2
+    parameters: M_3 M_2 = 2 * 96 = 192
+  Total parameters = 4544
+ 
+[aggregation_pooling] step 500 / 81234 (epoch 3.08 / 500):
+  learning_rate = 9.97e-04, loss_average = 6.44e-01
+  validation accuracy: 78.72 (455 / 578), f1 (binary): 13.99, loss: 5.34e-01
+  time: 13s (wall 4s)
+[aggregation_pooling] step 1000 / 81234 (epoch 6.16 / 500):
+  learning_rate = 9.94e-04, loss_average = 2.25e-01
+  validation accuracy: 93.94 (543 / 578), f1 (binary): 0.00, loss: 2.29e-01
+  time: 25s (wall 7s)
+[aggregation_pooling] step 1500 / 81234 (epoch 9.23 / 500):
+  learning_rate = 9.91e-04, loss_average = 2.40e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 3.21e-01
+  time: 38s (wall 11s)
+[aggregation_pooling] step 2000 / 81234 (epoch 12.31 / 500):
+  learning_rate = 9.88e-04, loss_average = 1.93e-01
+  validation accuracy: 95.85 (554 / 578), f1 (binary): 0.00, loss: 2.18e-01
+  time: 51s (wall 15s)
+[aggregation_pooling] step 2500 / 81234 (epoch 15.39 / 500):
+  learning_rate = 9.85e-04, loss_average = 1.60e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 2.30e-01
+  time: 64s (wall 18s)
+[aggregation_pooling] step 3000 / 81234 (epoch 18.47 / 500):
+  learning_rate = 9.82e-04, loss_average = 1.59e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.69e-01
+  time: 76s (wall 22s)
+[aggregation_pooling] step 3500 / 81234 (epoch 21.54 / 500):
+  learning_rate = 9.79e-04, loss_average = 1.35e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 2.29e-01
+  time: 89s (wall 26s)
+[aggregation_pooling] step 4000 / 81234 (epoch 24.62 / 500):
+  learning_rate = 9.76e-04, loss_average = 1.77e-01
+  validation accuracy: 93.43 (540 / 578), f1 (binary): 26.92, loss: 2.29e-01
+  time: 102s (wall 29s)
+[aggregation_pooling] step 4500 / 81234 (epoch 27.70 / 500):
+  learning_rate = 9.73e-04, loss_average = 1.46e-01
+  validation accuracy: 95.16 (550 / 578), f1 (binary): 0.00, loss: 1.89e-01
+  time: 115s (wall 33s)
+[aggregation_pooling] step 5000 / 81234 (epoch 30.78 / 500):
+  learning_rate = 9.70e-04, loss_average = 1.59e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.92e-01
+  time: 128s (wall 37s)
+[aggregation_pooling] step 5500 / 81234 (epoch 33.85 / 500):
+  learning_rate = 9.68e-04, loss_average = 1.57e-01
+  validation accuracy: 95.85 (554 / 578), f1 (binary): 14.29, loss: 1.68e-01
+  time: 141s (wall 40s)
+[aggregation_pooling] step 6000 / 81234 (epoch 36.93 / 500):
+  learning_rate = 9.65e-04, loss_average = 9.92e-02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.86e-01
+  time: 154s (wall 44s)
+[aggregation_pooling] step 6500 / 81234 (epoch 40.01 / 500):
+  learning_rate = 9.61e-04, loss_average = 7.75e-02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.62e-01
+  time: 167s (wall 48s)
+[aggregation_pooling] step 7000 / 81234 (epoch 43.09 / 500):
+  learning_rate = 9.58e-04, loss_average = 1.49e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 14.81, loss: 1.81e-01
+  time: 180s (wall 52s)
+[aggregation_pooling] step 7500 / 81234 (epoch 46.16 / 500):
+  learning_rate = 9.55e-04, loss_average = 1.33e-01
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 33.33, loss: 1.62e-01
+  time: 194s (wall 55s)
+[aggregation_pooling] step 8000 / 81234 (epoch 49.24 / 500):
+  learning_rate = 9.52e-04, loss_average = 1.24e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.65e-01
+  time: 207s (wall 59s)
+[aggregation_pooling] step 8500 / 81234 (epoch 52.32 / 500):
+  learning_rate = 9.49e-04, loss_average = 1.39e-01
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 8.33, loss: 1.56e-01
+  time: 220s (wall 63s)
+[aggregation_pooling] step 9000 / 81234 (epoch 55.40 / 500):
+  learning_rate = 9.46e-04, loss_average = 1.12e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.51e-01
+  time: 233s (wall 67s)
+[aggregation_pooling] step 9500 / 81234 (epoch 58.47 / 500):
+  learning_rate = 9.44e-04, loss_average = 1.33e-01
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 8.33, loss: 1.46e-01
+  time: 246s (wall 70s)
+[aggregation_pooling] step 10000 / 81234 (epoch 61.55 / 500):
+  learning_rate = 9.41e-04, loss_average = 9.50e-02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.46e-01
+  time: 259s (wall 74s)
+[aggregation_pooling] step 10500 / 81234 (epoch 64.63 / 500):
+  learning_rate = 9.38e-04, loss_average = 9.09e-02
+  validation accuracy: 96.37 (557 / 578), f1 (binary): 16.00, loss: 1.39e-01
+  time: 272s (wall 78s)
+[aggregation_pooling] step 11000 / 81234 (epoch 67.71 / 500):
+  learning_rate = 9.35e-04, loss_average = 1.11e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.45e-01
+  time: 285s (wall 82s)
+[aggregation_pooling] step 11500 / 81234 (epoch 70.78 / 500):
+  learning_rate = 9.32e-04, loss_average = 1.15e-01
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 8.33, loss: 1.35e-01
+  time: 298s (wall 85s)
+[aggregation_pooling] step 12000 / 81234 (epoch 73.86 / 500):
+  learning_rate = 9.30e-04, loss_average = 1.17e-01
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 8.33, loss: 1.42e-01
+  time: 311s (wall 89s)
+[aggregation_pooling] step 12500 / 81234 (epoch 76.94 / 500):
+  learning_rate = 9.27e-04, loss_average = 9.42e-02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 37.84, loss: 1.49e-01
+  time: 325s (wall 93s)
+[aggregation_pooling] step 13000 / 81234 (epoch 80.02 / 500):
+  learning_rate = 9.23e-04, loss_average = 1.03e-01
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 8.33, loss: 1.49e-01
+  time: 337s (wall 97s)
+[aggregation_pooling] step 13500 / 81234 (epoch 83.09 / 500):
+  learning_rate = 9.20e-04, loss_average = 9.90e-02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.39e-01
+  time: 351s (wall 100s)
+[aggregation_pooling] step 14000 / 81234 (epoch 86.17 / 500):
+  learning_rate = 9.18e-04, loss_average = 8.71e-02
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 8.33, loss: 1.35e-01
+  time: 364s (wall 104s)
+[aggregation_pooling] step 14500 / 81234 (epoch 89.25 / 500):
+  learning_rate = 9.15e-04, loss_average = 8.34e-02
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 43.75, loss: 1.28e-01
+  time: 376s (wall 108s)
+[aggregation_pooling] step 15000 / 81234 (epoch 92.33 / 500):
+  learning_rate = 9.12e-04, loss_average = 1.14e-01
+  validation accuracy: 95.85 (554 / 578), f1 (binary): 7.69, loss: 1.31e-01
+  time: 389s (wall 111s)
+[aggregation_pooling] step 15500 / 81234 (epoch 95.40 / 500):
+  learning_rate = 9.09e-04, loss_average = 6.98e-02
+  validation accuracy: 96.37 (557 / 578), f1 (binary): 22.22, loss: 1.32e-01
+  time: 402s (wall 115s)
+[aggregation_pooling] step 16000 / 81234 (epoch 98.48 / 500):
+  learning_rate = 9.07e-04, loss_average = 9.63e-02
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 45.71, loss: 1.18e-01
+  time: 415s (wall 119s)
+[aggregation_pooling] step 16500 / 81234 (epoch 101.56 / 500):
+  learning_rate = 9.04e-04, loss_average = 7.41e-02
+  validation accuracy: 96.37 (557 / 578), f1 (binary): 48.78, loss: 1.23e-01
+  time: 428s (wall 122s)
+[aggregation_pooling] step 17000 / 81234 (epoch 104.64 / 500):
+  learning_rate = 9.01e-04, loss_average = 8.65e-02
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 42.42, loss: 1.21e-01
+  time: 441s (wall 126s)
+[aggregation_pooling] step 17500 / 81234 (epoch 107.71 / 500):
+  learning_rate = 8.98e-04, loss_average = 9.09e-02
+  validation accuracy: 95.85 (554 / 578), f1 (binary): 45.45, loss: 1.30e-01
+  time: 454s (wall 130s)
+[aggregation_pooling] step 18000 / 81234 (epoch 110.79 / 500):
+  learning_rate = 8.96e-04, loss_average = 9.48e-02
+  validation accuracy: 95.33 (551 / 578), f1 (binary): 34.15, loss: 1.38e-01
+  time: 467s (wall 133s)
+[aggregation_pooling] step 18500 / 81234 (epoch 113.87 / 500):
+  learning_rate = 8.93e-04, loss_average = 6.58e-02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.55e-01
+  time: 480s (wall 137s)
+[aggregation_pooling] step 19000 / 81234 (epoch 116.95 / 500):
+  learning_rate = 8.90e-04, loss_average = 7.98e-02
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 43.75, loss: 1.14e-01
+  time: 493s (wall 141s)
+[aggregation_pooling] step 19500 / 81234 (epoch 120.02 / 500):
+  learning_rate = 8.87e-04, loss_average = 7.90e-02
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 35.71, loss: 1.13e-01
+  time: 506s (wall 145s)
+[aggregation_pooling] step 20000 / 81234 (epoch 123.10 / 500):
+  learning_rate = 8.84e-04, loss_average = 8.23e-02
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 23.08, loss: 1.19e-01
+  time: 519s (wall 148s)
+[aggregation_pooling] step 20500 / 81234 (epoch 126.18 / 500):
+  learning_rate = 8.82e-04, loss_average = 7.89e-02
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 38.71, loss: 1.28e-01
+  time: 532s (wall 152s)
+[aggregation_pooling] step 21000 / 81234 (epoch 129.26 / 500):
+  learning_rate = 8.79e-04, loss_average = 7.88e-02
+  validation accuracy: 97.23 (562 / 578), f1 (binary): 55.56, loss: 1.10e-01
+  time: 545s (wall 156s)
+[aggregation_pooling] step 21500 / 81234 (epoch 132.33 / 500):
+  learning_rate = 8.76e-04, loss_average = 9.06e-02
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 23.08, loss: 1.27e-01
+  time: 558s (wall 160s)
+[aggregation_pooling] step 22000 / 81234 (epoch 135.41 / 500):
+  learning_rate = 8.74e-04, loss_average = 6.68e-02
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 34.48, loss: 1.21e-01
+  time: 571s (wall 163s)
+[aggregation_pooling] step 22500 / 81234 (epoch 138.49 / 500):
+  learning_rate = 8.71e-04, loss_average = 7.26e-02
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 29.63, loss: 1.20e-01
+  time: 584s (wall 167s)
+[aggregation_pooling] step 23000 / 81234 (epoch 141.57 / 500):
+  learning_rate = 8.68e-04, loss_average = 5.41e-02
+  validation accuracy: 96.37 (557 / 578), f1 (binary): 36.36, loss: 1.33e-01
+  time: 597s (wall 171s)
+[aggregation_pooling] step 23500 / 81234 (epoch 144.64 / 500):
+  learning_rate = 8.66e-04, loss_average = 7.38e-02
+  validation accuracy: 96.37 (557 / 578), f1 (binary): 16.00, loss: 1.34e-01
+  time: 611s (wall 175s)
+[aggregation_pooling] step 24000 / 81234 (epoch 147.72 / 500):
+  learning_rate = 8.63e-04, loss_average = 7.64e-02
+  validation accuracy: 96.37 (557 / 578), f1 (binary): 55.32, loss: 1.15e-01
+  time: 624s (wall 178s)
+[aggregation_pooling] step 24500 / 81234 (epoch 150.80 / 500):
+  learning_rate = 8.61e-04, loss_average = 8.16e-02
+  validation accuracy: 96.37 (557 / 578), f1 (binary): 46.15, loss: 1.15e-01
+  time: 637s (wall 182s)
+[aggregation_pooling] step 25000 / 81234 (epoch 153.88 / 500):
+  learning_rate = 8.58e-04, loss_average = 8.35e-02
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 43.75, loss: 1.23e-01
+  time: 650s (wall 186s)
+[aggregation_pooling] step 25500 / 81234 (epoch 156.95 / 500):
+  learning_rate = 8.55e-04, loss_average = 7.61e-02
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 47.06, loss: 1.17e-01
+  time: 663s (wall 190s)
+[aggregation_pooling] step 26000 / 81234 (epoch 160.03 / 500):
+  learning_rate = 8.52e-04, loss_average = 7.89e-02
+  validation accuracy: 96.37 (557 / 578), f1 (binary): 46.15, loss: 1.33e-01
+  time: 676s (wall 193s)
+[aggregation_pooling] step 26500 / 81234 (epoch 163.11 / 500):
+  learning_rate = 8.50e-04, loss_average = 5.06e-02
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 38.71, loss: 1.16e-01
+  time: 690s (wall 197s)
+[aggregation_pooling] step 27000 / 81234 (epoch 166.19 / 500):
+  learning_rate = 8.47e-04, loss_average = 7.11e-02
+  validation accuracy: 97.58 (564 / 578), f1 (binary): 56.25, loss: 1.03e-01
+  time: 703s (wall 201s)
+[aggregation_pooling] step 27500 / 81234 (epoch 169.26 / 500):
+  learning_rate = 8.44e-04, loss_average = 5.46e-02
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 40.00, loss: 1.14e-01
+  time: 716s (wall 205s)
+[aggregation_pooling] step 28000 / 81234 (epoch 172.34 / 500):
+  learning_rate = 8.42e-04, loss_average = 5.47e-02
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 40.00, loss: 1.09e-01
+  time: 728s (wall 208s)
+[aggregation_pooling] step 28500 / 81234 (epoch 175.42 / 500):
+  learning_rate = 8.39e-04, loss_average = 8.39e-02
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 54.55, loss: 1.26e-01
+  time: 742s (wall 212s)
+[aggregation_pooling] step 29000 / 81234 (epoch 178.50 / 500):
+  learning_rate = 8.37e-04, loss_average = 5.93e-02
+  validation accuracy: 95.50 (552 / 578), f1 (binary): 48.00, loss: 1.43e-01
+  time: 755s (wall 216s)
+[aggregation_pooling] step 29500 / 81234 (epoch 181.57 / 500):
+  learning_rate = 8.34e-04, loss_average = 9.44e-02
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 45.00, loss: 1.41e-01
+  time: 768s (wall 220s)
+[aggregation_pooling] step 30000 / 81234 (epoch 184.65 / 500):
+  learning_rate = 8.32e-04, loss_average = 4.91e-02
+  validation accuracy: 97.23 (562 / 578), f1 (binary): 50.00, loss: 1.09e-01
+  time: 781s (wall 223s)
+[aggregation_pooling] step 30500 / 81234 (epoch 187.73 / 500):
+  learning_rate = 8.29e-04, loss_average = 6.15e-02
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 40.00, loss: 1.12e-01
+  time: 794s (wall 227s)
+[aggregation_pooling] step 31000 / 81234 (epoch 190.81 / 500):
+  learning_rate = 8.27e-04, loss_average = 5.39e-02
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 33.33, loss: 1.33e-01
+  time: 807s (wall 231s)
+[aggregation_pooling] step 31500 / 81234 (epoch 193.88 / 500):
+  learning_rate = 8.24e-04, loss_average = 7.07e-02
+  validation accuracy: 95.85 (554 / 578), f1 (binary): 45.45, loss: 1.29e-01
+  time: 820s (wall 235s)
+[aggregation_pooling] step 32000 / 81234 (epoch 196.96 / 500):
+  learning_rate = 8.22e-04, loss_average = 6.93e-02
+  validation accuracy: 95.85 (554 / 578), f1 (binary): 52.00, loss: 1.61e-01
+  time: 834s (wall 238s)
+[aggregation_pooling] step 32500 / 81234 (epoch 200.04 / 500):
+  learning_rate = 8.19e-04, loss_average = 6.18e-02
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 59.09, loss: 1.06e-01
+  time: 847s (wall 242s)
+[aggregation_pooling] step 33000 / 81234 (epoch 203.12 / 500):
+  learning_rate = 8.16e-04, loss_average = 6.65e-02
+  validation accuracy: 95.50 (552 / 578), f1 (binary): 50.00, loss: 1.52e-01
+  time: 860s (wall 246s)
+[aggregation_pooling] step 33500 / 81234 (epoch 206.19 / 500):
+  learning_rate = 8.14e-04, loss_average = 4.87e-02
+  validation accuracy: 97.23 (562 / 578), f1 (binary): 50.00, loss: 1.16e-01
+  time: 873s (wall 249s)
+[aggregation_pooling] step 34000 / 81234 (epoch 209.27 / 500):
+  learning_rate = 8.11e-04, loss_average = 2.71e-02
+  validation accuracy: 97.06 (561 / 578), f1 (binary): 56.41, loss: 1.11e-01
+  time: 886s (wall 253s)
+[aggregation_pooling] step 34500 / 81234 (epoch 212.35 / 500):
+  learning_rate = 8.09e-04, loss_average = 4.20e-02
+  validation accuracy: 97.06 (561 / 578), f1 (binary): 56.41, loss: 1.16e-01
+  time: 899s (wall 257s)
+[aggregation_pooling] step 35000 / 81234 (epoch 215.43 / 500):
+  learning_rate = 8.06e-04, loss_average = 7.41e-02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 58.18, loss: 1.51e-01
+  time: 911s (wall 260s)
+[aggregation_pooling] step 35500 / 81234 (epoch 218.50 / 500):
+  learning_rate = 8.04e-04, loss_average = 6.24e-02
+  validation accuracy: 97.06 (561 / 578), f1 (binary): 51.43, loss: 1.21e-01
+  time: 924s (wall 264s)
+[aggregation_pooling] step 36000 / 81234 (epoch 221.58 / 500):
+  learning_rate = 8.02e-04, loss_average = 5.31e-02
+  validation accuracy: 97.23 (562 / 578), f1 (binary): 61.90, loss: 1.27e-01
+  time: 936s (wall 268s)
+[aggregation_pooling] step 36500 / 81234 (epoch 224.66 / 500):
+  learning_rate = 7.99e-04, loss_average = 6.60e-02
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 50.00, loss: 1.50e-01
+  time: 949s (wall 271s)
+[aggregation_pooling] step 37000 / 81234 (epoch 227.74 / 500):
+  learning_rate = 7.97e-04, loss_average = 4.61e-02
+  validation accuracy: 97.06 (561 / 578), f1 (binary): 51.43, loss: 1.24e-01
+  time: 962s (wall 275s)
+[aggregation_pooling] step 37500 / 81234 (epoch 230.81 / 500):
+  learning_rate = 7.94e-04, loss_average = 4.30e-02
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 33.33, loss: 1.64e-01
+  time: 975s (wall 279s)
+[aggregation_pooling] step 38000 / 81234 (epoch 233.89 / 500):
+  learning_rate = 7.92e-04, loss_average = 4.53e-02
+  validation accuracy: 96.37 (557 / 578), f1 (binary): 40.00, loss: 1.51e-01
+  time: 989s (wall 283s)
+[aggregation_pooling] step 38500 / 81234 (epoch 236.97 / 500):
+  learning_rate = 7.90e-04, loss_average = 5.53e-02
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 40.00, loss: 1.27e-01
+  time: 1002s (wall 286s)
+[aggregation_pooling] step 39000 / 81234 (epoch 240.05 / 500):
+  learning_rate = 7.87e-04, loss_average = 5.90e-02
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 35.29, loss: 1.39e-01
+  time: 1015s (wall 290s)
+[aggregation_pooling] step 39500 / 81234 (epoch 243.12 / 500):
+  learning_rate = 7.84e-04, loss_average = 2.84e-02
+  validation accuracy: 97.58 (564 / 578), f1 (binary): 63.16, loss: 1.26e-01
+  time: 1028s (wall 294s)
+[aggregation_pooling] step 40000 / 81234 (epoch 246.20 / 500):
+  learning_rate = 7.82e-04, loss_average = 6.13e-02
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 42.42, loss: 1.60e-01
+  time: 1040s (wall 297s)
+[aggregation_pooling] step 40500 / 81234 (epoch 249.28 / 500):
+  learning_rate = 7.79e-04, loss_average = 3.85e-02
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 51.28, loss: 1.37e-01
+  time: 1053s (wall 301s)
+[aggregation_pooling] step 41000 / 81234 (epoch 252.36 / 500):
+  learning_rate = 7.77e-04, loss_average = 3.29e-02
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 50.00, loss: 1.41e-01
+  time: 1067s (wall 305s)
+[aggregation_pooling] step 41500 / 81234 (epoch 255.43 / 500):
+  learning_rate = 7.75e-04, loss_average = 4.46e-02
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 57.14, loss: 1.22e-01
+  time: 1080s (wall 309s)
+[aggregation_pooling] step 42000 / 81234 (epoch 258.51 / 500):
+  learning_rate = 7.72e-04, loss_average = 3.15e-02
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 47.06, loss: 1.51e-01
+  time: 1093s (wall 312s)
+[aggregation_pooling] step 42500 / 81234 (epoch 261.59 / 500):
+  learning_rate = 7.70e-04, loss_average = 3.11e-02
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 55.00, loss: 1.37e-01
+  time: 1106s (wall 316s)
+[aggregation_pooling] step 43000 / 81234 (epoch 264.67 / 500):
+  learning_rate = 7.68e-04, loss_average = 4.84e-02
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 47.37, loss: 1.51e-01
+  time: 1119s (wall 320s)
+[aggregation_pooling] step 43500 / 81234 (epoch 267.74 / 500):
+  learning_rate = 7.66e-04, loss_average = 3.41e-02
+  validation accuracy: 95.85 (554 / 578), f1 (binary): 47.83, loss: 1.61e-01
+  time: 1132s (wall 324s)
+[aggregation_pooling] step 44000 / 81234 (epoch 270.82 / 500):
+  learning_rate = 7.63e-04, loss_average = 6.46e-02
+  validation accuracy: 97.23 (562 / 578), f1 (binary): 60.00, loss: 1.28e-01
+  time: 1145s (wall 327s)
+[aggregation_pooling] step 44500 / 81234 (epoch 273.90 / 500):
+  learning_rate = 7.61e-04, loss_average = 5.52e-02
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 55.81, loss: 1.41e-01
+  time: 1157s (wall 331s)
+[aggregation_pooling] step 45000 / 81234 (epoch 276.98 / 500):
+  learning_rate = 7.59e-04, loss_average = 5.27e-02
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 57.14, loss: 1.37e-01
+  time: 1170s (wall 335s)
+[aggregation_pooling] step 45500 / 81234 (epoch 280.05 / 500):
+  learning_rate = 7.56e-04, loss_average = 2.85e-02
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 54.55, loss: 1.48e-01
+  time: 1183s (wall 338s)
+[aggregation_pooling] step 46000 / 81234 (epoch 283.13 / 500):
+  learning_rate = 7.53e-04, loss_average = 3.64e-02
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 42.11, loss: 1.50e-01
+  time: 1195s (wall 342s)
+[aggregation_pooling] step 46500 / 81234 (epoch 286.21 / 500):
+  learning_rate = 7.51e-04, loss_average = 1.91e-02
+  validation accuracy: 97.23 (562 / 578), f1 (binary): 50.00, loss: 1.76e-01
+  time: 1208s (wall 346s)
+[aggregation_pooling] step 47000 / 81234 (epoch 289.29 / 500):
+  learning_rate = 7.49e-04, loss_average = 6.20e-02
+  validation accuracy: 97.06 (561 / 578), f1 (binary): 54.05, loss: 1.63e-01
+  time: 1222s (wall 349s)
+[aggregation_pooling] step 47500 / 81234 (epoch 292.36 / 500):
+  learning_rate = 7.47e-04, loss_average = 2.26e-02
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 55.00, loss: 1.32e-01
+  time: 1234s (wall 353s)
+[aggregation_pooling] step 48000 / 81234 (epoch 295.44 / 500):
+  learning_rate = 7.44e-04, loss_average = 3.43e-02
+  validation accuracy: 97.06 (561 / 578), f1 (binary): 51.43, loss: 1.45e-01
+  time: 1248s (wall 357s)
+[aggregation_pooling] step 48500 / 81234 (epoch 298.52 / 500):
+  learning_rate = 7.42e-04, loss_average = 4.02e-02
+  validation accuracy: 97.23 (562 / 578), f1 (binary): 63.64, loss: 1.38e-01
+  time: 1261s (wall 361s)
+[aggregation_pooling] step 49000 / 81234 (epoch 301.60 / 500):
+  learning_rate = 7.40e-04, loss_average = 1.94e-02
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 52.38, loss: 1.30e-01
+  time: 1274s (wall 364s)
+[aggregation_pooling] step 49500 / 81234 (epoch 304.67 / 500):
+  learning_rate = 7.38e-04, loss_average = 2.32e-02
+  validation accuracy: 96.37 (557 / 578), f1 (binary): 48.78, loss: 1.34e-01
+  time: 1286s (wall 368s)
+[aggregation_pooling] step 50000 / 81234 (epoch 307.75 / 500):
+  learning_rate = 7.36e-04, loss_average = 5.38e-02
+  validation accuracy: 95.85 (554 / 578), f1 (binary): 45.45, loss: 1.42e-01
+  time: 1299s (wall 372s)
+[aggregation_pooling] step 50500 / 81234 (epoch 310.83 / 500):
+  learning_rate = 7.33e-04, loss_average = 6.93e-02
+  validation accuracy: 94.81 (548 / 578), f1 (binary): 44.44, loss: 1.86e-01
+  time: 1312s (wall 375s)
+[aggregation_pooling] step 51000 / 81234 (epoch 313.91 / 500):
+  learning_rate = 7.31e-04, loss_average = 4.17e-02
+  validation accuracy: 97.06 (561 / 578), f1 (binary): 54.05, loss: 1.55e-01
+  time: 1325s (wall 379s)
+[aggregation_pooling] step 51500 / 81234 (epoch 316.98 / 500):
+  learning_rate = 7.29e-04, loss_average = 2.70e-02
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 50.00, loss: 1.55e-01
+  time: 1338s (wall 383s)
+[aggregation_pooling] step 52000 / 81234 (epoch 320.06 / 500):
+  learning_rate = 7.26e-04, loss_average = 1.73e-02
+  validation accuracy: 97.06 (561 / 578), f1 (binary): 51.43, loss: 1.74e-01
+  time: 1351s (wall 386s)
+[aggregation_pooling] step 52500 / 81234 (epoch 323.14 / 500):
+  learning_rate = 7.24e-04, loss_average = 3.60e-02
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 50.00, loss: 1.56e-01
+  time: 1364s (wall 390s)
+[aggregation_pooling] step 53000 / 81234 (epoch 326.22 / 500):
+  learning_rate = 7.22e-04, loss_average = 1.21e-01
+  validation accuracy: 97.06 (561 / 578), f1 (binary): 54.05, loss: 1.17e-01
+  time: 1377s (wall 394s)
+[aggregation_pooling] step 53500 / 81234 (epoch 329.29 / 500):
+  learning_rate = 7.20e-04, loss_average = 3.03e-02
+  validation accuracy: 97.75 (565 / 578), f1 (binary): 62.86, loss: 1.34e-01
+  time: 1390s (wall 398s)
+[aggregation_pooling] step 54000 / 81234 (epoch 332.37 / 500):
+  learning_rate = 7.17e-04, loss_average = 7.27e-02
+  validation accuracy: 95.85 (554 / 578), f1 (binary): 53.85, loss: 1.73e-01
+  time: 1403s (wall 402s)
+[aggregation_pooling] step 54500 / 81234 (epoch 335.45 / 500):
+  learning_rate = 7.15e-04, loss_average = 2.56e-02
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 52.63, loss: 1.48e-01
+  time: 1416s (wall 405s)
+[aggregation_pooling] step 55000 / 81234 (epoch 338.53 / 500):
+  learning_rate = 7.13e-04, loss_average = 2.79e-02
+  validation accuracy: 94.98 (549 / 578), f1 (binary): 47.27, loss: 1.90e-01
+  time: 1430s (wall 409s)
+[aggregation_pooling] step 55500 / 81234 (epoch 341.60 / 500):
+  learning_rate = 7.11e-04, loss_average = 2.76e-02
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 57.14, loss: 1.74e-01
+  time: 1442s (wall 413s)
+[aggregation_pooling] step 56000 / 81234 (epoch 344.68 / 500):
+  learning_rate = 7.09e-04, loss_average = 2.87e-02
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 57.14, loss: 1.69e-01
+  time: 1455s (wall 416s)
+[aggregation_pooling] step 56500 / 81234 (epoch 347.76 / 500):
+  learning_rate = 7.07e-04, loss_average = 2.78e-02
+  validation accuracy: 97.23 (562 / 578), f1 (binary): 57.89, loss: 1.42e-01
+  time: 1468s (wall 420s)
+[aggregation_pooling] step 57000 / 81234 (epoch 350.84 / 500):
+  learning_rate = 7.05e-04, loss_average = 6.10e-02
+  validation accuracy: 95.50 (552 / 578), f1 (binary): 50.00, loss: 1.69e-01
+  time: 1481s (wall 424s)
+[aggregation_pooling] step 57500 / 81234 (epoch 353.91 / 500):
+  learning_rate = 7.02e-04, loss_average = 4.26e-02
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 47.06, loss: 1.43e-01
+  time: 1494s (wall 428s)
+[aggregation_pooling] step 58000 / 81234 (epoch 356.99 / 500):
+  learning_rate = 7.00e-04, loss_average = 2.67e-02
+  validation accuracy: 96.37 (557 / 578), f1 (binary): 55.32, loss: 1.59e-01
+  time: 1508s (wall 431s)
+[aggregation_pooling] step 58500 / 81234 (epoch 360.07 / 500):
+  learning_rate = 6.98e-04, loss_average = 2.47e-02
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 38.71, loss: 1.83e-01
+  time: 1521s (wall 435s)
+[aggregation_pooling] step 59000 / 81234 (epoch 363.15 / 500):
+  learning_rate = 6.95e-04, loss_average = 2.24e-02
+  validation accuracy: 97.23 (562 / 578), f1 (binary): 57.89, loss: 1.28e-01
+  time: 1533s (wall 439s)
+[aggregation_pooling] step 59500 / 81234 (epoch 366.22 / 500):
+  learning_rate = 6.93e-04, loss_average = 4.19e-02
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 55.00, loss: 1.61e-01
+  time: 1546s (wall 442s)
+[aggregation_pooling] step 60000 / 81234 (epoch 369.30 / 500):
+  learning_rate = 6.91e-04, loss_average = 1.94e-02
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 51.61, loss: 1.66e-01
+  time: 1559s (wall 446s)
+[aggregation_pooling] step 60500 / 81234 (epoch 372.38 / 500):
+  learning_rate = 6.89e-04, loss_average = 4.50e-02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 53.06, loss: 1.62e-01
+  time: 1572s (wall 450s)
+[aggregation_pooling] step 61000 / 81234 (epoch 375.46 / 500):
+  learning_rate = 6.87e-04, loss_average = 3.01e-02
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 52.63, loss: 1.76e-01
+  time: 1585s (wall 453s)
+[aggregation_pooling] step 61500 / 81234 (epoch 378.53 / 500):
+  learning_rate = 6.85e-04, loss_average = 3.02e-02
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 53.66, loss: 1.56e-01
+  time: 1598s (wall 457s)
+[aggregation_pooling] step 62000 / 81234 (epoch 381.61 / 500):
+  learning_rate = 6.83e-04, loss_average = 2.91e-02
+  validation accuracy: 96.37 (557 / 578), f1 (binary): 57.14, loss: 1.70e-01
+  time: 1611s (wall 461s)
+[aggregation_pooling] step 62500 / 81234 (epoch 384.69 / 500):
+  learning_rate = 6.81e-04, loss_average = 2.29e-02
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 55.81, loss: 1.52e-01
+  time: 1624s (wall 465s)
+[aggregation_pooling] step 63000 / 81234 (epoch 387.77 / 500):
+  learning_rate = 6.79e-04, loss_average = 3.46e-02
+  validation accuracy: 95.50 (552 / 578), f1 (binary): 43.48, loss: 1.79e-01
+  time: 1637s (wall 469s)
+[aggregation_pooling] step 63500 / 81234 (epoch 390.84 / 500):
+  learning_rate = 6.77e-04, loss_average = 2.09e-02
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 45.00, loss: 1.77e-01
+  time: 1651s (wall 472s)
+[aggregation_pooling] step 64000 / 81234 (epoch 393.92 / 500):
+  learning_rate = 6.75e-04, loss_average = 3.20e-02
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 50.00, loss: 1.56e-01
+  time: 1664s (wall 476s)
+[aggregation_pooling] step 64500 / 81234 (epoch 397.00 / 500):
+  learning_rate = 6.73e-04, loss_average = 3.34e-02
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 48.65, loss: 1.60e-01
+  time: 1677s (wall 480s)
+[aggregation_pooling] step 65000 / 81234 (epoch 400.08 / 500):
+  learning_rate = 6.70e-04, loss_average = 3.98e-02
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 41.18, loss: 1.70e-01
+  time: 1690s (wall 484s)
+[aggregation_pooling] step 65500 / 81234 (epoch 403.15 / 500):
+  learning_rate = 6.68e-04, loss_average = 2.34e-02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 53.06, loss: 1.64e-01
+  time: 1703s (wall 487s)
+[aggregation_pooling] step 66000 / 81234 (epoch 406.23 / 500):
+  learning_rate = 6.66e-04, loss_average = 3.32e-02
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 52.17, loss: 1.53e-01
+  time: 1716s (wall 491s)
+[aggregation_pooling] step 66500 / 81234 (epoch 409.31 / 500):
+  learning_rate = 6.64e-04, loss_average = 2.49e-02
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 47.37, loss: 1.81e-01
+  time: 1729s (wall 495s)
+[aggregation_pooling] step 67000 / 81234 (epoch 412.39 / 500):
+  learning_rate = 6.62e-04, loss_average = 1.76e-02
+  validation accuracy: 96.37 (557 / 578), f1 (binary): 46.15, loss: 1.80e-01
+  time: 1742s (wall 499s)
+[aggregation_pooling] step 67500 / 81234 (epoch 415.46 / 500):
+  learning_rate = 6.60e-04, loss_average = 4.06e-02
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 51.28, loss: 1.70e-01
+  time: 1755s (wall 502s)
+[aggregation_pooling] step 68000 / 81234 (epoch 418.54 / 500):
+  learning_rate = 6.58e-04, loss_average = 1.93e-02
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 55.81, loss: 1.68e-01
+  time: 1768s (wall 506s)
+[aggregation_pooling] step 68500 / 81234 (epoch 421.62 / 500):
+  learning_rate = 6.56e-04, loss_average = 2.59e-02
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 48.65, loss: 2.08e-01
+  time: 1781s (wall 510s)
+[aggregation_pooling] step 69000 / 81234 (epoch 424.70 / 500):
+  learning_rate = 6.54e-04, loss_average = 1.49e-02
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 55.81, loss: 2.04e-01
+  time: 1793s (wall 513s)
+[aggregation_pooling] step 69500 / 81234 (epoch 427.77 / 500):
+  learning_rate = 6.52e-04, loss_average = 1.77e-02
+  validation accuracy: 96.37 (557 / 578), f1 (binary): 48.78, loss: 1.75e-01
+  time: 1806s (wall 517s)
+[aggregation_pooling] step 70000 / 81234 (epoch 430.85 / 500):
+  learning_rate = 6.50e-04, loss_average = 5.44e-02
+  validation accuracy: 95.85 (554 / 578), f1 (binary): 42.86, loss: 2.71e-01
+  time: 1819s (wall 520s)
+[aggregation_pooling] step 70500 / 81234 (epoch 433.93 / 500):
+  learning_rate = 6.48e-04, loss_average = 1.85e-02
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 54.55, loss: 2.30e-01
+  time: 1832s (wall 524s)
+[aggregation_pooling] step 71000 / 81234 (epoch 437.01 / 500):
+  learning_rate = 6.46e-04, loss_average = 1.94e-02
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 47.37, loss: 1.96e-01
+  time: 1845s (wall 528s)
+[aggregation_pooling] step 71500 / 81234 (epoch 440.08 / 500):
+  learning_rate = 6.44e-04, loss_average = 2.04e-02
+  validation accuracy: 96.37 (557 / 578), f1 (binary): 40.00, loss: 2.21e-01
+  time: 1857s (wall 532s)
+[aggregation_pooling] step 72000 / 81234 (epoch 443.16 / 500):
+  learning_rate = 6.42e-04, loss_average = 1.09e-02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 48.89, loss: 2.11e-01
+  time: 1870s (wall 535s)
+[aggregation_pooling] step 72500 / 81234 (epoch 446.24 / 500):
+  learning_rate = 6.40e-04, loss_average = 2.11e-02
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 55.00, loss: 1.72e-01
+  time: 1883s (wall 539s)
+[aggregation_pooling] step 73000 / 81234 (epoch 449.32 / 500):
+  learning_rate = 6.38e-04, loss_average = 1.46e-02
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 52.63, loss: 1.73e-01
+  time: 1897s (wall 543s)
+[aggregation_pooling] step 73500 / 81234 (epoch 452.39 / 500):
+  learning_rate = 6.36e-04, loss_average = 1.60e-02
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 50.00, loss: 2.02e-01
+  time: 1910s (wall 547s)
+[aggregation_pooling] step 74000 / 81234 (epoch 455.47 / 500):
+  learning_rate = 6.34e-04, loss_average = 1.88e-02
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 47.37, loss: 1.83e-01
+  time: 1923s (wall 550s)
+[aggregation_pooling] step 74500 / 81234 (epoch 458.55 / 500):
+  learning_rate = 6.32e-04, loss_average = 5.63e-02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 43.90, loss: 2.23e-01
+  time: 1936s (wall 554s)
+[aggregation_pooling] step 75000 / 81234 (epoch 461.63 / 500):
+  learning_rate = 6.31e-04, loss_average = 2.33e-02
+  validation accuracy: 97.23 (562 / 578), f1 (binary): 52.94, loss: 2.27e-01
+  time: 1949s (wall 558s)
+[aggregation_pooling] step 75500 / 81234 (epoch 464.70 / 500):
+  learning_rate = 6.29e-04, loss_average = 3.08e-02
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 55.81, loss: 2.37e-01
+  time: 1963s (wall 562s)
+[aggregation_pooling] step 76000 / 81234 (epoch 467.78 / 500):
+  learning_rate = 6.27e-04, loss_average = 1.87e-02
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 50.00, loss: 2.17e-01
+  time: 1976s (wall 565s)
+[aggregation_pooling] step 76500 / 81234 (epoch 470.86 / 500):
+  learning_rate = 6.25e-04, loss_average = 8.30e-02
+  validation accuracy: 97.06 (561 / 578), f1 (binary): 51.43, loss: 2.04e-01
+  time: 1989s (wall 569s)
+[aggregation_pooling] step 77000 / 81234 (epoch 473.94 / 500):
+  learning_rate = 6.23e-04, loss_average = 3.43e-02
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 51.28, loss: 1.82e-01
+  time: 2001s (wall 573s)
+[aggregation_pooling] step 77500 / 81234 (epoch 477.01 / 500):
+  learning_rate = 6.20e-04, loss_average = 1.47e-02
+  validation accuracy: 97.06 (561 / 578), f1 (binary): 51.43, loss: 1.74e-01
+  time: 2014s (wall 576s)
+[aggregation_pooling] step 78000 / 81234 (epoch 480.09 / 500):
+  learning_rate = 6.19e-04, loss_average = 1.35e-02
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 55.00, loss: 1.82e-01
+  time: 2027s (wall 580s)
+[aggregation_pooling] step 78500 / 81234 (epoch 483.17 / 500):
+  learning_rate = 6.17e-04, loss_average = 1.46e-02
+  validation accuracy: 97.75 (565 / 578), f1 (binary): 64.86, loss: 1.78e-01
+  time: 2040s (wall 584s)
+[aggregation_pooling] step 79000 / 81234 (epoch 486.25 / 500):
+  learning_rate = 6.15e-04, loss_average = 2.58e-02
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 53.66, loss: 1.77e-01
+  time: 2053s (wall 588s)
+[aggregation_pooling] step 79500 / 81234 (epoch 489.32 / 500):
+  learning_rate = 6.13e-04, loss_average = 8.10e-03
+  validation accuracy: 97.06 (561 / 578), f1 (binary): 51.43, loss: 1.86e-01
+  time: 2065s (wall 591s)
+[aggregation_pooling] step 80000 / 81234 (epoch 492.40 / 500):
+  learning_rate = 6.11e-04, loss_average = 1.04e-02
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 52.63, loss: 2.23e-01
+  time: 2078s (wall 595s)
+[aggregation_pooling] step 80500 / 81234 (epoch 495.48 / 500):
+  learning_rate = 6.09e-04, loss_average = 2.90e-02
+  validation accuracy: 97.06 (561 / 578), f1 (binary): 56.41, loss: 2.13e-01
+  time: 2091s (wall 599s)
+[aggregation_pooling] step 81000 / 81234 (epoch 498.56 / 500):
+  learning_rate = 6.08e-04, loss_average = 1.91e-02
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 55.00, loss: 1.81e-01
+  time: 2104s (wall 602s)
+[aggregation_pooling] step 81234 / 81234 (epoch 500.00 / 500):
+  learning_rate = 6.07e-04, loss_average = 2.85e-02
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 50.00, loss: 2.14e-01
+  time: 2110s (wall 604s)
+validation accuracy: peak = 97.75, mean = 96.99
+train accuracy: 99.35 (5165 / 5199), f1 (binary): 90.56, loss: 1.79e-02
+time: 2s (wall 1s)
+test  accuracy: 96.89 (560 / 578), f1 (binary): 50.00, loss: 2.14e-01
+time: 0s (wall 0s)
+ 
+Training model: hybrid_pooling
+ 
+  architecture/L = 2
+  architecture/N = [25, 25, 10]
+CNNGS Architecture: hybrid_pooling (hybrid)
+  input: M_0 = N = 25
+  l_1: gsconv_1
+    input dimension : M_0 = F_0 N_0 =  1 * 25 = 25
+    output dimension: M_1 = F_1 N_1 = 16 * 25 = 400
+    parameters_1 detail:
+      parameters_(1,1): K_(1,1) F_(1,1) F_(1,0) = 8 * 8 * 1 = 64
+      parameters_(1,2): K_(1,2) F_(1,2) F_(1,1) = 8 * 16 * 8 = 1024
+    parameters = parameters_1 N_1 = 1088 * 25 = 27200
+  l_2: gsconv_2
+    input dimension : M_1 = F_1 N_1 = 16 * 25 = 400
+    output dimension: M_2 = F_2 N_2 = 16 * 10 = 160
+    parameters_2 detail:
+      parameters_(2,1): K_(2,1) F_(2,1) F_(2,0) = 8 * 8 * 16 = 1024
+      parameters_(2,2): K_(2,2) F_(2,2) F_(2,1) = 8 * 16 * 8 = 1024
+    parameters = parameters_2 N_2 = 2048 * 10 = 20480
+  l_3: softmax
+    input dimension : M_2 = 160
+    output dimension: M_3 = 2
+    parameters: M_3 M_2 = 2 * 160 = 320
+  Total parameters = 48000
+ 
+[hybrid_pooling] step 500 / 81234 (epoch 3.08 / 500):
+  learning_rate = 9.97e-04, loss_average = 2.09e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 3.84e-01
+  time: 133s (wall 15s)
+[hybrid_pooling] step 1000 / 81234 (epoch 6.16 / 500):
+  learning_rate = 9.94e-04, loss_average = 1.26e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.81e-01
+  time: 265s (wall 29s)
+[hybrid_pooling] step 1500 / 81234 (epoch 9.23 / 500):
+  learning_rate = 9.91e-04, loss_average = 1.15e-01
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 0.00, loss: 1.74e-01
+  time: 397s (wall 42s)
+[hybrid_pooling] step 2000 / 81234 (epoch 12.31 / 500):
+  learning_rate = 9.88e-04, loss_average = 8.85e-02
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 28.57, loss: 1.32e-01
+  time: 528s (wall 54s)
+[hybrid_pooling] step 2500 / 81234 (epoch 15.39 / 500):
+  learning_rate = 9.85e-04, loss_average = 1.02e-01
+  validation accuracy: 96.37 (557 / 578), f1 (binary): 16.00, loss: 1.38e-01
+  time: 659s (wall 67s)
+[hybrid_pooling] step 3000 / 81234 (epoch 18.47 / 500):
+  learning_rate = 9.82e-04, loss_average = 1.12e-01
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 37.50, loss: 1.47e-01
+  time: 790s (wall 79s)
+[hybrid_pooling] step 3500 / 81234 (epoch 21.54 / 500):
+  learning_rate = 9.79e-04, loss_average = 7.67e-02
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 29.63, loss: 1.26e-01
+  time: 921s (wall 92s)
+[hybrid_pooling] step 4000 / 81234 (epoch 24.62 / 500):
+  learning_rate = 9.76e-04, loss_average = 7.26e-02
+  validation accuracy: 97.06 (561 / 578), f1 (binary): 41.38, loss: 1.30e-01
+  time: 1052s (wall 105s)
+[hybrid_pooling] step 4500 / 81234 (epoch 27.70 / 500):
+  learning_rate = 9.73e-04, loss_average = 6.39e-02
+  validation accuracy: 97.23 (562 / 578), f1 (binary): 60.00, loss: 1.26e-01
+  time: 1183s (wall 117s)
+[hybrid_pooling] step 5000 / 81234 (epoch 30.78 / 500):
+  learning_rate = 9.70e-04, loss_average = 7.77e-02
+  validation accuracy: 97.06 (561 / 578), f1 (binary): 45.16, loss: 1.28e-01
+  time: 1315s (wall 130s)
+[hybrid_pooling] step 5500 / 81234 (epoch 33.85 / 500):
+  learning_rate = 9.68e-04, loss_average = 9.34e-02
+  validation accuracy: 97.06 (561 / 578), f1 (binary): 48.48, loss: 1.29e-01
+  time: 1446s (wall 142s)
+[hybrid_pooling] step 6000 / 81234 (epoch 36.93 / 500):
+  learning_rate = 9.65e-04, loss_average = 1.09e-01
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 38.71, loss: 1.36e-01
+  time: 1577s (wall 155s)
+[hybrid_pooling] step 6500 / 81234 (epoch 40.01 / 500):
+  learning_rate = 9.61e-04, loss_average = 6.25e-02
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 43.75, loss: 1.32e-01
+  time: 1708s (wall 168s)
+[hybrid_pooling] step 7000 / 81234 (epoch 43.09 / 500):
+  learning_rate = 9.58e-04, loss_average = 6.95e-02
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 56.52, loss: 1.33e-01
+  time: 1839s (wall 180s)
+[hybrid_pooling] step 7500 / 81234 (epoch 46.16 / 500):
+  learning_rate = 9.55e-04, loss_average = 7.22e-02
+  validation accuracy: 97.75 (565 / 578), f1 (binary): 60.61, loss: 1.37e-01
+  time: 1970s (wall 193s)
+[hybrid_pooling] step 8000 / 81234 (epoch 49.24 / 500):
+  learning_rate = 9.52e-04, loss_average = 6.53e-02
+  validation accuracy: 97.06 (561 / 578), f1 (binary): 54.05, loss: 1.37e-01
+  time: 2101s (wall 206s)
+[hybrid_pooling] step 8500 / 81234 (epoch 52.32 / 500):
+  learning_rate = 9.49e-04, loss_average = 8.05e-02
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 54.55, loss: 1.30e-01
+  time: 2232s (wall 218s)
+[hybrid_pooling] step 9000 / 81234 (epoch 55.40 / 500):
+  learning_rate = 9.46e-04, loss_average = 6.94e-02
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 57.14, loss: 1.20e-01
+  time: 2363s (wall 231s)
+[hybrid_pooling] step 9500 / 81234 (epoch 58.47 / 500):
+  learning_rate = 9.44e-04, loss_average = 4.54e-02
+  validation accuracy: 97.23 (562 / 578), f1 (binary): 52.94, loss: 1.35e-01
+  time: 2494s (wall 243s)
+[hybrid_pooling] step 10000 / 81234 (epoch 61.55 / 500):
+  learning_rate = 9.41e-04, loss_average = 9.19e-02
+  validation accuracy: 95.85 (554 / 578), f1 (binary): 47.83, loss: 1.64e-01
+  time: 2626s (wall 256s)
+[hybrid_pooling] step 10500 / 81234 (epoch 64.63 / 500):
+  learning_rate = 9.38e-04, loss_average = 8.98e-02
+  validation accuracy: 96.02 (555 / 578), f1 (binary): 54.90, loss: 1.35e-01
+  time: 2757s (wall 269s)
+[hybrid_pooling] step 11000 / 81234 (epoch 67.71 / 500):
+  learning_rate = 9.35e-04, loss_average = 6.81e-02
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 51.61, loss: 1.37e-01
+  time: 2889s (wall 281s)
+[hybrid_pooling] step 11500 / 81234 (epoch 70.78 / 500):
+  learning_rate = 9.32e-04, loss_average = 5.73e-02
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 52.63, loss: 1.31e-01
+  time: 3020s (wall 294s)
+[hybrid_pooling] step 12000 / 81234 (epoch 73.86 / 500):
+  learning_rate = 9.30e-04, loss_average = 4.62e-02
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 59.46, loss: 1.12e-01
+  time: 3151s (wall 306s)
+[hybrid_pooling] step 12500 / 81234 (epoch 76.94 / 500):
+  learning_rate = 9.27e-04, loss_average = 3.47e-02
+  validation accuracy: 97.23 (562 / 578), f1 (binary): 52.94, loss: 1.62e-01
+  time: 3282s (wall 319s)
+[hybrid_pooling] step 13000 / 81234 (epoch 80.02 / 500):
+  learning_rate = 9.23e-04, loss_average = 5.60e-02
+  validation accuracy: 97.06 (561 / 578), f1 (binary): 56.41, loss: 1.53e-01
+  time: 3414s (wall 332s)
+[hybrid_pooling] step 13500 / 81234 (epoch 83.09 / 500):
+  learning_rate = 9.20e-04, loss_average = 4.79e-02
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 57.14, loss: 9.87e-02
+  time: 3545s (wall 344s)
+[hybrid_pooling] step 14000 / 81234 (epoch 86.17 / 500):
+  learning_rate = 9.18e-04, loss_average = 3.07e-02
+  validation accuracy: 97.23 (562 / 578), f1 (binary): 55.56, loss: 1.21e-01
+  time: 3676s (wall 357s)
+[hybrid_pooling] step 14500 / 81234 (epoch 89.25 / 500):
+  learning_rate = 9.15e-04, loss_average = 4.43e-02
+  validation accuracy: 97.58 (564 / 578), f1 (binary): 63.16, loss: 1.22e-01
+  time: 3807s (wall 370s)
+[hybrid_pooling] step 15000 / 81234 (epoch 92.33 / 500):
+  learning_rate = 9.12e-04, loss_average = 5.82e-02
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 52.38, loss: 1.46e-01
+  time: 3938s (wall 382s)
+[hybrid_pooling] step 15500 / 81234 (epoch 95.40 / 500):
+  learning_rate = 9.09e-04, loss_average = 2.67e-02
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 61.54, loss: 1.41e-01
+  time: 4069s (wall 395s)
+[hybrid_pooling] step 16000 / 81234 (epoch 98.48 / 500):
+  learning_rate = 9.07e-04, loss_average = 3.66e-02
+  validation accuracy: 97.06 (561 / 578), f1 (binary): 51.43, loss: 1.39e-01
+  time: 4199s (wall 407s)
+[hybrid_pooling] step 16500 / 81234 (epoch 101.56 / 500):
+  learning_rate = 9.04e-04, loss_average = 2.82e-02
+  validation accuracy: 97.06 (561 / 578), f1 (binary): 69.09, loss: 1.44e-01
+  time: 4330s (wall 420s)
+[hybrid_pooling] step 17000 / 81234 (epoch 104.64 / 500):
+  learning_rate = 9.01e-04, loss_average = 4.60e-02
+  validation accuracy: 97.06 (561 / 578), f1 (binary): 51.43, loss: 1.54e-01
+  time: 4461s (wall 432s)
+[hybrid_pooling] step 17500 / 81234 (epoch 107.71 / 500):
+  learning_rate = 8.98e-04, loss_average = 5.76e-02
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 54.55, loss: 1.70e-01
+  time: 4592s (wall 445s)
+[hybrid_pooling] step 18000 / 81234 (epoch 110.79 / 500):
+  learning_rate = 8.96e-04, loss_average = 3.60e-02
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 64.00, loss: 1.62e-01
+  time: 4722s (wall 457s)
+[hybrid_pooling] step 18500 / 81234 (epoch 113.87 / 500):
+  learning_rate = 8.93e-04, loss_average = 2.32e-02
+  validation accuracy: 97.23 (562 / 578), f1 (binary): 63.64, loss: 1.48e-01
+  time: 4853s (wall 470s)
+[hybrid_pooling] step 19000 / 81234 (epoch 116.95 / 500):
+  learning_rate = 8.90e-04, loss_average = 4.46e-02
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 64.52, loss: 1.95e-01
+  time: 4983s (wall 482s)
+[hybrid_pooling] step 19500 / 81234 (epoch 120.02 / 500):
+  learning_rate = 8.87e-04, loss_average = 6.43e-02
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 53.66, loss: 2.22e-01
+  time: 5114s (wall 495s)
+[hybrid_pooling] step 20000 / 81234 (epoch 123.10 / 500):
+  learning_rate = 8.84e-04, loss_average = 4.85e-02
+  validation accuracy: 97.06 (561 / 578), f1 (binary): 58.54, loss: 1.56e-01
+  time: 5245s (wall 507s)
+[hybrid_pooling] step 20500 / 81234 (epoch 126.18 / 500):
+  learning_rate = 8.82e-04, loss_average = 2.81e-02
+  validation accuracy: 97.92 (566 / 578), f1 (binary): 72.73, loss: 1.60e-01
+  time: 5375s (wall 520s)
+[hybrid_pooling] step 21000 / 81234 (epoch 129.26 / 500):
+  learning_rate = 8.79e-04, loss_average = 3.22e-02
+  validation accuracy: 97.23 (562 / 578), f1 (binary): 55.56, loss: 2.16e-01
+  time: 5506s (wall 532s)
+[hybrid_pooling] step 21500 / 81234 (epoch 132.33 / 500):
+  learning_rate = 8.76e-04, loss_average = 2.22e-02
+  validation accuracy: 97.23 (562 / 578), f1 (binary): 61.90, loss: 1.93e-01
+  time: 5636s (wall 545s)
+[hybrid_pooling] step 22000 / 81234 (epoch 135.41 / 500):
+  learning_rate = 8.74e-04, loss_average = 2.20e-02
+  validation accuracy: 97.06 (561 / 578), f1 (binary): 60.47, loss: 1.70e-01
+  time: 5767s (wall 557s)
+[hybrid_pooling] step 22500 / 81234 (epoch 138.49 / 500):
+  learning_rate = 8.71e-04, loss_average = 8.01e-01
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 65.38, loss: 1.76e-01
+  time: 5898s (wall 570s)
+[hybrid_pooling] step 23000 / 81234 (epoch 141.57 / 500):
+  learning_rate = 8.68e-04, loss_average = 1.95e-02
+  validation accuracy: 97.58 (564 / 578), f1 (binary): 70.83, loss: 1.55e-01
+  time: 6028s (wall 582s)
+[hybrid_pooling] step 23500 / 81234 (epoch 144.64 / 500):
+  learning_rate = 8.66e-04, loss_average = 2.23e-02
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 61.54, loss: 2.01e-01
+  time: 6159s (wall 595s)
+[hybrid_pooling] step 24000 / 81234 (epoch 147.72 / 500):
+  learning_rate = 8.63e-04, loss_average = 1.68e-02
+  validation accuracy: 97.06 (561 / 578), f1 (binary): 58.54, loss: 2.25e-01
+  time: 6290s (wall 607s)
+[hybrid_pooling] step 24500 / 81234 (epoch 150.80 / 500):
+  learning_rate = 8.61e-04, loss_average = 2.82e-02
+  validation accuracy: 96.37 (557 / 578), f1 (binary): 51.16, loss: 2.99e-01
+  time: 6421s (wall 620s)
+[hybrid_pooling] step 25000 / 81234 (epoch 153.88 / 500):
+  learning_rate = 8.58e-04, loss_average = 3.09e-02
+  validation accuracy: 97.06 (561 / 578), f1 (binary): 58.54, loss: 2.69e-01
+  time: 6551s (wall 632s)
+[hybrid_pooling] step 25500 / 81234 (epoch 156.95 / 500):
+  learning_rate = 8.55e-04, loss_average = 1.88e-02
+  validation accuracy: 97.92 (566 / 578), f1 (binary): 71.43, loss: 2.24e-01
+  time: 6683s (wall 645s)
+[hybrid_pooling] step 26000 / 81234 (epoch 160.03 / 500):
+  learning_rate = 8.52e-04, loss_average = 1.65e-02
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 65.45, loss: 2.67e-01
+  time: 6813s (wall 657s)
+[hybrid_pooling] step 26500 / 81234 (epoch 163.11 / 500):
+  learning_rate = 8.50e-04, loss_average = 1.31e-02
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 51.28, loss: 2.60e-01
+  time: 6944s (wall 670s)
+[hybrid_pooling] step 27000 / 81234 (epoch 166.19 / 500):
+  learning_rate = 8.47e-04, loss_average = 7.04e-02
+  validation accuracy: 95.16 (550 / 578), f1 (binary): 53.33, loss: 2.98e-01
+  time: 7074s (wall 682s)
+[hybrid_pooling] step 27500 / 81234 (epoch 169.26 / 500):
+  learning_rate = 8.44e-04, loss_average = 1.32e-02
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 63.41, loss: 2.78e-01
+  time: 7205s (wall 695s)
+[hybrid_pooling] step 28000 / 81234 (epoch 172.34 / 500):
+  learning_rate = 8.42e-04, loss_average = 3.02e-02
+  validation accuracy: 97.75 (565 / 578), f1 (binary): 69.77, loss: 2.63e-01
+  time: 7336s (wall 707s)
+[hybrid_pooling] step 28500 / 81234 (epoch 175.42 / 500):
+  learning_rate = 8.39e-04, loss_average = 2.09e-02
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 54.55, loss: 3.49e-01
+  time: 7467s (wall 720s)
+[hybrid_pooling] step 29000 / 81234 (epoch 178.50 / 500):
+  learning_rate = 8.37e-04, loss_average = 2.19e-03
+  validation accuracy: 97.23 (562 / 578), f1 (binary): 65.22, loss: 3.00e-01
+  time: 7597s (wall 732s)
+[hybrid_pooling] step 29500 / 81234 (epoch 181.57 / 500):
+  learning_rate = 8.34e-04, loss_average = 2.84e-02
+  validation accuracy: 97.58 (564 / 578), f1 (binary): 68.18, loss: 2.85e-01
+  time: 7728s (wall 745s)
+[hybrid_pooling] step 30000 / 81234 (epoch 184.65 / 500):
+  learning_rate = 8.32e-04, loss_average = 1.76e-02
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 60.00, loss: 3.31e-01
+  time: 7859s (wall 757s)
+[hybrid_pooling] step 30500 / 81234 (epoch 187.73 / 500):
+  learning_rate = 8.29e-04, loss_average = 1.26e-02
+  validation accuracy: 97.23 (562 / 578), f1 (binary): 61.90, loss: 2.96e-01
+  time: 7990s (wall 770s)
+[hybrid_pooling] step 31000 / 81234 (epoch 190.81 / 500):
+  learning_rate = 8.27e-04, loss_average = 2.35e-03
+  validation accuracy: 97.58 (564 / 578), f1 (binary): 68.18, loss: 2.96e-01
+  time: 8121s (wall 782s)
+[hybrid_pooling] step 31500 / 81234 (epoch 193.88 / 500):
+  learning_rate = 8.24e-04, loss_average = 1.88e-03
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 65.12, loss: 3.38e-01
+  time: 8252s (wall 795s)
+[hybrid_pooling] step 32000 / 81234 (epoch 196.96 / 500):
+  learning_rate = 8.22e-04, loss_average = 1.15e-02
+  validation accuracy: 96.54 (558 / 578), f1 (binary): 60.00, loss: 3.36e-01
+  time: 8382s (wall 807s)
+[hybrid_pooling] step 32500 / 81234 (epoch 200.04 / 500):
+  learning_rate = 8.19e-04, loss_average = 4.59e-03
+  validation accuracy: 96.37 (557 / 578), f1 (binary): 60.38, loss: 3.37e-01
+  time: 8513s (wall 820s)
+[hybrid_pooling] step 33000 / 81234 (epoch 203.12 / 500):
+  learning_rate = 8.16e-04, loss_average = 1.40e-02
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 59.09, loss: 4.19e-01
+  time: 8643s (wall 832s)
+[hybrid_pooling] step 33500 / 81234 (epoch 206.19 / 500):
+  learning_rate = 8.14e-04, loss_average = 3.97e-03
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 69.39, loss: 4.36e-01
+  time: 8774s (wall 845s)
+[hybrid_pooling] step 34000 / 81234 (epoch 209.27 / 500):
+  learning_rate = 8.11e-04, loss_average = 2.70e-02
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 51.28, loss: 3.69e-01
+  time: 8905s (wall 857s)
+[hybrid_pooling] step 34500 / 81234 (epoch 212.35 / 500):
+  learning_rate = 8.09e-04, loss_average = 1.61e-02
+  validation accuracy: 96.71 (559 / 578), f1 (binary): 59.57, loss: 3.70e-01
+  time: 9036s (wall 870s)
+[hybrid_pooling] step 35000 / 81234 (epoch 215.43 / 500):
+  learning_rate = 8.06e-04, loss_average = 1.37e-03
+  validation accuracy: 97.23 (562 / 578), f1 (binary): 65.22, loss: 3.83e-01
+  time: 9167s (wall 882s)
+[hybrid_pooling] step 35500 / 81234 (epoch 218.50 / 500):
+  learning_rate = 8.04e-04, loss_average = 1.79e-02
+  validation accuracy: 96.89 (560 / 578), f1 (binary): 60.87, loss: 4.46e-01
+  time: 9297s (wall 895s)
+[hybrid_pooling] step 36000 / 81234 (epoch 221.58 / 500):
+  learning_rate = 8.02e-04, loss_average = 1.25e-02
+  validation accuracy: 97.23 (562 / 578), f1 (binary): 65.22, loss: 4.02e-01
+  time: 9428s (wall 907s)
+[hybrid_pooling] step 36500 / 81234 (epoch 224.66 / 500):
+  learning_rate = 7.99e-04, loss_average = 2.51e-02
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 66.67, loss: 3.25e-01
+  time: 9559s (wall 920s)
+[hybrid_pooling] step 37000 / 81234 (epoch 227.74 / 500):
+  learning_rate = 7.97e-04, loss_average = 5.36e-03
+  validation accuracy: 97.75 (565 / 578), f1 (binary): 66.67, loss: 3.91e-01
+  time: 9690s (wall 933s)
+[hybrid_pooling] step 37500 / 81234 (epoch 230.81 / 500):
+  learning_rate = 7.94e-04, loss_average = 1.78e-03
+  validation accuracy: 97.23 (562 / 578), f1 (binary): 57.89, loss: 4.32e-01
+  time: 9820s (wall 945s)
+[hybrid_pooling] step 38000 / 81234 (epoch 233.89 / 500):
+  learning_rate = 7.92e-04, loss_average = 1.56e-03
+  validation accuracy: 97.58 (564 / 578), f1 (binary): 63.16, loss: 4.25e-01
+  time: 9951s (wall 957s)
+[hybrid_pooling] step 38500 / 81234 (epoch 236.97 / 500):
+  learning_rate = 7.90e-04, loss_average = 5.91e-02
+  validation accuracy: 95.33 (551 / 578), f1 (binary): 58.46, loss: 3.83e-01
+  time: 10081s (wall 970s)
+[hybrid_pooling] step 39000 / 81234 (epoch 240.05 / 500):
+  learning_rate = 7.87e-04, loss_average = 4.98e-03
+  validation accuracy: 97.75 (565 / 578), f1 (binary): 71.11, loss: 3.09e-01
+  time: 10212s (wall 982s)
+[hybrid_pooling] step 39500 / 81234 (epoch 243.12 / 500):
+  learning_rate = 7.84e-04, loss_average = 8.34e-04
+  validation accuracy: 97.92 (566 / 578), f1 (binary): 72.73, loss: 3.25e-01
+  time: 10343s (wall 995s)
+[hybrid_pooling] step 40000 / 81234 (epoch 246.20 / 500):
+  learning_rate = 7.82e-04, loss_average = 4.19e-04
+  validation accuracy: 97.92 (566 / 578), f1 (binary): 72.73, loss: 3.65e-01
+  time: 10473s (wall 1007s)
+[hybrid_pooling] step 40500 / 81234 (epoch 249.28 / 500):
+  learning_rate = 7.79e-04, loss_average = 2.10e-04
+  validation accuracy: 98.10 (567 / 578), f1 (binary): 74.42, loss: 4.01e-01
+  time: 10603s (wall 1020s)
+[hybrid_pooling] step 41000 / 81234 (epoch 252.36 / 500):
+  learning_rate = 7.77e-04, loss_average = 2.19e-04
+  validation accuracy: 97.75 (565 / 578), f1 (binary): 71.11, loss: 4.26e-01
+  time: 10734s (wall 1032s)
+[hybrid_pooling] step 41500 / 81234 (epoch 255.43 / 500):
+  learning_rate = 7.75e-04, loss_average = 1.66e-04
+  validation accuracy: 97.75 (565 / 578), f1 (binary): 69.77, loss: 4.48e-01
+  time: 10865s (wall 1045s)
+[hybrid_pooling] step 42000 / 81234 (epoch 258.51 / 500):
+  learning_rate = 7.72e-04, loss_average = 8.37e-05
+  validation accuracy: 97.92 (566 / 578), f1 (binary): 72.73, loss: 4.80e-01
+  time: 10995s (wall 1057s)
+[hybrid_pooling] step 42500 / 81234 (epoch 261.59 / 500):
+  learning_rate = 7.70e-04, loss_average = 6.97e-05
+  validation accuracy: 97.92 (566 / 578), f1 (binary): 72.73, loss: 5.04e-01
+  time: 11126s (wall 1070s)
+[hybrid_pooling] step 43000 / 81234 (epoch 264.67 / 500):
+  learning_rate = 7.68e-04, loss_average = 3.80e-05
+  validation accuracy: 97.92 (566 / 578), f1 (binary): 72.73, loss: 5.27e-01
+  time: 11257s (wall 1082s)
+[hybrid_pooling] step 43500 / 81234 (epoch 267.74 / 500):
+  learning_rate = 7.66e-04, loss_average = 3.66e-05
+  validation accuracy: 97.58 (564 / 578), f1 (binary): 69.57, loss: 5.57e-01
+  time: 11387s (wall 1095s)
+[hybrid_pooling] step 44000 / 81234 (epoch 270.82 / 500):
+  learning_rate = 7.63e-04, loss_average = 7.21e-05
+  validation accuracy: 97.75 (565 / 578), f1 (binary): 71.11, loss: 5.87e-01
+  time: 11518s (wall 1107s)
+[hybrid_pooling] step 44500 / 81234 (epoch 273.90 / 500):
+  learning_rate = 7.61e-04, loss_average = 1.02e-05
+  validation accuracy: 97.75 (565 / 578), f1 (binary): 69.77, loss: 6.07e-01
+  time: 11649s (wall 1120s)
+[hybrid_pooling] step 45000 / 81234 (epoch 276.98 / 500):
+  learning_rate = 7.59e-04, loss_average = 1.09e-05
+  validation accuracy: 97.58 (564 / 578), f1 (binary): 68.18, loss: 6.35e-01
+  time: 11780s (wall 1132s)
+[hybrid_pooling] step 45500 / 81234 (epoch 280.05 / 500):
+  learning_rate = 7.56e-04, loss_average = 3.56e-01
+  validation accuracy: 96.19 (556 / 578), f1 (binary): 56.00, loss: 3.02e-01
+  time: 11910s (wall 1145s)
+[hybrid_pooling] step 46000 / 81234 (epoch 283.13 / 500):
+  learning_rate = 7.53e-04, loss_average = 1.40e-02
+  validation accuracy: 97.58 (564 / 578), f1 (binary): 65.00, loss: 3.69e-01
+  time: 12041s (wall 1157s)
+[hybrid_pooling] step 46500 / 81234 (epoch 286.21 / 500):
+  learning_rate = 7.51e-04, loss_average = 4.08e-03
+  validation accuracy: 97.23 (562 / 578), f1 (binary): 61.90, loss: 4.24e-01
+  time: 12171s (wall 1170s)
+[hybrid_pooling] step 47000 / 81234 (epoch 289.29 / 500):
+  learning_rate = 7.49e-04, loss_average = 1.85e-03
+  validation accuracy: 97.58 (564 / 578), f1 (binary): 66.67, loss: 4.75e-01
+  time: 12302s (wall 1183s)
+[hybrid_pooling] step 47500 / 81234 (epoch 292.36 / 500):
+  learning_rate = 7.47e-04, loss_average = 2.24e-03
+  validation accuracy: 97.06 (561 / 578), f1 (binary): 62.22, loss: 4.37e-01
+  time: 12433s (wall 1195s)
+[hybrid_pooling] step 48000 / 81234 (epoch 295.44 / 500):
+  learning_rate = 7.44e-04, loss_average = 7.19e-04
+  validation accuracy: 97.75 (565 / 578), f1 (binary): 68.29, loss: 4.67e-01
+  time: 12563s (wall 1207s)
+[hybrid_pooling] step 48500 / 81234 (epoch 298.52 / 500):
+  learning_rate = 7.42e-04, loss_average = 1.76e-03
+  validation accuracy: 97.23 (562 / 578), f1 (binary): 61.90, loss: 4.94e-01
+  time: 12694s (wall 1220s)
+[hybrid_pooling] step 49000 / 81234 (epoch 301.60 / 500):
+  learning_rate = 7.40e-04, loss_average = 1.78e-04
+  validation accuracy: 97.58 (564 / 578), f1 (binary): 66.67, loss: 5.24e-01
+  time: 12824s (wall 1232s)
+[hybrid_pooling] step 49500 / 81234 (epoch 304.67 / 500):
+  learning_rate = 7.38e-04, loss_average = 1.60e-04
+  validation accuracy: 97.58 (564 / 578), f1 (binary): 66.67, loss: 5.34e-01
+  time: 12955s (wall 1245s)
+[hybrid_pooling] step 50000 / 81234 (epoch 307.75 / 500):
+  learning_rate = 7.36e-04, loss_average = 1.29e-04
+  validation accuracy: 97.58 (564 / 578), f1 (binary): 66.67, loss: 5.54e-01
+  time: 13086s (wall 1257s)
+[hybrid_pooling] step 50500 / 81234 (epoch 310.83 / 500):
+  learning_rate = 7.33e-04, loss_average = 6.70e-05
+  validation accuracy: 97.58 (564 / 578), f1 (binary): 66.67, loss: 5.75e-01
+  time: 13216s (wall 1270s)
+[hybrid_pooling] step 51000 / 81234 (epoch 313.91 / 500):
+  learning_rate = 7.31e-04, loss_average = 8.94e-05
+  validation accuracy: 97.58 (564 / 578), f1 (binary): 66.67, loss: 5.94e-01
+  time: 13347s (wall 1282s)
+[hybrid_pooling] step 51500 / 81234 (epoch 316.98 / 500):
+  learning_rate = 7.29e-04, loss_average = 6.06e-05
+  validation accuracy: 97.58 (564 / 578), f1 (binary): 66.67, loss: 6.14e-01
+  time: 13478s (wall 1295s)
+[hybrid_pooling] step 52000 / 81234 (epoch 320.06 / 500):
+  learning_rate = 7.26e-04, loss_average = 3.50e-05
+  validation accuracy: 97.58 (564 / 578), f1 (binary): 66.67, loss: 6.33e-01
+  time: 13609s (wall 1307s)
+[hybrid_pooling] step 52500 / 81234 (epoch 323.14 / 500):
+  learning_rate = 7.24e-04, loss_average = 2.40e-05
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 63.41, loss: 6.52e-01
+  time: 13739s (wall 1320s)
+[hybrid_pooling] step 53000 / 81234 (epoch 326.22 / 500):
+  learning_rate = 7.22e-04, loss_average = 1.70e-05
+  validation accuracy: 97.58 (564 / 578), f1 (binary): 66.67, loss: 6.74e-01
+  time: 13870s (wall 1332s)
+[hybrid_pooling] step 53500 / 81234 (epoch 329.29 / 500):
+  learning_rate = 7.20e-04, loss_average = 1.64e-05
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 63.41, loss: 7.00e-01
+  time: 14001s (wall 1345s)
+[hybrid_pooling] step 54000 / 81234 (epoch 332.37 / 500):
+  learning_rate = 7.17e-04, loss_average = 1.18e-05
+  validation accuracy: 97.23 (562 / 578), f1 (binary): 60.00, loss: 7.12e-01
+  time: 14131s (wall 1357s)
+[hybrid_pooling] step 54500 / 81234 (epoch 335.45 / 500):
+  learning_rate = 7.15e-04, loss_average = 6.11e-06
+  validation accuracy: 97.23 (562 / 578), f1 (binary): 60.00, loss: 7.35e-01
+  time: 14262s (wall 1370s)
+[hybrid_pooling] step 55000 / 81234 (epoch 338.53 / 500):
+  learning_rate = 7.13e-04, loss_average = 9.40e-06
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 63.41, loss: 7.60e-01
+  time: 14393s (wall 1383s)
+[hybrid_pooling] step 55500 / 81234 (epoch 341.60 / 500):
+  learning_rate = 7.11e-04, loss_average = 5.16e-06
+  validation accuracy: 97.58 (564 / 578), f1 (binary): 66.67, loss: 7.82e-01
+  time: 14523s (wall 1395s)
+[hybrid_pooling] step 56000 / 81234 (epoch 344.68 / 500):
+  learning_rate = 7.09e-04, loss_average = 5.08e-06
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 63.41, loss: 8.11e-01
+  time: 14654s (wall 1408s)
+[hybrid_pooling] step 56500 / 81234 (epoch 347.76 / 500):
+  learning_rate = 7.07e-04, loss_average = 2.76e-06
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 63.41, loss: 8.34e-01
+  time: 14785s (wall 1420s)
+[hybrid_pooling] step 57000 / 81234 (epoch 350.84 / 500):
+  learning_rate = 7.05e-04, loss_average = 1.27e-06
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 63.41, loss: 8.56e-01
+  time: 14915s (wall 1432s)
+[hybrid_pooling] step 57500 / 81234 (epoch 353.91 / 500):
+  learning_rate = 7.02e-04, loss_average = 1.55e-06
+  validation accuracy: 97.58 (564 / 578), f1 (binary): 66.67, loss: 8.82e-01
+  time: 15046s (wall 1445s)
+[hybrid_pooling] step 58000 / 81234 (epoch 356.99 / 500):
+  learning_rate = 7.00e-04, loss_average = 5.57e-07
+  validation accuracy: 97.75 (565 / 578), f1 (binary): 69.77, loss: 9.02e-01
+  time: 15177s (wall 1458s)
+[hybrid_pooling] step 58500 / 81234 (epoch 360.07 / 500):
+  learning_rate = 6.98e-04, loss_average = 7.02e-07
+  validation accuracy: 97.75 (565 / 578), f1 (binary): 69.77, loss: 9.18e-01
+  time: 15308s (wall 1470s)
+[hybrid_pooling] step 59000 / 81234 (epoch 363.15 / 500):
+  learning_rate = 6.95e-04, loss_average = 7.55e-07
+  validation accuracy: 97.75 (565 / 578), f1 (binary): 69.77, loss: 9.43e-01
+  time: 15439s (wall 1483s)
+[hybrid_pooling] step 59500 / 81234 (epoch 366.22 / 500):
+  learning_rate = 6.93e-04, loss_average = 3.24e-07
+  validation accuracy: 97.75 (565 / 578), f1 (binary): 69.77, loss: 9.69e-01
+  time: 15569s (wall 1495s)
+[hybrid_pooling] step 60000 / 81234 (epoch 369.30 / 500):
+  learning_rate = 6.91e-04, loss_average = 2.30e-07
+  validation accuracy: 97.75 (565 / 578), f1 (binary): 69.77, loss: 9.87e-01
+  time: 15700s (wall 1508s)
+[hybrid_pooling] step 60500 / 81234 (epoch 372.38 / 500):
+  learning_rate = 6.89e-04, loss_average = 1.87e-07
+  validation accuracy: 97.75 (565 / 578), f1 (binary): 69.77, loss: 1.01e+00
+  time: 15831s (wall 1520s)
+[hybrid_pooling] step 61000 / 81234 (epoch 375.46 / 500):
+  learning_rate = 6.87e-04, loss_average = 1.22e-07
+  validation accuracy: 97.75 (565 / 578), f1 (binary): 69.77, loss: 1.03e+00
+  time: 15961s (wall 1533s)
+[hybrid_pooling] step 61500 / 81234 (epoch 378.53 / 500):
+  learning_rate = 6.85e-04, loss_average = 9.28e-08
+  validation accuracy: 97.58 (564 / 578), f1 (binary): 68.18, loss: 1.05e+00
+  time: 16092s (wall 1545s)
+[hybrid_pooling] step 62000 / 81234 (epoch 381.61 / 500):
+  learning_rate = 6.83e-04, loss_average = 6.80e-08
+  validation accuracy: 97.75 (565 / 578), f1 (binary): 69.77, loss: 1.07e+00
+  time: 16222s (wall 1558s)
+[hybrid_pooling] step 62500 / 81234 (epoch 384.69 / 500):
+  learning_rate = 6.81e-04, loss_average = 5.48e-08
+  validation accuracy: 97.75 (565 / 578), f1 (binary): 69.77, loss: 1.09e+00
+  time: 16353s (wall 1570s)
+[hybrid_pooling] step 63000 / 81234 (epoch 387.77 / 500):
+  learning_rate = 6.79e-04, loss_average = 4.06e-08
+  validation accuracy: 97.75 (565 / 578), f1 (binary): 69.77, loss: 1.11e+00
+  time: 16484s (wall 1583s)
+[hybrid_pooling] step 63500 / 81234 (epoch 390.84 / 500):
+  learning_rate = 6.77e-04, loss_average = 2.81e-08
+  validation accuracy: 97.58 (564 / 578), f1 (binary): 68.18, loss: 1.13e+00
+  time: 16615s (wall 1595s)
+[hybrid_pooling] step 64000 / 81234 (epoch 393.92 / 500):
+  learning_rate = 6.75e-04, loss_average = 3.61e-08
+  validation accuracy: 97.58 (564 / 578), f1 (binary): 68.18, loss: 1.15e+00
+  time: 16745s (wall 1608s)
+[hybrid_pooling] step 64500 / 81234 (epoch 397.00 / 500):
+  learning_rate = 6.73e-04, loss_average = 1.68e-08
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 65.12, loss: 1.17e+00
+  time: 16876s (wall 1620s)
+[hybrid_pooling] step 65000 / 81234 (epoch 400.08 / 500):
+  learning_rate = 6.70e-04, loss_average = 2.59e-08
+  validation accuracy: 97.58 (564 / 578), f1 (binary): 66.67, loss: 1.19e+00
+  time: 17007s (wall 1633s)
+[hybrid_pooling] step 65500 / 81234 (epoch 403.15 / 500):
+  learning_rate = 6.68e-04, loss_average = 1.36e-08
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 65.12, loss: 1.21e+00
+  time: 17138s (wall 1645s)
+[hybrid_pooling] step 66000 / 81234 (epoch 406.23 / 500):
+  learning_rate = 6.66e-04, loss_average = 1.18e-08
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 65.12, loss: 1.23e+00
+  time: 17269s (wall 1658s)
+[hybrid_pooling] step 66500 / 81234 (epoch 409.31 / 500):
+  learning_rate = 6.64e-04, loss_average = 7.53e-09
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 65.12, loss: 1.25e+00
+  time: 17400s (wall 1670s)
+[hybrid_pooling] step 67000 / 81234 (epoch 412.39 / 500):
+  learning_rate = 6.62e-04, loss_average = 5.25e-09
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 65.12, loss: 1.28e+00
+  time: 17530s (wall 1683s)
+[hybrid_pooling] step 67500 / 81234 (epoch 415.46 / 500):
+  learning_rate = 6.60e-04, loss_average = 3.75e-09
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 65.12, loss: 1.29e+00
+  time: 17661s (wall 1695s)
+[hybrid_pooling] step 68000 / 81234 (epoch 418.54 / 500):
+  learning_rate = 6.58e-04, loss_average = 1.90e-09
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 65.12, loss: 1.31e+00
+  time: 17791s (wall 1708s)
+[hybrid_pooling] step 68500 / 81234 (epoch 421.62 / 500):
+  learning_rate = 6.56e-04, loss_average = 2.68e-09
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 65.12, loss: 1.33e+00
+  time: 17922s (wall 1720s)
+[hybrid_pooling] step 69000 / 81234 (epoch 424.70 / 500):
+  learning_rate = 6.54e-04, loss_average = 1.67e-09
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 65.12, loss: 1.35e+00
+  time: 18052s (wall 1733s)
+[hybrid_pooling] step 69500 / 81234 (epoch 427.77 / 500):
+  learning_rate = 6.52e-04, loss_average = 2.49e-09
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 65.12, loss: 1.36e+00
+  time: 18182s (wall 1745s)
+[hybrid_pooling] step 70000 / 81234 (epoch 430.85 / 500):
+  learning_rate = 6.50e-04, loss_average = 1.12e-09
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 65.12, loss: 1.38e+00
+  time: 18313s (wall 1758s)
+[hybrid_pooling] step 70500 / 81234 (epoch 433.93 / 500):
+  learning_rate = 6.48e-04, loss_average = 1.10e-09
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 65.12, loss: 1.39e+00
+  time: 18444s (wall 1770s)
+[hybrid_pooling] step 71000 / 81234 (epoch 437.01 / 500):
+  learning_rate = 6.46e-04, loss_average = 5.17e-10
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 65.12, loss: 1.40e+00
+  time: 18574s (wall 1783s)
+[hybrid_pooling] step 71500 / 81234 (epoch 440.08 / 500):
+  learning_rate = 6.44e-04, loss_average = 7.23e-10
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 65.12, loss: 1.43e+00
+  time: 18705s (wall 1795s)
+[hybrid_pooling] step 72000 / 81234 (epoch 443.16 / 500):
+  learning_rate = 6.42e-04, loss_average = 2.25e-01
+  validation accuracy: 94.46 (546 / 578), f1 (binary): 36.00, loss: 1.09e+00
+  time: 18836s (wall 1808s)
+[hybrid_pooling] step 72500 / 81234 (epoch 446.24 / 500):
+  learning_rate = 6.40e-04, loss_average = 7.48e-03
+  validation accuracy: 97.40 (563 / 578), f1 (binary): 65.12, loss: 8.70e-01
+  time: 18967s (wall 1820s)
+[hybrid_pooling] step 73000 / 81234 (epoch 449.32 / 500):
+  learning_rate = 6.38e-04, loss_average = 2.89e-03
+  validation accuracy: 97.58 (564 / 578), f1 (binary): 70.83, loss: 8.85e-01
+  time: 19097s (wall 1833s)
+[hybrid_pooling] step 73500 / 81234 (epoch 452.39 / 500):
+  learning_rate = 6.36e-04, loss_average = 2.39e-02
+  validation accuracy: 97.06 (561 / 578), f1 (binary): 67.92, loss: 9.14e-01
+  time: 19229s (wall 1845s)
+[hybrid_pooling] step 74000 / 81234 (epoch 455.47 / 500):
+  learning_rate = 6.34e-04, loss_average = 5.36e-03
+  validation accuracy: 97.58 (564 / 578), f1 (binary): 68.18, loss: 8.28e-01
+  time: 19359s (wall 1858s)
+[hybrid_pooling] step 74500 / 81234 (epoch 458.55 / 500):
+  learning_rate = 6.32e-04, loss_average = 1.17e-03
+  validation accuracy: 97.75 (565 / 578), f1 (binary): 69.77, loss: 8.33e-01
+  time: 19490s (wall 1870s)
+[hybrid_pooling] step 75000 / 81234 (epoch 461.63 / 500):
+  learning_rate = 6.31e-04, loss_average = 3.13e-04
+  validation accuracy: 97.75 (565 / 578), f1 (binary): 68.29, loss: 8.58e-01
+  time: 19620s (wall 1883s)
+[hybrid_pooling] step 75500 / 81234 (epoch 464.70 / 500):
+  learning_rate = 6.29e-04, loss_average = 2.76e-04
+  validation accuracy: 97.92 (566 / 578), f1 (binary): 71.43, loss: 8.70e-01
+  time: 19751s (wall 1896s)
+[hybrid_pooling] step 76000 / 81234 (epoch 467.78 / 500):
+  learning_rate = 6.27e-04, loss_average = 2.08e-04
+  validation accuracy: 97.92 (566 / 578), f1 (binary): 71.43, loss: 8.93e-01
+  time: 19882s (wall 1908s)
+[hybrid_pooling] step 76500 / 81234 (epoch 470.86 / 500):
+  learning_rate = 6.25e-04, loss_average = 5.79e-05
+  validation accuracy: 97.92 (566 / 578), f1 (binary): 71.43, loss: 9.08e-01
+  time: 20013s (wall 1921s)
+[hybrid_pooling] step 77000 / 81234 (epoch 473.94 / 500):
+  learning_rate = 6.23e-04, loss_average = 7.29e-05
+  validation accuracy: 97.75 (565 / 578), f1 (binary): 68.29, loss: 9.32e-01
+  time: 20144s (wall 1933s)
+[hybrid_pooling] step 77500 / 81234 (epoch 477.01 / 500):
+  learning_rate = 6.20e-04, loss_average = 4.75e-05
+  validation accuracy: 97.92 (566 / 578), f1 (binary): 71.43, loss: 9.44e-01
+  time: 20274s (wall 1946s)
+[hybrid_pooling] step 78000 / 81234 (epoch 480.09 / 500):
+  learning_rate = 6.19e-04, loss_average = 3.41e-05
+  validation accuracy: 97.92 (566 / 578), f1 (binary): 71.43, loss: 9.58e-01
+  time: 20405s (wall 1958s)
+[hybrid_pooling] step 78500 / 81234 (epoch 483.17 / 500):
+  learning_rate = 6.17e-04, loss_average = 3.31e-05
+  validation accuracy: 97.92 (566 / 578), f1 (binary): 71.43, loss: 9.78e-01
+  time: 20535s (wall 1971s)
+[hybrid_pooling] step 79000 / 81234 (epoch 486.25 / 500):
+  learning_rate = 6.15e-04, loss_average = 1.61e-05
+  validation accuracy: 97.92 (566 / 578), f1 (binary): 71.43, loss: 9.88e-01
+  time: 20666s (wall 1983s)
+[hybrid_pooling] step 79500 / 81234 (epoch 489.32 / 500):
+  learning_rate = 6.13e-04, loss_average = 2.41e-05
+  validation accuracy: 97.92 (566 / 578), f1 (binary): 71.43, loss: 9.98e-01
+  time: 20796s (wall 1996s)
+[hybrid_pooling] step 80000 / 81234 (epoch 492.40 / 500):
+  learning_rate = 6.11e-04, loss_average = 7.05e-06
+  validation accuracy: 97.92 (566 / 578), f1 (binary): 71.43, loss: 1.01e+00
+  time: 20927s (wall 2008s)
+[hybrid_pooling] step 80500 / 81234 (epoch 495.48 / 500):
+  learning_rate = 6.09e-04, loss_average = 8.92e-06
+  validation accuracy: 97.92 (566 / 578), f1 (binary): 71.43, loss: 1.02e+00
+  time: 21058s (wall 2021s)
+[hybrid_pooling] step 81000 / 81234 (epoch 498.56 / 500):
+  learning_rate = 6.08e-04, loss_average = 6.34e-06
+  validation accuracy: 97.92 (566 / 578), f1 (binary): 71.43, loss: 1.04e+00
+  time: 21188s (wall 2033s)
+[hybrid_pooling] step 81234 / 81234 (epoch 500.00 / 500):
+  learning_rate = 6.07e-04, loss_average = 7.11e-06
+  validation accuracy: 97.92 (566 / 578), f1 (binary): 71.43, loss: 1.05e+00
+  time: 21251s (wall 2039s)
+validation accuracy: peak = 98.10, mean = 97.91
+train accuracy: 100.00 (5199 / 5199), f1 (binary): 100.00, loss: 4.07e-02
+time: 14s (wall 2s)
+test  accuracy: 97.92 (566 / 578), f1 (binary): 71.43, loss: 1.05e+00
+time: 2s (wall 1s)
+ 
+Showing results...
+ 
+    {n = 25, norm-Laplacian, num_epochs = 500, batch_size = 32, 
+     reg = 0, dropout = 0, momentum = 0
+     ADAM, learning_rate = 0.001}
+ 
+Region: NYC
+    aggregation_pooling = {F = [16, 16], K = [16, 16], M = [2]}
+    c_cheb_a = {F = [14, 28], K = [7, 14], M = [2]}
+    hybrid_pooling = {F = [[8, 16], [8, 16]], K = [[8, 8], [8, 8]], M = [2]}
+    np_3 = {F = [14, 28], K = [7, 14], M = [2]}
+    selection_pooling = {F = [16, 16], K = [16, 16], M = [2]}
+ 
+    Results:
+      accuracy        F1        parameters    time [ms]  name
+    test  train   test  train   
+    96.89 99.35   50.00 90.56      4544          7       aggregation_pooling
+    96.71 96.81   42.42 37.12      5978         10       c_cheb_a
+    97.92 100.00   71.43 100.00     48000         25       hybrid_pooling
+    95.85 96.17    0.00  1.97      6986          9       np_3
+    96.02 96.27    0.00  1.02      4832         15       selection_pooling
+ 
+ 
+Clustering graph sizes:
+S_c[0]: 28
+S_c[1]: 14
+S_c[2]: 7

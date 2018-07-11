@@ -1,0 +1,484 @@
+
+#!/usr/bin/env python3
+
+import sys, os
+sys.path.insert(0, '..')
+
+import pdb
+from IPython.core.debugger import set_trace
+from importlib import reload
+from cnngs import architecture, graphtools, manager
+import tensorflow as tf
+import scipy.sparse
+import numpy as np
+import time
+from EN_GNN.graph import get_distance_graph
+from EN_GNN.data import pick_greedy, import_data
+from sklearn.model_selection import train_test_split
+
+"""
+Output
+"""
+log = False
+this_filename = "../../Results/gnn_out"
+
+"""
+SIMULATION SELECTION
+"""
+
+# Graph:
+
+GSO = 'Adjacency'  # 'Adjacency', 'max2-Laplacian', 'norm-Laplacian'
+# Pre-training graph operations:
+do_clustering = True  # Obtain clustering GSOs
+do_degree = True  # Obtain nodes selected based on degree
+overlap_K = 0  # Number of shifts on where not to consider overlap
+# (If K=0 then it is simply degree based ordering)
+
+# Training:
+
+train_method = 'ADAM'  # 'SGD' or 'ADAM'
+do_validation = False
+
+# Presentation:
+
+print_data_summary = False
+
+# Methods:
+
+do_c_a = False  # Clustering with our code
+do_np = True  # No pooling
+do_sp = True  # Selection Pooling
+do_ap = True  # Aggregation Pooling
+do_hp = True  # Hybrid Pooling (multinode)
+do_nn = False  # Neural networks
+
+# Fields
+fields = ["PressureSeaLevelMBar"
+          ,"TemperatureC"
+          ,"WindSpeedKph"
+          ,"PressureSeaLevelMBarRatePerHour"
+          ,"Humidity"
+          ,"HumidityRatePerHour"
+          ,"RainMillimetersRatePerHour"
+]
+region = "NYC"
+
+#fields = "DewPointC,DewPointCRatePerHour,Humidity,HumidityRatePerHour,Light,LightRatePerHour,PressureSeaLevelMBar,PressureSeaLevelMBarRatePerHour,RainMillimetersDaily,RainMillimetersRatePerHour,RainMillimetersMonthly,RainMillimetersYearly,TemperatureC,TemperatureCRatePerHour,FeelsLike,WindSpeedKph,WindDirectionDegrees,WindSpeedKphAvg,WindDirectionDegreesAvg,WindGustKphHourly,WindGustTimeUtcHourly,WindGustDirectionDegreesHourly,WindGustKphDaily,WindGustTimeUtcDaily,WindGustDirectionDegreesDaily,HumidityHigh,HumidityHighUtc,HumidityLow,HumidityLowUtc,LightHigh,LightHighUtc,LightLow,LightLowUtc,PressureSeaLevelHighMBar,PressureSeaLevelHighUtc,PressureSeaLevelLowMBar,PressureSeaLevelLowUtc,RainRateMaxMmPerHour,RainRateMaxUtc,TemperatureHighC,TemperatureHighUtc,TemperatureLowC,TemperatureLowUtc".split(',')
+#fields = ['PressureSeaLevelMBar', "TemperatureC", "WindSpeedKph", "PressureSeaLevelMBarRatePerHour", "Humidity", "HumidityRatePerHour", "RainMillimetersRatePerHour", "TemperatureCRatePerHour"]
+#fields = ['PressureSeaLevelMBar', "TemperatureC", "WindSpeedKph", "PressureSeaLevelMBarRatePerHour"]
+
+"""
+PARAMETERS SELECTION
+"""
+
+print("Setting up problem parameters...", end=" ", flush=True)
+
+# Graph:
+N = 25  # Number of nodes
+if do_clustering:
+    coarsening_levels = 2  # Same as number of layers
+
+# Training:
+N_batch = 100  # Number of samples in the batch
+
+# Training split size:
+test_split = 0.1
+
+# Specific to the dataset:
+try: tf_flags_defined
+except NameError: tf_flags_defined = False
+if not tf_flags_defined:
+    flags = tf.app.flags
+    FLAGS = flags.FLAGS
+    flags.DEFINE_integer(
+        'number_edges', 16,
+        'Graph: minimum number of edges per vertex.')
+    flags.DEFINE_string(
+        'metric', 'cosine',
+        'Graph: similarity measure (between features).')
+    flags.DEFINE_bool(
+        'normalized_laplacian', True,
+        'Graph Laplacian: normalized.')
+    flags.DEFINE_integer(
+        'coarsening_levels', coarsening_levels,
+        'Number of coarsened graphs.')
+    flags.DEFINE_string(
+        'dir_data', os.path.join('..', 'data', '20news'),
+        'Directory to store data.')
+    flags.DEFINE_integer(
+        'val_size', 400,
+    'Size of the validation set.')
+    tf_flags_defined = True
+
+l_short_docs = 5  # 5 in the original 20news file, no mention in the paper.
+
+common = {}
+common['num_epochs'] = 100  # 20 in the paper (for ADAM), 80 in the source
+# file (for SGD)
+common['learning_rate'] = 0.001  # This was set in the paper. It was 0.1 in
+# the cgconv_softmax in the source file. The other methods will remain the
+# same as they are.
+common['decay_rate'] = 0.999  # Nothing says anywhere about this in the
+# paper. I believe this is for the SGD. I left it at 0.999 which is the one
+# that was set for the cgconv. The other ones that were also 0.999 have
+# been removed from params. The ones that were different were kept.
+common['momentum'] = 0  # Determines whether training is done following
+# train_method or with momentum training.
+
+common['regularization'] = 0  # Only for the graph CNN that has no FC layer
+# the rest were originally set to zero. The paper says there is
+# regularization and this is the value that was found in the source file.
+common['dropout'] = 0.5  # Nothing says about dropout in the paper. Only
+# in the MNIST. In the source file they were all set to 1 (no dropout).
+common['batch_size'] = N_batch
+common['eval_frequency'] = 5 * common['num_epochs']
+
+common['dir_name'] = "1"  # TODO
+
+common['GSO'] = GSO
+common['train_method'] = train_method
+
+print("DONE")
+
+"""
+GRAPH CREATION & DATA HANDLING
+"""
+
+print("Gathering data...", end=" ", flush=True)
+
+stations = pick_greedy(region, n_stations=N)
+data, labels = import_data(fields, stations, region)  # type: (np.ndarray, np.ndarray)
+data = data.astype(dtype=np.float32)
+labels = labels.astype(dtype=np.int32).flatten()
+
+train_data, test_data, train_labels, test_labels = train_test_split(data, labels, test_size=test_split)
+
+print("Numbmer of datapoints: {}".format(data.shape[0]))
+
+if print_data_summary:
+    print(" ")
+    print("DATA Summary:")
+    print("    train_data:")
+    print("        type = {}".format(type(train_data)))
+    print("        dtype = {}".format(train_data.dtype))
+    print("        shape = {}".format(train_data.shape))
+    print("        average = {:.4}".format(train_data.mean()))
+    print("        min = {:.4}".format(train_data.min()))
+    print("        max = {:.4}".format(train_data.max()))
+    print("    train_labels:")
+    print("        type = {}".format(type(train_labels)))
+    print("        dtype = {}".format(train_labels.dtype))
+    print("        shape = {}".format(train_labels.shape))
+    print("        average = {:.4}".format(train_labels.mean()))
+    print("        min = {}".format(train_labels.min()))
+    print("        max = {}".format(train_labels.max()))
+    print("    test_data:")
+    print("        type = {}".format(type(test_data)))
+    print("        dtype = {}".format(test_data.dtype))
+    print("        shape = {}".format(test_data.shape))
+    print("        average = {:.4}".format(test_data.mean()))
+    print("        min = {:.4}".format(test_data.min()))
+    print("        max = {:.4}".format(test_data.max()))
+    print("    test_labels:")
+    print("        type = {}".format(type(test_labels)))
+    print("        dtype = {}".format(test_labels.dtype))
+    print("        shape = {}".format(test_labels.shape))
+    print("        average = {:.4}".format(test_labels.mean()))
+    print("        min = {}".format(test_labels.min()))
+    print("        max = {}".format(test_labels.max()))
+    print(" ")
+
+"""
+FEATURE GRAPH
+"""
+
+print("Building graph support...", end=" ", flush=True)
+A = get_distance_graph(region)
+A = A[stations.flatten(), :][: , stations.flatten()]  # type: np.ndarray
+A = A.astype(dtype=np.float32)
+A = scipy.sparse.csr_matrix(A)
+
+t_start = time.process_time()
+if GSO == 'Adjacency':
+    S = A
+else:
+    S = graphtools.laplacian(A, normalized=True)
+    if GSO == 'max2-Laplacian':
+        S = graphtools.rescale_L(S, lmax=2)
+
+if do_clustering:
+    graphs_c, perm_c = graphtools.coarsen(
+        A, levels=FLAGS.coarsening_levels, self_connections=False)
+    if GSO == 'Adjacency':
+        S_c = graphs_c
+    else:
+        L_c = [graphtools.laplacian(A, normalized=True) for A in graphs_c]
+        if GSO == 'norm-Laplacian':
+            S_c = L_c
+        if GSO == 'max2-Laplacian':
+            S_c = [graphtools.rescale_L(L, lmax=2) for L in L_c]
+
+if do_degree:
+    # REMEMBER: Input the true adjacency matrix!!
+    perm_d = graphtools.degree_order(A, overlap_K)
+    A_d = A[perm_d][:, perm_d]
+    if GSO == 'Adjacency':
+        S_d = A_d
+    else:
+        S_d = graphtools.laplacian(A_d, normalized=True)
+        if GSO == 'max2-Laplacian':
+            S_d = graphtools.rescale_L(S_d, lmax=2)
+
+if do_clustering:
+    L = train_data.shape[2]
+    train_data_c = graphtools.perm_data(train_data, perm_c)
+    test_data_c = graphtools.perm_data(test_data, perm_c)
+
+if do_degree:
+    train_data_d = train_data[:][:, perm_d, :]
+    test_data_d = test_data[:][:, perm_d, :]
+
+# Validation set.
+if do_validation:
+    # Not implemented yet:
+    val_data = train_data[:FLAGS.val_size, :, :]
+    val_labels = train_labels[:FLAGS.val_size, :]
+    train_data = train_data[FLAGS.val_size:, :, :]
+    train_labels = train_labels[FLAGS.val_size:, :]
+else:
+    val_data = test_data
+    val_labels = test_labels
+    if do_clustering:
+        val_data_c = test_data_c
+    if do_degree:
+        val_data_d = test_data_d
+
+print("DONE")
+
+print("Running Neural Networks: BEGINNING")
+
+common['decay_steps'] = len(train_labels) / N_batch
+common['decay_steps'] = len(train_labels) / N_batch
+C = max(train_labels) + 1  # number of classes
+
+if do_c_a or do_np or do_sp or do_ap or do_hp or do_nn:
+    model_manager = manager.model_manager()
+
+if do_c_a:
+    name = 'c_cheb_a'
+    print(" ")
+    print("Training model: {}".format(name))
+    print(" ")
+    params = common.copy()
+    params['S'] = S_c
+    params['V'] = len(fields)
+
+    params['archit'] = 'clustering'
+    params['filter'] = 'chebyshev5'
+    params['pool'] = 'maxpool'
+    params['nonlin'] = 'b1relu'
+
+    params['K'] = [32, 64]
+    params['F'] = [32, 32]
+    params['a'] = [2, 2]
+    params['M'] = [C]
+
+    params['name'] = name
+    params['dir_name'] += '_' + name + '/'
+    
+    model_manager.test(architecture.cnngs(**params), name, params,
+                       train_data_c, train_labels, val_data_c, val_labels,
+                       test_data_c, test_labels)
+
+if do_np:
+    name = 'np_3'
+    print(" ")
+    print("Training model: {}".format(name))
+    print(" ")
+    params = common.copy()
+    params['S'] = S
+    params['V'] = len(fields)
+
+    params['archit'] = 'no-pooling'
+    params['filter'] = 'lsigf'
+    params['pool'] = 'maxpool'
+    params['nonlin'] = 'b1relu'
+
+    params['K'] = [7, 14]
+    params['F'] = [14, 28]
+    params['a'] = [2, 2]
+    params['M'] = [C]
+    params['name'] = name
+    params['dir_name'] += '_' + name + '/'
+
+    model_manager.test(architecture.cnngs(**params), name, params,
+                       train_data, train_labels, val_data, val_labels,
+                       test_data, test_labels)
+
+if do_sp:
+    name = 'selection_pooling'
+    print(" ")
+    print("Training model: {}".format(name))
+    print(" ")
+    params = common.copy()
+    params['S'] = [S_d, [25, 15]]  # the number of nodes at each layer, if fewer layers than elements in list, final parameter specifies downsampling at the end
+    params['V'] = len(fields)
+
+    params['archit'] = 'selection'
+    params['filter'] = 'lsigf'
+    params['pool'] = 'maxpool'
+    params['nonlin'] = 'b1relu'
+
+    params['K'] = [16, 16]  # number of filter taps
+    params['F'] = [21, 42]  # number of features
+    params['a'] = [2, 2]  # size of the pooling, n-hop pooling
+    params['M'] = [C]
+    params['name'] = name
+    params['dir_name'] += '_' + name + '/'
+
+    model_manager.test(architecture.cnngs(**params), name, params,
+                       train_data_d, train_labels, val_data_d, val_labels,
+                       test_data_d, test_labels)
+
+if do_ap:
+    name = 'aggregation_pooling'
+    print(" ")
+    print("Training model: {}".format(name))
+    print(" ")
+    params = common.copy()
+    params['S'] = [S_d, [1]]  # the node to use for aggregation (nth highest degree)
+    params['V'] = len(fields)
+
+    params['archit'] = 'aggregation'
+    params['filter'] = 'lsigf'
+    params['pool'] = 'maxpool'
+    params['nonlin'] = 'b1relu'
+
+    params['K'] = [16, 16]
+    params['F'] = [16, 16]
+    params['a'] = [2, 2]
+    params['M'] = [C]
+
+    params['name'] = name
+    params['dir_name'] += '_' + name + '/'
+
+    model_manager.test(architecture.cnngs(**params), name, params,
+                       train_data_d, train_labels, val_data_d, val_labels,
+                       test_data_d, test_labels)
+
+if do_hp:
+    name = 'hybrid_pooling'
+    print(" ")
+    print("Training model: {}".format(name))
+    print(" ")
+    params = common.copy()
+    params['S'] = [S_d, [25, 10], [15, 10]]  # subset of nodes to look at , number of exchanges you do
+    params['V'] = len(fields)
+
+    params['archit'] = 'hybrid'
+    params['filter'] = 'lsigf'
+    params['pool'] = 'maxpool'
+    params['nonlin'] = 'b1relu'
+
+    params['K'] = [[8, 8], [8, 8]]
+    params['F'] = [[8, 16], [8, 16]]
+    params['a'] = [[2, 2], [2, 2]]
+    params['M'] = [C]
+
+    params['name'] = name
+    params['dir_name'] += '_' + name + '/'
+
+    model_manager.test(architecture.cnngs(**params), name, params,
+                       train_data_d, train_labels, val_data_d, val_labels,
+                       test_data_d, test_labels)
+    
+#if do_nn:
+#    nn_train_data = train_data.reshape((train_data.shape[0], train_data.shape[1] * train_data.shape[2]))
+#    nn_val_data = val_data.reshape((val_data.shape[0], val_data.shape[1] * val_data.shape[2]))
+#    nn_test_data = test_data.reshape((test_data.shape[0], test_data.shape[1] * test_data.shape[2]))    
+#    name = 'fc_softmax'
+#    params = common.copy()
+#    del params['GSO']
+#    del params['train_method']
+#    params['dir_name'] += name
+#    params['regularization'] = 0
+#    params['dropout']        = 0.4
+#    params['learning_rate']  = 0.1
+#    params['decay_rate']     = 0.95
+#    params['momentum']       = 0.9
+#    params['F']              = []
+#    params['K']              = []
+#    params['p']              = []
+#    params['M']              = [2500, C]
+#    params['V']              = len(fields)
+#    model = models.cgcnn(S, **params)
+#    model.n_param = 0
+#    model_manager.test(model, name, params,
+#			nn_train_data, train_labels, nn_val_data, val_labels, nn_test_data,
+#			test_labels)
+#    name = 'fc_fc_softmax'
+#    params = common.copy()
+#    del params['GSO']
+#    del params['train_method']
+#    params['dir_name'] += name
+#    params['regularization'] = 0
+#    params['dropout']        = 0.4
+#    params['learning_rate']  = 0.1
+#    params['decay_rate']     = 0.95
+#    params['momentum']       = 0.9
+#    params['F']              = []
+#    params['K']              = []
+#    params['p']              = []
+#    params['M']              = [2500, 500, C]
+#    params['V']              = len(fields)
+#    model = models.cgcnn(S, **params)
+#    model.n_param = 0
+#    model_manager.test(model, name, params,
+#			nn_train_data, train_labels, nn_val_data, val_labels, nn_test_data,
+#			test_labels)
+
+print(" ")
+
+print("Showing results...")
+
+print(" ")
+
+print("    {{n = {}, {}, num_epochs = {}, batch_size = {}, ".
+      format(train_data.shape[1], common['GSO'],
+             common['num_epochs'], common['batch_size']))
+print("     reg = {}, dropout = {}, momentum = {}".
+      format(common['regularization'], common['dropout'],
+             common['momentum']))
+if train_method == "SGD":
+    print("     {}, learning_rate = {}, decay_rate = {}}}".
+          format(common['train_method'], common['learning_rate'],
+                 common['decay_rate']))
+elif train_method == "ADAM":
+    print("     {}, learning_rate = {}}}".
+          format(common['train_method'], common['learning_rate']))
+
+print(" ")
+
+if do_c_a or do_np or do_sp or do_ap or do_hp:
+    print("Region: " + region)
+    model_manager.show()
+    print(" ")
+
+print(" ")
+print("Clustering graph sizes:")
+for i in range(len(S_c)):
+    print('S_c[{}]: {}'.format(i, S_c[i].shape[0]))
+
+if log:
+    ff = open(this_filename + '-DONE', 'a');
+    ff.write('DONE.')
+    ff.write('\r\n')
+    ff.close()
+
+if False:
+    grid_params = {}
+    data = (train_data, train_labels, val_data, val_labels, test_data,
+            test_labels)
+    manager.grid_search(params, grid_params, *data,
+                        model=lambda x: architecture.cnngs(**x))

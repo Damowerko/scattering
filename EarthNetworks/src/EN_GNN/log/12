@@ -1,0 +1,125 @@
+Training model...
+Fitting 3 folds for each of 12 candidates, totalling 36 fits
+[CV] M1=500, M2=None .................................................
+/glob/intel-python/versions/2018/intelpython3/lib/python3.6/site-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+[CV]  M1=500, M2=None, f1=0.0, accuracy=0.9636468551644547, total=  51.9s
+[Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:   52.3s remaining:    0.0s
+[CV] M1=500, M2=None .................................................
+[CV]  M1=500, M2=None, f1=0.0, accuracy=0.9619157530294288, total=  52.7s
+[Parallel(n_jobs=1)]: Done   2 out of   2 | elapsed:  1.8min remaining:    0.0s
+[CV] M1=500, M2=None .................................................
+[CV]  M1=500, M2=None, f1=0.0, accuracy=0.96133871898442, total=  54.4s
+[Parallel(n_jobs=1)]: Done   3 out of   3 | elapsed:  2.7min remaining:    0.0s
+[CV] M1=500, M2=100 ..................................................
+[CV]  M1=500, M2=100, f1=0.0, accuracy=0.9636468551644547, total= 3.4min
+[Parallel(n_jobs=1)]: Done   4 out of   4 | elapsed:  6.1min remaining:    0.0s
+[CV] M1=500, M2=100 ..................................................
+[CV]  M1=500, M2=100, f1=0.0, accuracy=0.9619157530294288, total= 3.2min
+[Parallel(n_jobs=1)]: Done   5 out of   5 | elapsed:  9.2min remaining:    0.0s
+[CV] M1=500, M2=100 ..................................................
+[CV]  M1=500, M2=100, f1=0.0, accuracy=0.96133871898442, total= 3.1min
+[Parallel(n_jobs=1)]: Done   6 out of   6 | elapsed: 12.4min remaining:    0.0s
+[CV] M1=500, M2=500 ..................................................
+[CV]  M1=500, M2=500, f1=0.0, accuracy=0.9636468551644547, total= 4.8min
+[Parallel(n_jobs=1)]: Done   7 out of   7 | elapsed: 17.2min remaining:    0.0s
+[CV] M1=500, M2=500 ..................................................
+[CV]  M1=500, M2=500, f1=0.0, accuracy=0.9619157530294288, total= 4.8min
+[Parallel(n_jobs=1)]: Done   8 out of   8 | elapsed: 22.1min remaining:    0.0s
+[CV] M1=500, M2=500 ..................................................
+[CV]  M1=500, M2=500, f1=0.0, accuracy=0.96133871898442, total= 5.0min
+[Parallel(n_jobs=1)]: Done   9 out of   9 | elapsed: 27.1min remaining:    0.0s
+[CV] M1=500, M2=1000 .................................................
+[CV]  M1=500, M2=1000, f1=0.0, accuracy=0.9636468551644547, total= 4.3min
+[Parallel(n_jobs=1)]: Done  10 out of  10 | elapsed: 31.4min remaining:    0.0s
+[CV] M1=500, M2=1000 .................................................
+[CV]  M1=500, M2=1000, f1=0.0, accuracy=0.9619157530294288, total= 4.3min
+[Parallel(n_jobs=1)]: Done  11 out of  11 | elapsed: 35.7min remaining:    0.0s
+[CV] M1=500, M2=1000 .................................................
+[CV]  M1=500, M2=1000, f1=0.0, accuracy=0.96133871898442, total= 4.1min
+[Parallel(n_jobs=1)]: Done  12 out of  12 | elapsed: 39.8min remaining:    0.0s
+[CV] M1=1000, M2=None ................................................
+[CV]  M1=1000, M2=None, f1=0.0, accuracy=0.9636468551644547, total= 1.3min
+[Parallel(n_jobs=1)]: Done  13 out of  13 | elapsed: 41.1min remaining:    0.0s
+[CV] M1=1000, M2=None ................................................
+[CV]  M1=1000, M2=None, f1=0.0, accuracy=0.9619157530294288, total= 1.2min
+[Parallel(n_jobs=1)]: Done  14 out of  14 | elapsed: 42.4min remaining:    0.0s
+[CV] M1=1000, M2=None ................................................
+[CV]  M1=1000, M2=None, f1=0.0, accuracy=0.96133871898442, total= 1.4min
+[Parallel(n_jobs=1)]: Done  15 out of  15 | elapsed: 43.7min remaining:    0.0s
+[CV] M1=1000, M2=100 .................................................
+[CV]  M1=1000, M2=100, f1=0.0, accuracy=0.9636468551644547, total= 3.8min
+[Parallel(n_jobs=1)]: Done  16 out of  16 | elapsed: 47.6min remaining:    0.0s
+[CV] M1=1000, M2=100 .................................................
+[CV]  M1=1000, M2=100, f1=0.0, accuracy=0.9619157530294288, total= 3.8min
+[Parallel(n_jobs=1)]: Done  17 out of  17 | elapsed: 51.4min remaining:    0.0s
+[CV] M1=1000, M2=100 .................................................
+[CV]  M1=1000, M2=100, f1=0.0, accuracy=0.96133871898442, total= 3.4min
+[Parallel(n_jobs=1)]: Done  18 out of  18 | elapsed: 54.8min remaining:    0.0s
+[CV] M1=1000, M2=500 .................................................
+[CV]  M1=1000, M2=500, f1=0.0, accuracy=0.9636468551644547, total= 4.7min
+[Parallel(n_jobs=1)]: Done  19 out of  19 | elapsed: 59.6min remaining:    0.0s
+[CV] M1=1000, M2=500 .................................................
+[CV]  M1=1000, M2=500, f1=0.0, accuracy=0.9619157530294288, total= 4.8min
+[Parallel(n_jobs=1)]: Done  20 out of  20 | elapsed: 64.3min remaining:    0.0s
+[CV] M1=1000, M2=500 .................................................
+[CV]  M1=1000, M2=500, f1=0.0, accuracy=0.96133871898442, total= 4.6min
+[Parallel(n_jobs=1)]: Done  21 out of  21 | elapsed: 69.0min remaining:    0.0s
+[CV] M1=1000, M2=1000 ................................................
+[CV]  M1=1000, M2=1000, f1=0.0, accuracy=0.9636468551644547, total= 3.5min
+[Parallel(n_jobs=1)]: Done  22 out of  22 | elapsed: 72.6min remaining:    0.0s
+[CV] M1=1000, M2=1000 ................................................
+[CV]  M1=1000, M2=1000, f1=0.0, accuracy=0.9619157530294288, total= 3.5min
+[Parallel(n_jobs=1)]: Done  23 out of  23 | elapsed: 76.0min remaining:    0.0s
+[CV] M1=1000, M2=1000 ................................................
+[CV]  M1=1000, M2=1000, f1=0.0, accuracy=0.96133871898442, total= 3.2min
+[Parallel(n_jobs=1)]: Done  24 out of  24 | elapsed: 79.2min remaining:    0.0s
+[CV] M1=2000, M2=None ................................................
+[CV]  M1=2000, M2=None, f1=0.0, accuracy=0.9636468551644547, total= 1.7min
+[Parallel(n_jobs=1)]: Done  25 out of  25 | elapsed: 80.9min remaining:    0.0s
+[CV] M1=2000, M2=None ................................................
+[CV]  M1=2000, M2=None, f1=0.0, accuracy=0.9619157530294288, total= 1.7min
+[Parallel(n_jobs=1)]: Done  26 out of  26 | elapsed: 82.6min remaining:    0.0s
+[CV] M1=2000, M2=None ................................................
+[CV]  M1=2000, M2=None, f1=0.0, accuracy=0.96133871898442, total= 1.7min
+[Parallel(n_jobs=1)]: Done  27 out of  27 | elapsed: 84.4min remaining:    0.0s
+[CV] M1=2000, M2=100 .................................................
+[CV]  M1=2000, M2=100, f1=0.0, accuracy=0.9636468551644547, total= 3.9min
+[Parallel(n_jobs=1)]: Done  28 out of  28 | elapsed: 88.3min remaining:    0.0s
+[CV] M1=2000, M2=100 .................................................
+[CV]  M1=2000, M2=100, f1=0.0, accuracy=0.9619157530294288, total= 3.8min
+[Parallel(n_jobs=1)]: Done  29 out of  29 | elapsed: 92.1min remaining:    0.0s
+[CV] M1=2000, M2=100 .................................................
+[CV]  M1=2000, M2=100, f1=0.0, accuracy=0.96133871898442, total= 4.0min
+[Parallel(n_jobs=1)]: Done  30 out of  30 | elapsed: 96.1min remaining:    0.0s
+[CV] M1=2000, M2=500 .................................................
+[CV]  M1=2000, M2=500, f1=0.0, accuracy=0.9636468551644547, total= 5.3min
+[Parallel(n_jobs=1)]: Done  31 out of  31 | elapsed: 101.5min remaining:    0.0s
+[CV] M1=2000, M2=500 .................................................
+[CV]  M1=2000, M2=500, f1=0.0, accuracy=0.9619157530294288, total= 5.3min
+[Parallel(n_jobs=1)]: Done  32 out of  32 | elapsed: 106.8min remaining:    0.0s
+[CV] M1=2000, M2=500 .................................................
+[CV]  M1=2000, M2=500, f1=0.0, accuracy=0.96133871898442, total= 5.4min
+[Parallel(n_jobs=1)]: Done  33 out of  33 | elapsed: 112.2min remaining:    0.0s
+[CV] M1=2000, M2=1000 ................................................
+[CV]  M1=2000, M2=1000, f1=0.0, accuracy=0.9636468551644547, total= 5.2min
+[Parallel(n_jobs=1)]: Done  34 out of  34 | elapsed: 117.5min remaining:    0.0s
+[CV] M1=2000, M2=1000 ................................................
+[CV]  M1=2000, M2=1000, f1=0.0, accuracy=0.9619157530294288, total= 5.2min
+[Parallel(n_jobs=1)]: Done  35 out of  35 | elapsed: 122.7min remaining:    0.0s
+[CV] M1=2000, M2=1000 ................................................
+[CV]  M1=2000, M2=1000, f1=0.0, accuracy=0.96133871898442, total= 5.2min
+[Parallel(n_jobs=1)]: Done  36 out of  36 | elapsed: 128.0min remaining:    0.0s
+[Parallel(n_jobs=1)]: Done  36 out of  36 | elapsed: 128.0min finished
+GridSearchCV(cv=None, error_score='raise',
+       estimator=<keras.wrappers.scikit_learn.KerasClassifier object at 0x14fdc170fe48>,
+       fit_params=None, iid=True, n_jobs=1,
+       param_grid={'M1': [500, 1000, 2000], 'M2': [None, 100, 500, 1000]},
+       pre_dispatch='2*n_jobs', refit='f1', return_train_score='warn',
+       scoring=['f1', 'accuracy'], verbose=100)
+       
+Test Results
+---------------
+F1 Score: 0.0
+Accuracy: 0.9619377162629758
+---------------
